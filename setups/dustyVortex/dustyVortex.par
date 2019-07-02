@@ -1,0 +1,32 @@
+Setup			dustyVortex
+
+### Disk parameters
+rhoDust		1.0	 Dust grain density
+surfDust	0.000001	Grain surface
+TsConst		0.0	Stopping time
+CsConst		5.0	 Gas sound speed
+OMEGAFRAME 1.0 omega frame
+
+### Mesh parameters
+
+Nx			1
+Ny			500
+Nz			500
+Ymin			-2.0
+Ymax			2.0
+Zmin			-2.0
+Zmax			2.0
+#PeriodicY	 yes
+#PeriodicZ	 yes
+
+
+Ntot			100
+Ninterm	 		1
+DT			0.1
+OutputDir		/data/lovascio/vortex_FARGO2
+
+Gamma			1.0
+
+# Plot options
+Field			gasdens
+Autocolor		No

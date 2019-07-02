@@ -1,0 +1,18 @@
+#MAINOBJ += cooling.o
+#GPUOBJ  += cooling_gpu.o
+#MAINOBJ += differencing.o
+#GPUOBJ += differencing_gpu.o
+#MAINOBJ += functions.o
+#GPUOBJ += functions_gpu.o
+#MAINOBJ += dust_function.o
+#GPUOBJ += dust_function_gpu.o
+#MAINOBJ += calc_dmax.o 
+#GPUOBJ += calc_dmax_gpu.o
+#MAINOBJ += naive.o
+#MAINOBJ += integrate_naive.o
+#MAINOBJ += integrate.o
+#MAINOBJ += RKL1.o
+#MAINOBJ += testbound.o
+MAINOBJ += waveKilling.o
+#GPUOBJ += vortex_gpu.o
+

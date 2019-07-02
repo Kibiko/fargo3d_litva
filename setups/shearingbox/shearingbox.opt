@@ -1,0 +1,38 @@
+# You may enter a description between the BEGIN and END labels.
+# BEGIN
+# The "shearingbox" setup corresponds to the standard shearing box
+# In order to run it, do:
+# make SETUP=shearingbox
+# ./fargo3d in/shearingbox.par
+#
+# END
+#-------------------------------------------------------------------------
+
+FLUIDS := 0
+NFLUIDS = 1
+FARGO_OPT += -DNFLUIDS=${NFLUIDS}
+
+FARGO_OPT  += -DX
+FARGO_OPT  += -DY
+
+#Coordinate System.
+FARGO_OPT  += -DCARTESIAN
+FARGO_OPT  += -DSHEARINGBOX
+FARGO_OPT  += -DSHEARINGBC
+FARGO_OPT  += -DSHEARPARAM=1.5
+
+FARGO_OPT	 += -DSWK	 #shearing wave killer
+#Equation of State
+FARGO_OPT  += -DADIABATIC
+FARGO_OPT	 += -DDUSTY
+FARGO_OPT  += -DTS_CCART
+
+#Transport Algorithm
+FARGO_OPT += -DSTANDARD
+FARGO_OPT += -DSTABLE
+#Cuda blocks
+ifeq (${GPU}, 1)
+FARGO_OPT += -DBLOCK_X=1
+FARGO_OPT += -DBLOCK_Y=16
+FARGO_OPT += -DBLOCK_Z=16
+endif

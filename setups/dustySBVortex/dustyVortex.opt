@@ -1,0 +1,53 @@
+# You may enter a description between the BEGIN and END labels.
+# BEGIN
+# make SETUP=dust
+# ./fargo3d -m in/sod1d.par
+# END
+#-------------------------------------------------------------------------------
+# From the list below, activate/deactivate the options that apply to your run.
+#-------------------------------------------------------------------------------
+
+#Dimension(s) of Simulation.
+#FARGO_OPT +=-DX
+#FARGO_OPT+=-DY
+
+#FARGO3D 2.0 (multifluid)
+#-------------------------------
+FLUIDS := 0
+NFLUIDS = 1
+FARGO_OPT += -DNFLUIDS=${NFLUIDS}
+#--------------------------------
+FARGO_OPT+=-DY
+FARGO_OPT+=-DZ
+
+#Equation of State
+
+FARGO_OPT+=-DADIABATIC
+FARGO_OPT+=-DDUSTYVORTEX
+#FARGO_OPT+=-DDUSTYVORTEX1
+#FARGO_OPT+=-DDUSTYVORTEX2
+
+#Coordinate System.
+FARGO_OPT +=  -DCARTESIAN
+
+#Transport Algorithm
+FARGO_OPT += -DSTANDARD
+
+#Dust Flag
+FARGO_OPT += -DDUSTY
+
+FARGO_OPT += -DTS_CCART
+
+FARGO_OPT += -DHARDBOUNDARIES
+
+#DEBUG FEATURES
+#FARGO_OPT += -DWRITEGHOSTS
+#Diffusion Algorythm: select STABLE for RKL2 integrator, RK2 is default
+FARGO_OPT += -DSTABLE
+
+#Cuda blocks
+ifeq (${GPU}, 1)
+FARGO_OPT += -DBLOCK_X=1
+FARGO_OPT += -DBLOCK_Y=16
+FARGO_OPT += -DBLOCK_Z=16
+endif

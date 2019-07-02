@@ -1,0 +1,3488 @@
+
+addviscosity_cart.c,35
+void addviscosity_cart_cpu(10,107
+
+addviscosity_cyl.c,34
+void addviscosity_cyl_cpu(10,107
+
+addviscosity_sph.c,34
+void addviscosity_sph_cpu(10,107
+
+advect_shift.c,27
+void AdvectSHIFT_cpu 9,87
+
+algogas.c,333
+TimeProcess t_Comm;3,22
+TimeProcess t_Hydro;4,42
+TimeProcess t_Mhd;5,63
+TimeProcess t_sub1;6,82
+TimeProcess t_sub1_x;7,102
+TimeProcess t_sub1_y;8,124
+TimeProcess t_sub1_z;9,146
+double current_simulation_time=10,168
+void FillGhosts 12,205
+void Fill_Resistivity_Profiles 30,566
+void Sources(51,1199
+void Transport(162,4243
+
+allocate.c,231
+Field *CreateFieldAlias(CreateFieldAlias3,22
+Fluid *CreateFluid(CreateFluid45,1275
+Field *CreateField(CreateField111,3094
+Field2D *CreateField2D(CreateField2D244,6622
+FieldInt2D *CreateFieldInt2D(CreateFieldInt2D322,8617
+
+boundary.c,22
+void boundaries(2,21
+
+calc_dmax.c,26
+real calcDmax_cpu(28,591
+
+cfl_b.c,17
+void cfl_b(3,22
+
+cfl.c,21
+void cfl_cpu(10,107
+
+cfl_fluids_min.c,24
+void CflFluidsMin(3,22
+
+change_arch.c,22
+void ChangeArch(3,22
+
+change_frame.c,29
+void ChangeFrame_cpu(10,107
+
+checkmute_y.c,28
+void CheckMuteY_cpu(10,107
+
+checkmute_z.c,28
+void CheckMuteZ_cpu(10,107
+
+checknans.c,92
+int CheckNansField 3,22
+int CheckAxiSym 17,247
+void AxiSym 28,460
+void CheckNans 37,627
+
+closed_bc.c,33
+void CloseBoundaries_cpu(10,107
+
+collision_kernel.h,179
+idm 14,322
+omega 17,378
+omega 23,540
+omega 25,566
+for (o=0; o<NFLUIDS;NFLUIDS32,643
+  for (p=0; p<NFLUIDS;NFLUIDS33,671
+    rho_p 35,706
+    else 56,1381
+  b[b93,2391
+
+collisions.c,55
+void _collisions_cpu(10,107
+void Collisions(156,2835
+
+colrate.c,21
+void ColRate(10,107
+
+comm.c,826
+#define LEFT 2,21
+#define RIGHT 3,37
+#define DOWN 4,53
+#define UP 5,69
+#define UPRIGHT 6,85
+#define UPLEFT 7,103
+#define DOWNLEFT 8,121
+#define DOWNRIGHT 9,140
+#define MAX_FIELDS_PER_COMM 11,161
+struct communicator 13,193
+  int src;14,215
+  int dst;15,266
+  struct communicator *next;next16,277
+  real *buffer;buffer17,346
+  int direction;19,456
+  int yminsrc;20,473
+  int zminsrc;21,515
+  int ymaxsrc;22,530
+  int zmaxsrc;23,545
+  int ymindst;24,560
+  int zmindst;25,607
+  int ymaxdst;26,622
+  int zmaxdst;27,637
+  int size;28,652
+  int nvarmax;29,699
+  int stride;31,780
+  int parity;32,794
+typedef struct communicator Communicator;35,812
+static Communicator *ListStart ListStart37,855
+static int NbCom=38,894
+void MakeCommunicator 40,915
+void ResetBuffers(75,1933
+void comm_cpu 197,5662
+
+comm_device.c,888
+#define LEFT 2,21
+#define RIGHT 3,37
+#define DOWN 4,53
+#define UP 5,69
+#define UPRIGHT 6,85
+#define UPLEFT 7,103
+#define DOWNLEFT 8,121
+#define DOWNRIGHT 9,140
+#define MAX_FIELDS_PER_COMM 11,161
+struct gpucommunicator 13,193
+  int src;14,218
+  int dst;15,269
+  int direction;16,280
+  struct gpucommunicator *next;next17,297
+  struct cudaPitchedPtr buffer;19,368
+  struct cudaMemcpy3DParms OnSrc;22,507
+  struct cudaMemcpy3DParms OnDst;23,541
+  int size;25,582
+  int nvarmax;26,629
+  void *buffer2d;buffer2d28,710
+  size_t pitch;29,728
+  int offset_src;30,744
+  int offset_dst;31,762
+  int dwbytes;32,780
+  int dz;33,795
+  int parity;34,805
+typedef struct gpucommunicator GpuCommunicator;37,823
+static GpuCommunicator *ListStart ListStart39,872
+static int NbCom=40,914
+void MakeCommunicatorGPU 42,935
+void ResetBuffersGPU(111,3813
+void comm_gpu 235,7699
+
+compfields.c,81
+boolean CompareField 3,22
+void CompareAllFields 30,836
+void GiveStats 45,1281
+
+CompPresAd.c,40
+void ComputePressureFieldAd_cpu 10,107
+
+CompPresIso.c,41
+void ComputePressureFieldIso_cpu 10,107
+
+CompPresPoly.c,42
+void ComputePressureFieldPoly_cpu 10,107
+
+compute_emf.c,53
+void ComputeEmf(11,108
+void _ComputeEmf_cpu(55,905
+
+compute_force.c,31
+void _ComputeForce_cpu(16,231
+
+Compute_Mean.c,23
+real ComputeMean(5,86
+
+compute_residual.c,33
+void ComputeResidual_cpu(10,107
+
+compute_slopes.c,31
+void ComputeSlopes_cpu(12,109
+
+compute_star.c,56
+void ComputeStar(10,107
+void _ComputeStar_cpu(79,1551
+
+compute_vmed.c,23
+void ComputeVmed(3,22
+
+condinit.c,20
+void CondInit 3,22
+
+cooling.c,54
+void cooling_cpu(6,37
+void RK2_cooling_cpu(136,3435
+
+correct_vtheta.c,31
+void CorrectVtheta_cpu(10,107
+
+cpvel.c,65
+void copy_velocities_cpu(3,22
+void copy_velocities_gpu(51,1132
+
+define.h,7868
+#define MAXVARIABLES 2,17
+#define MAXLINELENGTH 3,43
+#define MAXNAMELENGTH 4,69
+#define WIDESCREEN 5,94
+#define MAX1D 6,116
+#define MAXPRIME 7,136
+#define MAX_FIELDS 8,158
+#define CVNR 9,180
+#define CVNL 10,198
+#define GAS 12,217
+#define DUST 13,231
+#define Input 15,247
+#define Output 16,263
+#define XY 18,281
+#define YZ 19,294
+#define ZX 20,307
+#define INT 23,342
+#define REAL 24,360
+#define STRING 25,378
+#define BOOL 26,396
+#define ALL 28,415
+#define SPECIFIC 29,434
+#define TRUE 32,476
+#define FALSE 33,492
+#define YES 36,530
+#define NO 37,544
+#define IRRELEVANT 38,557
+#define REDEFINED 39,578
+#define GET 43,629
+#define MARK 44,643
+#define FREQUENCY 45,658
+#define NGHX 51,719
+#define NGHX 53,741
+#define NGHY 58,780
+#define NGHZ 62,812
+#define NGHX 66,848
+#define NGHY 69,883
+#define NGHZ 72,918
+#define XIP 76,956
+#define XIM 77,1044
+#define XIP 79,1138
+#define XIM 80,1155
+#define DENS 84,1206
+#define VY 85,1222
+#define VX 86,1238
+#define VZ 87,1254
+#define ENERGY 88,1270
+#define BX 89,1289
+#define BY 90,1308
+#define BZ 91,1327
+#define EMFX 92,1347
+#define EMFY 93,1365
+#define EMFZ 94,1383
+#define VXTEMP 95,1402
+#define VYTEMP 96,1423
+#define VZTEMP 97,1444
+#define Y1_COMM 98,1465
+#define Y2_COMM 99,1489
+#define Y3_COMM 100,1512
+#define Y4_COMM 101,1535
+#define MONITORSCALAR 105,1663
+#define MONITOR2D 106,1704
+#define MONITORY 107,1741
+#define MONITORY_RAW 108,1777
+#define MONITORZ 109,1817
+#define MONITORZ_RAW 110,1853
+#define NOGHOSTINC 112,1894
+#define GHOSTINC 113,1915
+#define TOTAL 115,1935
+#define AVG_MASS 116,1951
+#define AVG_VOL 117,1970
+#define INDEP_PLANET 119,1989
+#define DEP_PLANET 120,2012
+#define MASS 124,2068
+#define MAGBETA 125,2089
+#define BXFLUX 126,2174
+#define FLUX_Y 127,2195
+#define FLUX_Z 129,2258
+#define MOM_X 130,2280
+#define MOM_Y 131,2302
+#define MOM_Z 132,2325
+#define TORQ 133,2348
+#define REYNOLDS 134,2371
+#define MAXWELL 135,2395
+#define VTEMP2V 139,2486
+#define V2VTEMP 140,2507
+#define MERGE 142,2529
+#define MIN(146,2608
+#define MAX(147,2639
+#define MIN(149,2676
+#define MAX(150,2718
+#define max2(152,2767
+#define max3(153,2809
+#define SUM(156,2905
+#define MINSTART 157,2932
+#define MAXSTART 158,2954
+#define SUMSTART 159,2977
+#define function_name_cpu(160,2998
+#define name_reduction_cpu(161,3059
+#define function_name_gpu(162,3116
+#define name_reduction_gpu(163,3177
+#define function_name(164,3234
+#define name_reduction(165,3283
+#define function_shift_kernel(166,3332
+#define kernel_shift(167,3392
+#define function_kernel(168,3447
+#define kernel_reduction(169,3495
+#define function_name_full(170,3548
+#define name_full_reduction(171,3607
+#define RESET_REDUCTION(172,3666
+#define INIT_REDUCTION(173,3710
+#define XC 178,3882
+#define YC 179,3901
+#define ZC 180,3920
+#define XC 183,3965
+#define YC 184,3997
+#define ZC 185,4029
+#define XC 188,4072
+#define YC 189,4117
+#define ZC 190,4162
+#define xmin(196,4253
+#define ymin(197,4279
+#define zmin(198,4305
+#define xmed(199,4331
+#define ymed(200,4357
+#define zmed(201,4383
+#define alpha(203,4410
+#define xmin_d 208,4477
+#define ymin_d 209,4499
+#define zmin_d 210,4521
+#define xmed(213,4551
+#define ymed(214,4601
+#define zmed(215,4651
+#define invDiffXmed(218,4709
+#define invDiffYmed(219,4749
+#define invDiffZmed(220,4789
+#define Xmin(222,4830
+#define Ymin(223,4856
+#define Zmin(224,4882
+#define Xmed(225,4908
+#define Ymed(226,4934
+#define Zmed(227,4960
+#define alpha(229,4987
+#define InvDiffXmed(232,5017
+#define InvDiffYmed(233,5057
+#define InvDiffZmed(234,5097
+#define InvVol(239,5154
+#define Vol(240,5192
+#define InvVj(242,5226
+#define invVj(243,5254
+#define SurfX(245,5283
+#define SurfY(246,5316
+#define SurfZ(247,5349
+#define InvVol(251,5405
+#define Vol(252,5451
+#define SurfX(256,5526
+#define SurfY(257,5567
+#define SurfZ(258,5608
+#define zone_size_x(264,5689
+#define zone_size_y(265,5717
+#define zone_size_z(266,5762
+#define zone_size_x(270,5834
+#define zone_size_y(271,5872
+#define zone_size_z(272,5917
+#define zone_size_x(276,5987
+#define zone_size_y(277,6038
+#define zone_size_z(278,6083
+#define zone_size_x(284,6183
+#define zone_size_y(285,6213
+#define zone_size_z(286,6258
+#define zone_size_x(290,6330
+#define zone_size_y(291,6368
+#define zone_size_z(292,6413
+#define zone_size_x(296,6483
+#define zone_size_y(297,6534
+#define zone_size_z(298,6579
+#define edge_size_x(306,6682
+#define edge_size_x_middlez_lowy(307,6710
+#define edge_size_x_middley_lowz(308,6771
+#define edge_size_y(309,6832
+#define edge_size_z(310,6877
+#define edge_size_x(314,6949
+#define edge_size_x_middlez_lowy(315,6987
+#define edge_size_x_middley_lowz(316,7038
+#define edge_size_y(317,7089
+#define edge_size_z(318,7134
+#define edge_size_x(322,7204
+#define edge_size_x_middlez_lowy(323,7255
+#define edge_size_x_middley_lowz(324,7319
+#define edge_size_y(325,7383
+#define edge_size_z(326,7428
+#define edge_size_x(332,7529
+#define edge_size_x_middlez_lowy(333,7557
+#define edge_size_x_middley_lowz(334,7618
+#define edge_size_y(335,7679
+#define edge_size_z(336,7724
+#define edge_size_x(340,7796
+#define edge_size_x_middlez_lowy(341,7834
+#define edge_size_x_middley_lowz(342,7885
+#define edge_size_y(343,7936
+#define edge_size_z(344,7981
+#define edge_size_x(348,8051
+#define edge_size_x_middlez_lowy(349,8102
+#define edge_size_x_middley_lowz(350,8166
+#define edge_size_y(351,8230
+#define edge_size_z(352,8275
+#define Sxj(360,8362
+#define Sxk(361,8386
+#define Syj(362,8410
+#define Syk(363,8434
+#define Szj(364,8458
+#define Szk(365,8482
+#define lxp 380,8750
+#define lxm 381,8770
+#define ixm 383,8791
+#define ixp 384,8811
+#define lyp 387,8841
+#define lym 388,8869
+#define lyp 390,8903
+#define lym 391,8921
+#define lxp 394,8999
+#define lxm 395,9051
+#define ixm 397,9099
+#define ixp 398,9136
+#define lyp 401,9183
+#define lym 402,9204
+#define lyp 404,9231
+#define lym 405,9249
+#define lzp 410,9322
+#define lzm 411,9345
+#define lzp 413,9374
+#define lzm 414,9390
+#define l 418,9429
+#define l 420,9482
+#define l2D 422,9529
+#define l2D_int 423,9565
+#define lxp 428,9645
+#define lxm 429,9703
+#define ixm 430,9754
+#define ixp 431,9795
+#define lxp 435,9846
+#define lxm 436,9866
+#define ixp 437,9886
+#define ixm 438,9906
+#define lyp 443,9944
+#define lym 444,9968
+#define lyp 446,9998
+#define lym 447,10016
+#define lzp 451,10051
+#define lzm 452,10076
+#define lzp 454,10107
+#define lzm 455,10123
+#define l 458,10147
+#define l2D 459,10190
+#define l2D_int 460,10222
+#	 define H_X(466,10318
+#	 define H_Y(467,10343
+#	 define H_Z(468,10368
+#	 define H_X(471,10421
+#	 define H_Y(472,10451
+#	 define H_Z(473,10476
+#	 define H_X(476,10527
+#	 define H_Y(477,10557
+#	 define H_Z(478,10582
+#define FARGO_SAFE(492,10908
+#define FARGO_DEBUG(545,13473
+#define FARGO_SPEEDUP(559,14161
+#define GET 580,15344
+#define MARK 581,15370
+#define FREQUENCY 582,15396
+#define INPUT(585,15436
+#define OUTPUT(586,15496
+#define INPUT2D(587,15558
+#define OUTPUT2D(588,15622
+#define INPUT2DINT(589,15688
+#define OUTPUT2DINT(590,15758
+#define INPUT(592,15836
+#define OUTPUT(593,15896
+#define INPUT2D(594,15958
+#define OUTPUT2D(595,16022
+#define INPUT2DINT(596,16088
+#define OUTPUT2DINT(597,16158
+#define DRAFT(600,16238
+#define CUDAMEMCPY(603,16309
+#define CONSTANT(604,16408
+#define CUDAMEMCPY(606,16468
+#define CONSTANT(607,16534
+#define INSPECT_REAL(611,16611
+#define INSPECT_REAL(613,16679
+#define INSPECT_INT(616,16752
+#define pow 619,16827
+#define sin 620,16844
+#define cos 621,16861
+#define sqrt 622,16878
+#define xstr(625,16905
+#define str(626,16928
+#define DUMP_PPVAR(628,16947
+#define MULTIFLUID(629,17069
+#define index(634,17209
+#define SMALLVEL 636,17241
+#define SMALLTIME 637,17282
+#define CREATEFIELDALIAS(639,17334
+
+defout.c,48
+void ReadDefaultOut 7,212
+void SubsDef 20,599
+
+dh_boundary.c,648
+#define LEFT 3,22
+#define RIGHT 4,37
+#define DOWN 5,53
+#define UP 6,68
+#define INSIDE 7,81
+#define OUTSIDE 8,98
+static boolean BuffersReady 10,117
+static int StartAddress_CPU[StartAddress_CPU11,151
+static int StartAddress_GPU[StartAddress_GPU12,186
+static int Stride_j_CPU;13,221
+static int Stride_k_CPU;14,246
+static int Stride_j_GPU;15,271
+static int Stride_k_GPU;16,296
+static int Nj[Nj17,321
+static int Nk[Nk18,342
+static struct cudaMemcpy3DParms Inner[Inner21,375
+static struct cudaMemcpy3DParms Outer[Outer22,429
+void Prepare_DH_buffers 25,492
+void Input_Contour_Inside 105,3248
+void Output_Contour_Outside 130,4086
+
+differencing.c,110
+real dx(28,594
+real dxx(32,655
+real dq(36,729
+real dq2(40,846
+real GradDDotGrad(47,972
+real Lap(97,2436
+
+divrho.c,29
+void DivideByRho_cpu(10,107
+
+dust_function.c,36
+real C_dust(30,597
+real Cd(46,967
+
+fargo_mhd.c,63
+void Compute_Staggered_2D_fields 3,22
+void MHD_fargo 39,1077
+
+fargo_ppa_a.c,32
+void VanLeerX_PPA_a_cpu(10,107
+
+fargo_ppa_b.c,32
+void VanLeerX_PPA_b_cpu(10,107
+
+fargo_ppa_c.c,32
+void VanLeerX_PPA_c_cpu(10,107
+
+fargo_ppa_d_2d.c,35
+void VanLeerX_PPA_d_2d_cpu(10,107
+
+fargo_ppa_d.c,32
+void VanLeerX_PPA_d_cpu(10,107
+
+fargo_ppa_steep.c,98
+#define ETA1 15,563
+#define ETA2 16,581
+#define EPS 17,599
+void VanLeerX_PPA_steep_cpu(21,633
+
+fill_ghostsx.c,30
+void Fill_GhostsX_cpu 10,107
+
+floor.c,23
+void Floor_cpu(10,107
+
+fondam.h,887
+#define      G_SF 14,367
+#define  MSTAR_SF 15,390
+#define     R0_SF 16,413
+#define   R_MU_SF 17,436
+#define    MU0_SF 18,459
+#define      G_MKS 20,483
+#define  MSTAR_MKS 21,513
+#define     R0_MKS 22,543
+#define   R_MU_MKS 23,583
+#define    MU0_MKS 24,610
+#define      G_CGS 26,666
+#define  MSTAR_CGS 27,695
+#define     R0_CGS 28,725
+#define   R_MU_CGS 29,765
+#define    MU0_CGS 30,796
+#define		G	33,886
+#define     MSTAR 34,904
+#define        R0 35,939
+#define      R_MU 36,971
+#define       MU0 37,1005
+#define		G	42,1080
+#define     MSTAR 43,1099
+#define        R0 44,1135
+#define      R_MU 45,1168
+#define       MU0 46,1203
+#define		G	51,1262
+#define     MSTAR 52,1281
+#define        R0 53,1317
+#define      R_MU 54,1350
+#define       MU0 55,1385
+#define STEFANK 60,1449
+#define C0 63,1583
+#define TCMB 66,1707
+#define THRESHOLD_STELLAR_MASS 70,1861
+
+fresh.c,536
+void send2cpu(3,22
+void send2gpu(22,466
+void Input2D_CPU(41,910
+void Input2D_GPU(62,1473
+void Input2DInt_CPU(83,2036
+void Input2DInt_GPU(104,2611
+void Input_CPU(125,3186
+void Input_GPU(187,5723
+void Output_CPU(248,8229
+void Output_GPU(263,8681
+void Output2D_CPU(278,9133
+void Output2D_GPU(283,9252
+void Output2DInt_CPU(288,9371
+void Output2DInt_GPU(293,9496
+void Draft 298,9621
+void WhereIsField(304,9794
+void WhereIsFieldInt2D(315,10033
+void WhoOwns 326,10282
+void SynchronizeHD 330,10402
+void WhereIsWho 352,10965
+
+functions.c,142
+real bj(13,168
+real ws(22,277
+real aj(26,319
+real muj(30,359
+real nuj(34,426
+real mu1j(38,498
+real nu1j(42,548
+void make_D_cpu(47,627
+
+gauss.h,201
+  max_value 5,159
+  for(ir2=ir; ir2<NFLUIDS;NFLUIDS6,177
+  for(ir2=ir+1;ir2<NFLUIDS;NFLUIDS30,822
+    factor 31,857
+    for(ic=0; ic<NFLUIDS;NFLUIDS32,908
+  for(ic=NFLUIDS-1; ic>ir ir41,1207
+
+global.h,6206
+int CPU_Rank;3,24
+int CPU_Number;4,38
+boolean CPU_Master 5,54
+boolean Resistivity_Profiles_Filled 10,102
+boolean VxIsResidual 11,144
+boolean LogGrid 12,171
+boolean GuidingCenter 13,193
+boolean Corotating 14,221
+boolean Restart 15,246
+boolean Restart_Full 16,268
+boolean Stockholm 17,295
+boolean Merge 18,319
+boolean Merge_All 19,340
+boolean MonitorIntegral;20,364
+boolean TimeInfo 21,389
+boolean EverythingOnCPU 22,412
+boolean ForwardOneStep 23,442
+boolean Vtk2dat 24,471
+boolean Dat2vtk 25,493
+boolean PostRestart 26,515
+boolean OnlyInit 27,541
+boolean EarlyOutputRename 28,564
+boolean RedefineOptions 29,596
+boolean DeviceFileSpecified 30,626
+boolean StretchOldOutput 31,660
+boolean ThereArePlanets 32,691
+boolean ThereIsACentralBinary 33,721
+real    PhysicalTimeInitial;34,757
+real    PhysicalTime 35,786
+real    XAxisRotationAngle 36,812
+char    NewOutputdir[NewOutputdir37,846
+char    VersionString[VersionString38,874
+char    StickyOptions[StickyOptions39,903
+char    BoundaryFile[BoundaryFile40,932
+char    CommandLine[CommandLine41,960
+char    FirstCommand[FirstCommand42,987
+char    ArchFile[ArchFile43,1015
+char    ParameterFile[ParameterFile44,1039
+char    DefaultOut[DefaultOut45,1068
+char    DeviceFile[DeviceFile46,1094
+char    CurrentWorkingDirectory[CurrentWorkingDirectory47,1120
+char    *InputFile;InputFile48,1159
+char    *PlanetaryFile;PlanetaryFile49,1179
+char    *HostsList;HostsList50,1203
+int     TimeStep 51,1223
+int     FullArrayComms 52,1245
+int     ContourComms 53,1273
+int     DeviceManualSelection 54,1299
+int     ArrayNb 55,1335
+int     StretchNumber 56,1356
+int     BinaryStar1 57,1383
+int     BinaryStar2 58,1408
+real InnerBorder;60,1434
+real OuterBorder;61,1452
+double current_simulation_time;63,1471
+TimeProcess t_speedup_cpu;65,1504
+TimeProcess t_speedup_gpu;66,1531
+int t_speedup_count;67,1558
+real time_speedup_cpu;68,1579
+real time_speedup_gpu;69,1602
+PlanetarySystem *Sys;Sys71,1626
+Point DiskOnPrimaryAcceleration;72,1648
+Point IndirectTerm;73,1681
+real StepTime;75,1702
+real localforce[localforce77,1718
+real globalforce[globalforce78,1739
+Grid Gridd;82,1782
+Field *Vx;Vx84,1795
+Field *Vy;Vy85,1806
+Field *Vz;Vz86,1817
+Field *Vx_temp;Vx_temp88,1829
+Field *Vy_temp;Vy_temp89,1845
+Field *Vz_temp;Vz_temp90,1861
+Field *Vx_half;Vx_half92,1878
+Field *Vy_half;Vy_half93,1894
+Field *Vz_half;Vz_half94,1910
+Field *Slope;Slope96,1927
+Field *Mpx;Mpx98,1942
+Field *Mpy;Mpy99,1954
+Field *Mpz;Mpz100,1966
+Field *Mmx;Mmx101,1978
+Field *Mmy;Mmy102,1990
+Field *Mmz;Mmz103,2002
+Field *Pot;Pot105,2015
+Field *DivRho;DivRho107,2028
+Field *DensStar;DensStar108,2043
+Field *Qs;Qs109,2060
+Field *Density;Density111,2072
+Field *Energy;Energy112,2088
+Field *Pressure;Pressure113,2103
+Field *Total_Density;Total_Density115,2121
+Field *QL;QL117,2144
+Field *QR;QR118,2155
+Field *LapPPA;LapPPA119,2166
+Field2D *VxMed;VxMed122,2228
+Field2D *Vxhy;Vxhy123,2244
+Field2D *Vxhyr;Vxhyr124,2259
+Field2D *Vxhz;Vxhz125,2275
+Field2D *Vxhzr;Vxhzr126,2290
+Field2D *Reduction2D;Reduction2D127,2306
+Field2D *Eta_profile_xi;Eta_profile_xi128,2328
+Field2D *Eta_profile_xizi;Eta_profile_xizi129,2353
+Field2D *Eta_profile_zi;Eta_profile_zi130,2380
+FieldInt2D *Nxhy;Nxhy132,2406
+FieldInt2D *Nxhz;Nxhz133,2424
+FieldInt2D *Nshift;Nshift134,2442
+Field *Y1;Y1138,2494
+Field *Y2;Y2139,2505
+Field *Y3;Y3140,2516
+Field *Y4;Y4141,2527
+Field *Y5;Y5142,2538
+Field *Bx;Bx148,2594
+Field *By;By149,2605
+Field *Bz;Bz150,2616
+Field *B1_star;B1_star152,2628
+Field *B2_star;B2_star153,2644
+Field *V1_star;V1_star155,2661
+Field *V2_star;V2_star156,2677
+Field *Slope_b1;Slope_b1158,2694
+Field *Slope_v1;Slope_v1159,2711
+Field *Slope_b2;Slope_b2160,2728
+Field *Slope_v2;Slope_v2161,2745
+Field *Emfx;Emfx163,2763
+Field *Emfy;Emfy164,2777
+Field *Emfz;Emfz165,2790
+Field *Divergence;Divergence167,2804
+Field2D *Density0;Density0170,2833
+Field2D *Vx0;Vx0171,2852
+Field2D *Vy0;Vy0172,2866
+Field2D *Vz0;Vz0173,2880
+Field2D *Energy0;Energy0174,2894
+int Ncpu_x;178,2941
+int Ncpu_y;179,2983
+Buffer Bfd;181,3015
+Buffer Bfu;182,3033
+Buffer Bfl;183,3051
+Buffer Bfr;184,3069
+Buffer Bfcdl;185,3139
+Buffer Bfcdr;186,3184
+Buffer Bfcul;187,3202
+Buffer Bfcur;188,3220
+real Dx;194,3284
+real *Xmin;Xmin195,3293
+real *Ymin;Ymin196,3305
+real *Zmin;Zmin197,3317
+real *Xmed;Xmed198,3329
+real *Ymed;Ymed199,3341
+real *Zmed;Zmed200,3353
+real *InvDiffXmed;InvDiffXmed201,3365
+real *InvDiffYmed;InvDiffYmed202,3384
+real *InvDiffZmed;InvDiffZmed203,3403
+real *Sxj;Sxj204,3422
+real *Sxk;Sxk205,3433
+real *Syj;Syj206,3444
+real *Syk;Syk207,3455
+real *Szj;Szj208,3466
+real *Szk;Szk209,3477
+real *InvVj;InvVj210,3488
+real shift_buffer[shift_buffer211,3501
+real *Alpha;Alpha214,3554
+real *Alpha_d;Alpha_d215,3567
+real *Dx_d;Dx_d216,3582
+real *Xmin_d;Xmin_d217,3594
+real *Ymin_d;Ymin_d218,3608
+real *Zmin_d;Zmin_d219,3622
+real *Sxj_d;Sxj_d220,3636
+real *Sxk_d;Sxk_d221,3649
+real *Syj_d;Syj_d222,3662
+real *Syk_d;Syk_d223,3675
+real *Szj_d;Szj_d224,3688
+real *Szk_d;Szk_d225,3701
+real *InvVj_d;InvVj_d226,3714
+real shift_buffer_d[shift_buffer_d227,3729
+int Nx;231,3776
+int Ny;232,3784
+int Nz;233,3792
+int J;234,3800
+int K;235,3807
+int Y0;236,3814
+int Z0;237,3822
+int Stride_cpu;238,3830
+int Stride_gpu;239,3846
+int Pitch_cpu;240,3862
+int Pitch_gpu;241,3877
+int Pitch_Int_gpu;242,3892
+int Pitch2D;243,3911
+int Stride;244,3924
+int ix;245,3936
+int iy;246,3944
+int ycells;247,3952
+int zcells;248,3964
+int y0cell;249,3976
+int z0cell;250,3988
+Field *ListOfGrids ListOfGrids253,4016
+int Bounl;257,4066
+int Bounr;258,4077
+int Bounu;259,4088
+int Bound;260,4099
+real Xplanet;263,4129
+real Yplanet;264,4143
+real Zplanet;265,4157
+real VXplanet;266,4171
+real VYplanet;267,4186
+real VZplanet;268,4201
+real MplanetVirtual;269,4216
+MPI_Status fargostat;271,4238
+real OMEGAFRAME0;273,4261
+int Fscan;275,4280
+long VtkPosition 277,4292
+int Timestepcount 280,4339
+int Fluidtype;281,4362
+int FluidIndex;282,4377
+real Min[Min283,4393
+Fluid *Fluids[Fluids284,4412
+
+init_stockholm.c,57
+void _init_stockholm(3,22
+void init_stockholm(128,2594
+
+integrate.c,106
+void integrate_cpu(28,588
+void integrate1_cpu(103,1937
+void RK2_cpu(170,2962
+void Assign_cpu(261,4380
+
+integrate_emf.c,40
+void EMF_Upstream_Integrate_cpu 15,284
+
+light_global_dev.c,26
+void LightGlobalDev(5,98
+
+lorentz_force.c,58
+void LorentzForce(10,107
+void _LorentzForce_cpu(75,1402
+
+LowTasks.c,704
+void prs_exit(3,22
+void prs_error(8,83
+int PrimitiveVariables 13,166
+inline real Swap(41,518
+    real value;43,555
+    char b[b45,585
+    char b[b47,606
+void Check_CUDA_Blocks_Consistency 70,1069
+void MakeDir 112,2543
+FILE *fopen_prs fopen_prs136,3464
+FILE *master_fopen master_fopen162,4333
+void masterfprintf(177,4646
+void masterprint(185,4816
+void mastererr(193,4980
+void InitSpace(201,5142
+void InitSurfaces(432,10503
+void SelectFluid(540,12842
+void CreateFields(576,13615
+real ComputeMass(663,16444
+void SaveState 704,17140
+void SaveStateSecondary 728,17835
+void RestoreState 752,18589
+int RestartSimulation(770,19098
+void RestartVTK(843,20675
+void RestartDat(951,22911
+
+lowtasks.cu,513
+#define __NOPROTO1,0
+#define __GPU 2,18
+extern "C" void check_errors(6,56
+extern "C" int DevMalloc(17,326
+extern "C" int DevMemcpyD2H(32,717
+extern "C" int DevMemcpyH2D(47,1149
+extern "C" int DevMemcpyH2H(62,1581
+extern "C" int DevMemcpyD2D(77,2011
+extern "C" int Host2Dev3D(92,2445
+extern "C" int Dev2Dev3D(101,2867
+extern "C" int Dev2Host3D(110,3317
+extern "C" int Host2Dev2D 119,3739
+extern "C" int Dev2Host2D 129,4219
+extern "C" int Host2Dev2DInt 139,4711
+extern "C" int Dev2Host2DInt 144,4936
+
+main.c,107
+int   begin_i 10,142
+int   InnerOutputCounter=11,176
+real dt;12,225
+real dtemp 13,234
+int main(15,253
+
+makefile,5481
+SETUPSDIR=5,200
+BINDIR=6,220
+STDDIR=7,234
+SRCDIR=8,248
+ARCHDIR=9,262
+ARCHNAME 10,278
+SCRIPTSDIR=11,304
+GIT_VERSION 12,326
+ARCH_CREATE 13,410
+SHORTARCH 14,454
+BLACK=18,584
+BLUE=19,601
+GREEN=20,626
+CYAN=21,643
+RED=22,659
+PURPLE=23,674
+BROWN=24,692
+LIGHT_GRAY=25,709
+END_COLOR=26,731
+FARGO_OPT_FILE 83,1766
+VARFILE 84,1812
+FARGO_DISPLAY 87,1878
+FARGO_ARCH 93,2125
+CUDA 105,2398
+PYTHON_INCLUDE 108,2459
+CC_LINUX 113,2644
+SEQOPT_LINUX 114,2668
+PARAOPT_LINUX 115,2688
+PARACC_LINUX 116,2720
+LIBS_LINUX 117,2742
+INC_LINUX 118,2762
+NVCC_LINUX 119,2779
+CUDAOPT_LINUX 120,2800
+PARAINC_LINUX 121,2837
+PARALIB_LINUX 122,2854
+CUDAINC_LINUX 123,2870
+CUDALIB_LINUX 124,2905
+CUDALIB_LINUX 125,2948
+CXX_LINUX 126,3000
+CXXPARA_LINUX 127,3038
+CC_KEPLEROPENMPI 131,3235
+SEQOPT_KEPLEROPENMPI 132,3264
+PARAOPT_KEPLEROPENMPI 133,3304
+PARACC_KEPLEROPENMPI 134,3352
+LIBS_KEPLEROPENMPI 135,3382
+ENVRANK_KEPLEROPENMPI 136,3410
+INC_KEPLEROPENMPI 137,3461
+NVCC_KEPLEROPENMPI 138,3486
+CUDAOPT_KEPLEROPENMPI 139,3515
+PARAINC_KEPLEROPENMPI 140,3555
+PARALIB_KEPLEROPENMPI 141,3580
+CUDAINC_KEPLEROPENMPI 142,3604
+CUDALIB_KEPLEROPENMPI 143,3647
+CXX_KEPLEROPENMPI 144,3698
+CXXPARA_KEPLEROPENMPI 145,3744
+CC_KEPLERMVAPICH 149,3949
+SEQOPT_KEPLERMVAPICH 150,3978
+PARAOPT_KEPLERMVAPICH 151,4018
+PARACC_KEPLERMVAPICH 152,4066
+LIBS_KEPLERMVAPICH 153,4096
+ENVRANK_KEPLERMVAPICH 154,4124
+INC_KEPLERMVAPICH 155,4174
+NVCC_KEPLERMVAPICH 156,4199
+CUDAOPT_KEPLERMVAPICH 157,4228
+PARAINC_KEPLERMVAPICH 158,4268
+PARALIB_KEPLERMVAPICH 159,4293
+CUDAINC_KEPLERMVAPICH 160,4318
+CUDALIB_KEPLERMVAPICH 161,4361
+CXX_KEPLERMVAPICH 162,4438
+CXXPARA_KEPLERMVAPICH 163,4484
+CC_TESLAOPENMPI 167,4687
+SEQOPT_TESLAOPENMPI 168,4715
+PARAOPT_TESLAOPENMPI 169,4754
+PARACC_TESLAOPENMPI 170,4800
+LIBS_TESLAOPENMPI 171,4829
+ENVRANK_TESLAOPENMPI 172,4856
+INC_TESLAOPENMPI 173,4906
+NVCC_TESLAOPENMPI 174,4930
+CUDAOPT_TESLAOPENMPI 175,4958
+PARAINC_TESLAOPENMPI 176,4997
+PARALIB_TESLAOPENMPI 177,5021
+CUDAINC_TESLAOPENMPI 178,5044
+CUDALIB_TESLAOPENMPI 179,5086
+CXX_TESLAOPENMPI 180,5136
+CXXPARA_TESLAOPENMPI 181,5163
+CC_TESLAMVAPICH 185,5346
+SEQOPT_TESLAMVAPICH 186,5374
+PARAOPT_TESLAMVAPICH 187,5413
+PARACC_TESLAMVAPICH 188,5459
+LIBS_TESLAMVAPICH 189,5488
+ENVRANK_TESLAMVAPICH 190,5515
+INC_TESLAMVAPICH 191,5564
+NVCC_TESLAMVAPICH 192,5588
+CUDAOPT_TESLAMVAPICH 193,5616
+PARAINC_TESLAMVAPICH 194,5655
+PARALIB_TESLAMVAPICH 195,5679
+CUDAINC_TESLAMVAPICH 196,5719
+CUDALIB_TESLAMVAPICH 197,5761
+CXX_TESLAMVAPICH 198,5793
+CXXPARA_TESLAMVAPICH 199,5838
+CC_MENDIETA 203,6044
+SEQOPT_MENDIETA 204,6068
+PARAOPT_MENDIETA 205,6103
+PARACC_MENDIETA 206,6141
+LIBS_MENDIETA 207,6166
+ENVRANK_MENDIETA 208,6189
+INC_MENDIETA 209,6228
+NVCC_MENDIETA 210,6248
+CUDAOPT_MENDIETA 211,6272
+PARAINC_MENDIETA 212,6307
+PARALIB_MENDIETA 213,6327
+CUDAINC_MENDIETA 214,6363
+CUDALIB_MENDIETA 215,6401
+CXX_MENDIETA 216,6429
+CXXPARA_MENDIETA 217,6470
+CC_QUADRO 221,6652
+SEQOPT_QUADRO 222,6673
+PARAOPT_QUADRO 223,6708
+PARACC_QUADRO 224,6742
+LIBS_QUADRO 225,6765
+INC_QUADRO 226,6786
+NVCC_QUADRO 227,6804
+CUDAOPT_QUADRO 228,6850
+PARAINC_QUADRO 229,6868
+PARALIB_QUADRO 230,6916
+CUDALIB_QUADRO 231,6959
+CUDAINC_QUADRO 232,7002
+CXX_QUADRO 233,7038
+CXXPARA_QUADRO 234,7077
+CC_MacIntel 239,7369
+SEQOPT_MacIntel 240,7392
+PARAOPT_MacIntel 241,7464
+PARACC_MacIntel 242,7502
+ENVRANK_MacIntel 243,7527
+LIBS_MacIntel 244,7567
+INC_MacIntel 245,7587
+NVCC_MacIntel 246,7607
+CUDAOPT_MacIntel 247,7643
+PARAINC_MacIntel 248,7826
+PARALIB_MacIntel 249,7846
+CUDALIB_MacIntel 250,7866
+CUDAINC_MacIntel 251,7909
+CXX_MacIntel 252,7947
+CXXPARA_MacIntel 253,7988
+CC	255,8103
+SEQOPT 256,8129
+PARAOPT 257,8164
+PARACC 258,8200
+LIBS 259,8235
+NVCC 260,8268
+ENVRANK 261,8301
+CUDAOPT 262,8337
+PARAINC 263,8373
+PARALIB 264,8409
+CUDAINC 265,8445
+CUDALIB 266,8481
+CXX 267,8517
+CXXPARA 268,8549
+INCLUDE 269,8585
+MAKEFILE=273,8743
+MAKEFILE +=MAKEFILE +275,8763
+GLOBAL 277,8798
+GLOBAL +=GLOBAL +279,8864
+BOUNDARIES_DEP 281,8938
+MPIDUMMY 287,9055
+EXENAME 288,9112
+VPATH=291,9179
+MAINOBJ 294,9313
+GPU_OBJ 341,11656
+GPU_OBJBLOCKS 346,11773
+MAINOBJ +=MAINOBJ +383,13576
+MAINOBJ +=MAINOBJ +384,13634
+GPU_OBJ +=GPU_OBJ +385,13692
+GPU_OBJ +=GPU_OBJ +386,13754
+MAINOBJ +=MAINOBJ +390,13865
+MAINOBJ +=MAINOBJ +391,13923
+GPU_OBJ +=GPU_OBJ +392,13981
+GPU_OBJ +=GPU_OBJ +393,14043
+MAINOBJ +=MAINOBJ +397,14113
+GPUOBJ +=GPUOBJ +398,14139
+OBJECTS 418,14545
+OPTIONS 438,15164
+all:all445,15249
+allp:allp449,15366
+${EXENAME} 526,17681
+var.c:var.c550,18768
+${SETUP}.units:${SETUP}.units555,18935
+rescale.c:rescale.c558,18997
+.PHONY:.PHONY563,19179
+gitversion:gitversion564,19208
+clean:clean566,19294
+main.o:main.o573,19404
+change_arch.o 574,19423
+${SCRIPTSDIR}/bound_proto.code ${SCRIPTSDIR}/bound_cpu.code ${SCRIPTSDIR}/bound_gpu.code:${SCRIPTSDIR}/bound_proto.code ${SCRIPTSDIR}/bound_cpu.code ${SCRIPTSDIR}/bound_gpu.code578,19815
+collisions.cu:collisions.cu582,20003
+%_gpu.o 586,20135
+%.cu:%.cu591,20334
+reduction_sum_device.o:reduction_sum_device.o595,20435
+reduction_min_device.o:reduction_min_device.o600,20599
+ymin_bound_%.o:ymin_bound_%.o608,20919
+ymax_bound_%.o:ymax_bound_%.o611,21063
+zmin_bound_%.o:zmin_bound_%.o614,21207
+zmax_bound_%.o:zmax_bound_%.o617,21351
+ymin_bound_%.c ymax_bound_%.c zmin_bound_%.c zmax_bound_%.c:ymin_bound_%.c ymax_bound_%.c zmin_bound_%.c zmax_bound_%.c621,21496
+%.o 627,21788
+
+matplotlib.c,251
+#define YZSIM 4,42
+#define XZSIM 5,58
+#define XYSIM 6,74
+void pyrun(8,91
+void finalize_python(17,277
+int check_simtype(21,319
+void initialize_python(32,534
+void plot1d(49,1048
+void plot2d(163,3520
+void plot3d(298,6707
+void Display(379,8691
+
+mhd.c,54
+void ComputeMHD(4,23
+void ComputeDivergence(86,3720
+
+momenta_x.c,27
+void momenta_x_cpu(10,107
+
+momenta_y.c,27
+void momenta_y_cpu(10,107
+
+momenta_z.c,27
+void momenta_z_cpu(10,107
+
+mon_bxflux.c,28
+void mon_bxflux_cpu 10,107
+
+mon_dens.c,26
+void mon_dens_cpu 10,107
+
+monitor.c,484
+#define FORMAT 2,21
+#define MAX_MONITOR 3,46
+#define MAX_STRING 4,69
+int mon_kind[mon_kind8,128
+int mon_pldp[mon_pldp9,155
+char mon_name[mon_name10,182
+char mon_cent[mon_cent11,222
+static boolean func_declared 13,263
+static int MonCounter=14,298
+int Index(17,325
+void Write1DFile 25,414
+void InitMonitoring3D 38,712
+void InitMonitoring(50,921
+void InitFunctionMonitoring 62,1651
+void MonitorFunction 76,2108
+void DoMonitoring 214,6421
+void MonitorGlobal 238,7100
+
+mon_maxwell.c,29
+void mon_maxwell_cpu 10,107
+
+mon_momx.c,26
+void mon_momx_cpu 10,107
+
+mon_momy.c,26
+void mon_momy_cpu 10,107
+
+mon_momz.c,26
+void mon_momz_cpu 10,107
+
+mon_reynolds.c,30
+void mon_reynolds_cpu 10,107
+
+mon_torque.c,26
+void mon_torq_cpu 10,107
+
+mpi_dummy.c,399
+void MPI_Comm_rank 14,269
+void MPI_Comm_size 16,357
+void MPI_Init 18,455
+void MPI_Allreduce 27,935
+void MPI_Gather 44,1367
+void MPI_Reduce 64,1868
+void MPI_Finalize(82,2323
+void MPI_Bcast(83,2345
+void MPI_Isend(84,2364
+void MPI_Irecv(85,2383
+void MPI_Send(86,2402
+void MPI_Recv(87,2420
+void MPI_Barrier(88,2438
+void MPI_Wait(89,2459
+void MPI_Scan(90,2477
+void MPI_Comm_split(91,2538
+
+mpi_dummy.h,402
+#define MPI_COMM_WORLD 1,0
+#define MPI_IN_PLACE 2,25
+#define MPI_DOUBLE 3,48
+#define MPI_FLOAT 4,69
+#define MPI_CHAR 5,89
+#define MPI_LONG 6,108
+#define MPI_INT 7,127
+#define MPI_MIN 8,145
+#define MPI_MAX 9,163
+#define MPI_SUM 10,181
+#define MPI_STATUS_IGNORE 12,200
+typedef int MPI_Request;14,229
+typedef int MPI_Status;15,254
+typedef int MPI_Comm;16,278
+typedef long MPI_Offset;17,300
+
+newvel_x.c,31
+void NewVelocity_x_cpu 10,107
+
+newvel_y.c,31
+void NewVelocity_y_cpu 10,107
+
+newvel_z.c,31
+void NewVelocity_z_cpu 10,107
+
+output2d.c,43
+void Write2D 3,22
+boolean Read2D 62,2365
+
+output.c,551
+void SelectWriteMethod(3,22
+void EmptyPlanetSystemFiles 32,486
+void WritePlanetFile 46,807
+real GetfromPlanetFile 78,1505
+void RestartPlanetarySystem 116,2465
+void WriteTorqueAndWork(132,2967
+void WritePlanetSystemFile 186,4301
+void WriteDim 203,4697
+void WriteField2D(238,5898
+void WriteFieldInt2D(248,6169
+void WriteField(258,6448
+void WriteFieldGhost(273,6848
+void WriteMerging(288,7273
+void Write_offset(329,8246
+MPI_Offset ParallelIO(344,8566
+void WriteBinFile(515,12908
+void DumpAllFields 547,13550
+void WriteOutputs(562,13884
+
+output_vtk.c,118
+void write_vtk_header(3,22
+void write_vtk_coordinates(21,577
+void write_vtk_scalar(89,2224
+void WriteVTK(137,3014
+
+output_vtk_merging.c,27
+void WriteVTKMerging(3,22
+
+param.c,242
+Param Var_Set[Var_Set6,84
+int Id_Var 7,113
+void DumpToFargo3drc 9,130
+void init_var(70,1763
+void ReadVarFile(98,2757
+void var_assign(219,6638
+void ListVariables 329,10097
+void ListVariablesIDL 356,10902
+void ReadRedefined 382,11739
+
+planets.c,216
+void ComputeIndirectTerm 3,22
+Force ComputeForce(20,414
+Point ComputeAccel(68,1970
+void AdvanceSystemFromDisk(86,2532
+OrbitalElements SV2OE 116,3344
+void FindOrbitalElements 197,5104
+void SolveOrbits 216,5604
+
+postrestarthook.c,27
+void PostRestartHook 4,75
+
+potential.c,59
+void compute_potential(10,107
+void Potential_cpu(52,1398
+
+prototypes.h,34
+#define ex 2,13
+#define ex 4,42
+
+psys.c,302
+int FindNumberOfPlanets(3,22
+PlanetarySystem *AllocPlanetSystem(AllocPlanetSystem20,356
+void FreePlanetary 105,3022
+real ComputeInnerMass(117,3222
+PlanetarySystem *InitPlanetarySystem InitPlanetarySystem141,3758
+void ListPlanets 332,10451
+real GetPsysInfo 362,11300
+void RotatePsys 417,12413
+
+redefoptions.c,132
+HashParam CommandLineParams[CommandLineParams3,22
+long nbparamCL=4,82
+void OptionError 6,101
+void ParseRedefinedOptions 10,194
+
+reduction_arch35_gpu.cu,263
+#define __GPU7,280
+#define LOCAL_BLOCK_X 11,369
+#define LOCAL_BLOCK_Y 12,426
+#define LOCAL_BLOCK_Z 13,483
+#define WARPSIZE 14,540
+__global__ void kernel_reduction(17,563
+extern "C" void name_reduction_gpu(84,2529
+#define str(96,2988
+#define xstr(97,3006
+
+reduction_full_generic.c,30
+real name_full_reduction 1,0
+
+reduction_generic.c,31
+void name_reduction_cpu(5,218
+
+reduction_generic_gpu.cu,278
+#define __GPU7,280
+#define LOCAL_BLOCK_X 11,369
+#define LOCAL_BLOCK_Y 12,426
+#define LOCAL_BLOCK_Z 13,451
+__global__ void kernel_reduction(15,508
+__global__ void kernel_shift(72,3213
+extern "C" void name_reduction_gpu(85,3717
+#define str(103,4308
+#define xstr(104,4326
+
+reduction_min.c,20
+#define macro 3,22
+
+reduction_min_device.cu,19
+#define macro 1,0
+
+reduction_sum.c,20
+#define macro 3,22
+
+reduction_sum_device.cu,19
+#define macro 1,0
+
+rescale.c,19
+void rescale 4,23
+
+resetfield.c,29
+void Reset_field_cpu 10,107
+
+resist.c,45
+void Resist 10,107
+void _Resist_cpu 51,845
+
+resistivity.c,23
+real Resistivity 3,22
+
+runge_kutta.c,600
+static real k1[k110,178
+static real k1[MAX1D], k2[k210,178
+static real k1[MAX1D], k2[MAX1D], k3[k310,178
+static real k1[MAX1D], k2[MAX1D], k3[MAX1D], k4[k410,178
+static real k1[MAX1D], k2[MAX1D], k3[MAX1D], k4[MAX1D], k5[k510,178
+static real k1[MAX1D], k2[MAX1D], k3[MAX1D], k4[MAX1D], k5[MAX1D], k6[k610,178
+static real Dist[Dist11,256
+static real q0[q012,281
+static real q0[MAX1D], q1[q112,281
+static real q0[MAX1D], q1[MAX1D], PlanetMasses[PlanetMasses12,281
+void DerivMotionRK5(14,337
+void TranslatePlanetRK5(81,1945
+void RungeKutta(88,2158
+void AdvanceSystemRK5 120,3190
+
+select_device.c,59
+void SelectDevice(3,22
+void EarlyDeviceSelection 59,2131
+
+setuphook1.c,28
+void SetupHook1_cpu(10,107
+
+ShearingPeriodicBC.c,258
+static real SB_resi[SB_resi3,22
+static int  SB_nint[SB_nint4,46
+static real SlideVel;5,70
+void ShearBC 16,472
+void SB_slide 63,1600
+void ShearingPeriodicCondition 68,1718
+void SlideIntShearingBoundary 87,2420
+void SlideResShearingBoundary 114,3053
+
+split.c,93
+void buildprime(3,22
+void primefactors 23,435
+void repartition 39,746
+void split(76,1680
+
+stockholm.c,35
+void StockholmBoundary_cpu(10,107
+
+stretch.c,54
+void RestartStretch 3,22
+void StretchOutput 53,1402
+
+structs.h,4778
+struct param{param1,0
+  char name[name2,14
+  char *variable;variable3,31
+  int type;4,49
+  int need;5,61
+  int read;6,73
+struct hashparam 10,90
+  char name[name11,109
+  char stringvalue[stringvalue12,137
+  real floatvalue;13,172
+  long intvalue;14,191
+  long boolvalue;15,208
+struct planetary_system 22,325
+  int nb;23,351
+  real *mass;mass24,389
+  real *mass_cpu;mass_cpu25,435
+  real *mass_gpu;mass_gpu26,485
+  real *x;x27,535
+  real *x_cpu;x_cpu28,584
+  real *x_gpu;x_gpu29,637
+  real *y;y30,690
+  real *y_cpu;y_cpu31,739
+  real *y_gpu;y_gpu32,792
+  real *z;z33,845
+  real *z_cpu;z_cpu34,894
+  real *z_gpu;z_gpu35,947
+  real *vx;vx36,1000
+  real *vy;vy37,1061
+  real *vz;vz38,1129
+  real *acc;acc39,1197
+  char **name;name40,1252
+  boolean *FeelDisk;FeelDisk41,1297
+  boolean *FeelOthers;FeelOthers42,1384
+struct grid 46,1488
+  int nx;47,1547
+  int ny;48,1570
+  int nz;49,1593
+  int J;50,1616
+  int K;51,1651
+  int stride;52,1687
+  int bc_up;53,1727
+  int bc_down;54,1740
+  int bc_left;55,1755
+  int bc_right;56,1770
+  int NJ;57,1786
+  int NK;58,1857
+struct zmeanprop 61,1932
+  real PreviousDate;62,1951
+  real ResetDate;63,1972
+  boolean NeverReset;64,1990
+struct field 67,2016
+  char *name;name68,2079
+  real *field_cpu;field_cpu69,2093
+  real *backup;backup70,2112
+  real *secondary_backup;secondary_backup71,2189
+  real *field_gpu;field_gpu72,2229
+  int x_cpus;73,2248
+  int y_cpus;74,2262
+  int type;75,2276
+  boolean fresh_cpu;76,2288
+  boolean fresh_gpu;77,2309
+  boolean fresh_inside_contour_cpu[fresh_inside_contour_cpu78,2330
+  boolean fresh_inside_contour_gpu[fresh_inside_contour_gpu79,2369
+  boolean fresh_outside_contour_cpu[fresh_outside_contour_cpu80,2408
+  boolean fresh_outside_contour_gpu[fresh_outside_contour_gpu81,2448
+  struct field *next;next82,2488
+  struct field **owner;owner83,2524
+  struct cudaPitchedPtr gpu_pp;85,2578
+  struct cudaPitchedPtr cpu_pp;86,2610
+  char file_origin[file_origin88,2649
+  int line_origin;89,2684
+  real *x;x90,2703
+  real *y;y91,2714
+  real *z;z92,2725
+  double *zmean;zmean93,2736
+  struct zmeanprop zp;94,2753
+struct fluid 97,2780
+  char *name;name98,2795
+  int Fluidtype;99,2809
+  struct field2D *VxMed;VxMed100,2826
+  struct field *Density;Density101,2851
+  struct field *Energy;Energy102,2876
+  struct field *Vx;Vx103,2900
+  struct field *Vx_temp;Vx_temp104,2920
+  struct field *Vy;Vy105,2945
+  struct field *Vy_temp;Vy_temp106,2965
+  struct field *Vz;Vz107,2990
+  struct field *Vz_temp;Vz_temp108,3010
+  struct field *Vx_half;Vx_half109,3035
+  struct field *Vy_half;Vy_half110,3060
+  struct field *Vz_half;Vz_half111,3085
+	struct field *Y1;Y1113,3123
+	struct field *Y2;Y2114,3142
+	struct field *Y3;Y3115,3161
+	struct field *Y4;Y4116,3180
+  struct field2D *Density0;Density0119,3223
+  struct field2D *Energy0;Energy0120,3251
+  struct field2D *Vx0;Vx0121,3278
+  struct field2D *Vy0;Vy0122,3301
+  struct field2D *Vz0;Vz0123,3324
+struct field2D 127,3358
+  char *name;name128,3431
+  real *field_cpu;field_cpu129,3445
+  real *backup;backup130,3464
+  real *secondary_backup;secondary_backup131,3541
+  real *field_gpu;field_gpu132,3567
+  int x_cpus;133,3586
+  int y_cpus;134,3600
+  size_t pitch;135,3614
+  int kind;136,3630
+  boolean fresh_cpu;137,3642
+  boolean fresh_gpu;138,3663
+  struct field2D *next;next139,3684
+struct fieldint2D 142,3726
+  char *name;name143,3802
+  int *field_cpu;field_cpu144,3816
+  int *backup;backup145,3834
+  int *secondary_backup;secondary_backup146,3849
+  int *field_gpu;field_gpu147,3874
+  int x_cpus;148,3892
+  int y_cpus;149,3906
+  boolean fresh_cpu;150,3920
+  boolean fresh_gpu;151,3941
+  struct fieldint2D *next;next152,3962
+struct buffer 155,4007
+  real *buffer;buffer156,4023
+  int index;157,4039
+struct force 160,4056
+  real fx_inner;161,4074
+  real fy_inner;162,4185
+  real fz_inner;163,4296
+  real fx_ex_inner;164,4313
+  real fy_ex_inner;165,4427
+  real fz_ex_inner;166,4548
+  real fx_outer;167,4568
+  real fy_outer;168,4685
+  real fz_outer;169,4802
+  real fx_ex_outer;170,4819
+  real fy_ex_outer;171,4930
+  real fz_ex_outer;172,5048
+struct point 176,5073
+  real x;177,5088
+  real y;178,5098
+  real z;179,5108
+struct timeprocess 184,5243
+  char name[name185,5264
+  clock_t clicks;186,5281
+struct orbital_elements 189,5303
+  real a;190,5329
+  real e;191,5339
+  real i;192,5349
+  real an;193,5359
+  real per;194,5370
+  real ta;195,5382
+  real E;196,5393
+  real M;197,5433
+  real Perihelion_Phi;198,5443
+struct state_vector 201,5470
+  real x;202,5492
+  real y;203,5502
+  real z;204,5512
+  real vx;205,5522
+  real vy;206,5533
+  real vz;207,5544
+
+substep1_x.c,28
+void SubStep1_x_cpu 10,107
+
+substep1_y.c,28
+void SubStep1_y_cpu 10,107
+
+substep1_z.c,28
+void SubStep1_z_cpu 10,107
+
+substep2_a.c,28
+void SubStep2_a_cpu 10,107
+
+substep2_b.c,28
+void SubStep2_b_cpu 10,107
+
+substep3.c,26
+void SubStep3_cpu 10,107
+
+summary.c,190
+char dummy_end=5,65
+void SelectArchFileName 7,87
+void StoreFileToChar 21,457
+char *ExtractFromExecutable ExtractFromExecutable43,1029
+void GetHostsList 109,3132
+void Summary 135,3835
+
+timeinfo.c,540
+#define WALLCLOCK 3,22
+#define TIMETICKS 6,60
+#define TIMETICKS 8,92
+static clock_t  First,11,135
+static clock_t  First, Preceeding,11,135
+static clock_t  First, Preceeding, Current,11,135
+static clock_t  First, Preceeding, Current, FirstUser,11,135
+static clock_t  First, Preceeding, Current, FirstUser, CurrentUser,11,135
+static clock_t  First, Preceeding, Current, FirstUser, CurrentUser, PreceedingUser;11,135
+static long     Ticks;12,219
+void InitSpecificTime 15,263
+real GiveSpecificTime 30,594
+void GiveTimeInfo 54,1173
+
+totaldens.c,37
+void ComputeTotalDensity_cpu 10,107
+
+transport.c,142
+void VanLeerX(5,84
+void TransportX(11,249
+void TransportY(21,513
+void TransportZ(32,785
+void X_advection 43,1058
+void transport(63,1489
+
+types_def.h,695
+typedef char boolean;1,0
+typedef float real;3,35
+typedef double real;5,61
+typedef struct param Param;7,89
+typedef struct planetary_system PlanetarySystem;8,117
+typedef struct field Field;9,166
+typedef struct field2D Field2D;10,194
+typedef struct fieldint2D FieldInt2D;11,226
+typedef struct grid Grid;12,264
+typedef struct buffer Buffer;13,290
+typedef struct force Force;14,320
+typedef struct point Point;15,348
+typedef struct timeprocess TimeProcess;16,376
+typedef struct zmeanprop ZmeanProp;17,416
+typedef struct hashparam HashParam;18,452
+typedef struct state_vector StateVector;19,488
+typedef struct orbital_elements OrbitalElements;20,529
+typedef struct fluid Fluid;22,579
+
+update_density_x.c,32
+void UpdateDensityX_cpu(10,107
+
+update_density_y.c,32
+void UpdateDensityY_cpu(10,107
+
+update_density_z.c,32
+void UpdateDensityZ_cpu(10,107
+
+update_magnetic.c,71
+void UpdateMagneticField(10,107
+void _UpdateMagneticField_cpu(45,794
+
+update_x.c,25
+void UpdateX_cpu(10,107
+
+update_y.c,25
+void UpdateY_cpu(10,107
+
+update_z.c,25
+void UpdateZ_cpu(10,107
+
+usage.c,22
+void PrintUsage 3,22
+
+vanleer_x_a.c,28
+void VanLeerX_a_cpu(10,107
+
+vanleer_x_b.c,28
+void VanLeerX_b_cpu(10,107
+
+vanleerx_ppa.c,53
+void VanLeerX_PPA(3,22
+void VanLeerX_PPA_2D(14,300
+
+vanleer_y_a.c,28
+void VanLeerY_a_cpu(10,107
+
+vanleer_y_b.c,28
+void VanLeerY_b_cpu(10,107
+
+vanleer_z_a.c,28
+void VanLeerZ_a_cpu(10,107
+
+vanleer_z_b.c,28
+void VanLeerZ_b_cpu(10,107
+
+viscosity.c,21
+void viscosity(4,23
+
+visctensor_cart.c,33
+void visctensor_cart_cpu(10,107
+
+visctensor_cyl.c,32
+void visctensor_cyl_cpu(10,107
+
+visctensor_sph.c,32
+void visctensor_sph_cpu(10,107
+
+fargo3d.h,0
+
+addviscosity_cart.c,35
+void addviscosity_cart_cpu(10,107
+
+addviscosity_cyl.c,34
+void addviscosity_cyl_cpu(10,107
+
+addviscosity_sph.c,34
+void addviscosity_sph_cpu(10,107
+
+advect_shift.c,27
+void AdvectSHIFT_cpu 9,87
+
+algogas.c,333
+TimeProcess t_Comm;3,22
+TimeProcess t_Hydro;4,42
+TimeProcess t_Mhd;5,63
+TimeProcess t_sub1;6,82
+TimeProcess t_sub1_x;7,102
+TimeProcess t_sub1_y;8,124
+TimeProcess t_sub1_z;9,146
+double current_simulation_time=10,168
+void FillGhosts 12,205
+void Fill_Resistivity_Profiles 30,566
+void Sources(51,1199
+void Transport(162,4243
+
+allocate.c,231
+Field *CreateFieldAlias(CreateFieldAlias3,22
+Fluid *CreateFluid(CreateFluid45,1275
+Field *CreateField(CreateField111,3094
+Field2D *CreateField2D(CreateField2D244,6622
+FieldInt2D *CreateFieldInt2D(CreateFieldInt2D322,8617
+
+boundary.c,22
+void boundaries(2,21
+
+calc_dmax.c,26
+real calcDmax_cpu(28,591
+
+cfl_b.c,17
+void cfl_b(3,22
+
+cfl.c,21
+void cfl_cpu(10,107
+
+cfl_fluids_min.c,24
+void CflFluidsMin(3,22
+
+change_arch.c,22
+void ChangeArch(3,22
+
+change_frame.c,29
+void ChangeFrame_cpu(10,107
+
+checkmute_y.c,28
+void CheckMuteY_cpu(10,107
+
+checkmute_z.c,28
+void CheckMuteZ_cpu(10,107
+
+checknans.c,92
+int CheckNansField 3,22
+int CheckAxiSym 17,247
+void AxiSym 28,460
+void CheckNans 37,627
+
+closed_bc.c,33
+void CloseBoundaries_cpu(10,107
+
+collision_kernel.h,179
+idm 14,322
+omega 17,378
+omega 23,540
+omega 25,566
+for (o=0; o<NFLUIDS;NFLUIDS32,643
+  for (p=0; p<NFLUIDS;NFLUIDS33,671
+    rho_p 35,706
+    else 56,1381
+  b[b93,2391
+
+collisions.c,55
+void _collisions_cpu(10,107
+void Collisions(156,2835
+
+colrate.c,21
+void ColRate(10,107
+
+comm.c,826
+#define LEFT 2,21
+#define RIGHT 3,37
+#define DOWN 4,53
+#define UP 5,69
+#define UPRIGHT 6,85
+#define UPLEFT 7,103
+#define DOWNLEFT 8,121
+#define DOWNRIGHT 9,140
+#define MAX_FIELDS_PER_COMM 11,161
+struct communicator 13,193
+  int src;14,215
+  int dst;15,266
+  struct communicator *next;next16,277
+  real *buffer;buffer17,346
+  int direction;19,456
+  int yminsrc;20,473
+  int zminsrc;21,515
+  int ymaxsrc;22,530
+  int zmaxsrc;23,545
+  int ymindst;24,560
+  int zmindst;25,607
+  int ymaxdst;26,622
+  int zmaxdst;27,637
+  int size;28,652
+  int nvarmax;29,699
+  int stride;31,780
+  int parity;32,794
+typedef struct communicator Communicator;35,812
+static Communicator *ListStart ListStart37,855
+static int NbCom=38,894
+void MakeCommunicator 40,915
+void ResetBuffers(75,1933
+void comm_cpu 197,5662
+
+comm_device.c,888
+#define LEFT 2,21
+#define RIGHT 3,37
+#define DOWN 4,53
+#define UP 5,69
+#define UPRIGHT 6,85
+#define UPLEFT 7,103
+#define DOWNLEFT 8,121
+#define DOWNRIGHT 9,140
+#define MAX_FIELDS_PER_COMM 11,161
+struct gpucommunicator 13,193
+  int src;14,218
+  int dst;15,269
+  int direction;16,280
+  struct gpucommunicator *next;next17,297
+  struct cudaPitchedPtr buffer;19,368
+  struct cudaMemcpy3DParms OnSrc;22,507
+  struct cudaMemcpy3DParms OnDst;23,541
+  int size;25,582
+  int nvarmax;26,629
+  void *buffer2d;buffer2d28,710
+  size_t pitch;29,728
+  int offset_src;30,744
+  int offset_dst;31,762
+  int dwbytes;32,780
+  int dz;33,795
+  int parity;34,805
+typedef struct gpucommunicator GpuCommunicator;37,823
+static GpuCommunicator *ListStart ListStart39,872
+static int NbCom=40,914
+void MakeCommunicatorGPU 42,935
+void ResetBuffersGPU(111,3813
+void comm_gpu 235,7699
+
+compfields.c,81
+boolean CompareField 3,22
+void CompareAllFields 30,836
+void GiveStats 45,1281
+
+CompPresAd.c,40
+void ComputePressureFieldAd_cpu 10,107
+
+CompPresIso.c,41
+void ComputePressureFieldIso_cpu 10,107
+
+CompPresPoly.c,42
+void ComputePressureFieldPoly_cpu 10,107
+
+compute_emf.c,53
+void ComputeEmf(11,108
+void _ComputeEmf_cpu(55,905
+
+compute_force.c,31
+void _ComputeForce_cpu(16,231
+
+Compute_Mean.c,23
+real ComputeMean(5,86
+
+compute_residual.c,33
+void ComputeResidual_cpu(10,107
+
+compute_slopes.c,31
+void ComputeSlopes_cpu(12,109
+
+compute_star.c,56
+void ComputeStar(10,107
+void _ComputeStar_cpu(79,1551
+
+compute_vmed.c,23
+void ComputeVmed(3,22
+
+condinit.c,20
+void CondInit 3,22
+
+cooling.c,54
+void cooling_cpu(6,37
+void RK2_cooling_cpu(136,3435
+
+correct_vtheta.c,31
+void CorrectVtheta_cpu(10,107
+
+cpvel.c,65
+void copy_velocities_cpu(3,22
+void copy_velocities_gpu(51,1132
+
+define.h,7868
+#define MAXVARIABLES 2,17
+#define MAXLINELENGTH 3,43
+#define MAXNAMELENGTH 4,69
+#define WIDESCREEN 5,94
+#define MAX1D 6,116
+#define MAXPRIME 7,136
+#define MAX_FIELDS 8,158
+#define CVNR 9,180
+#define CVNL 10,198
+#define GAS 12,217
+#define DUST 13,231
+#define Input 15,247
+#define Output 16,263
+#define XY 18,281
+#define YZ 19,294
+#define ZX 20,307
+#define INT 23,342
+#define REAL 24,360
+#define STRING 25,378
+#define BOOL 26,396
+#define ALL 28,415
+#define SPECIFIC 29,434
+#define TRUE 32,476
+#define FALSE 33,492
+#define YES 36,530
+#define NO 37,544
+#define IRRELEVANT 38,557
+#define REDEFINED 39,578
+#define GET 43,629
+#define MARK 44,643
+#define FREQUENCY 45,658
+#define NGHX 51,719
+#define NGHX 53,741
+#define NGHY 58,780
+#define NGHZ 62,812
+#define NGHX 66,848
+#define NGHY 69,883
+#define NGHZ 72,918
+#define XIP 76,956
+#define XIM 77,1044
+#define XIP 79,1138
+#define XIM 80,1155
+#define DENS 84,1206
+#define VY 85,1222
+#define VX 86,1238
+#define VZ 87,1254
+#define ENERGY 88,1270
+#define BX 89,1289
+#define BY 90,1308
+#define BZ 91,1327
+#define EMFX 92,1347
+#define EMFY 93,1365
+#define EMFZ 94,1383
+#define VXTEMP 95,1402
+#define VYTEMP 96,1423
+#define VZTEMP 97,1444
+#define Y1_COMM 98,1465
+#define Y2_COMM 99,1489
+#define Y3_COMM 100,1512
+#define Y4_COMM 101,1535
+#define MONITORSCALAR 105,1663
+#define MONITOR2D 106,1704
+#define MONITORY 107,1741
+#define MONITORY_RAW 108,1777
+#define MONITORZ 109,1817
+#define MONITORZ_RAW 110,1853
+#define NOGHOSTINC 112,1894
+#define GHOSTINC 113,1915
+#define TOTAL 115,1935
+#define AVG_MASS 116,1951
+#define AVG_VOL 117,1970
+#define INDEP_PLANET 119,1989
+#define DEP_PLANET 120,2012
+#define MASS 124,2068
+#define MAGBETA 125,2089
+#define BXFLUX 126,2174
+#define FLUX_Y 127,2195
+#define FLUX_Z 129,2258
+#define MOM_X 130,2280
+#define MOM_Y 131,2302
+#define MOM_Z 132,2325
+#define TORQ 133,2348
+#define REYNOLDS 134,2371
+#define MAXWELL 135,2395
+#define VTEMP2V 139,2486
+#define V2VTEMP 140,2507
+#define MERGE 142,2529
+#define MIN(146,2608
+#define MAX(147,2639
+#define MIN(149,2676
+#define MAX(150,2718
+#define max2(152,2767
+#define max3(153,2809
+#define SUM(156,2905
+#define MINSTART 157,2932
+#define MAXSTART 158,2954
+#define SUMSTART 159,2977
+#define function_name_cpu(160,2998
+#define name_reduction_cpu(161,3059
+#define function_name_gpu(162,3116
+#define name_reduction_gpu(163,3177
+#define function_name(164,3234
+#define name_reduction(165,3283
+#define function_shift_kernel(166,3332
+#define kernel_shift(167,3392
+#define function_kernel(168,3447
+#define kernel_reduction(169,3495
+#define function_name_full(170,3548
+#define name_full_reduction(171,3607
+#define RESET_REDUCTION(172,3666
+#define INIT_REDUCTION(173,3710
+#define XC 178,3882
+#define YC 179,3901
+#define ZC 180,3920
+#define XC 183,3965
+#define YC 184,3997
+#define ZC 185,4029
+#define XC 188,4072
+#define YC 189,4117
+#define ZC 190,4162
+#define xmin(196,4253
+#define ymin(197,4279
+#define zmin(198,4305
+#define xmed(199,4331
+#define ymed(200,4357
+#define zmed(201,4383
+#define alpha(203,4410
+#define xmin_d 208,4477
+#define ymin_d 209,4499
+#define zmin_d 210,4521
+#define xmed(213,4551
+#define ymed(214,4601
+#define zmed(215,4651
+#define invDiffXmed(218,4709
+#define invDiffYmed(219,4749
+#define invDiffZmed(220,4789
+#define Xmin(222,4830
+#define Ymin(223,4856
+#define Zmin(224,4882
+#define Xmed(225,4908
+#define Ymed(226,4934
+#define Zmed(227,4960
+#define alpha(229,4987
+#define InvDiffXmed(232,5017
+#define InvDiffYmed(233,5057
+#define InvDiffZmed(234,5097
+#define InvVol(239,5154
+#define Vol(240,5192
+#define InvVj(242,5226
+#define invVj(243,5254
+#define SurfX(245,5283
+#define SurfY(246,5316
+#define SurfZ(247,5349
+#define InvVol(251,5405
+#define Vol(252,5451
+#define SurfX(256,5526
+#define SurfY(257,5567
+#define SurfZ(258,5608
+#define zone_size_x(264,5689
+#define zone_size_y(265,5717
+#define zone_size_z(266,5762
+#define zone_size_x(270,5834
+#define zone_size_y(271,5872
+#define zone_size_z(272,5917
+#define zone_size_x(276,5987
+#define zone_size_y(277,6038
+#define zone_size_z(278,6083
+#define zone_size_x(284,6183
+#define zone_size_y(285,6213
+#define zone_size_z(286,6258
+#define zone_size_x(290,6330
+#define zone_size_y(291,6368
+#define zone_size_z(292,6413
+#define zone_size_x(296,6483
+#define zone_size_y(297,6534
+#define zone_size_z(298,6579
+#define edge_size_x(306,6682
+#define edge_size_x_middlez_lowy(307,6710
+#define edge_size_x_middley_lowz(308,6771
+#define edge_size_y(309,6832
+#define edge_size_z(310,6877
+#define edge_size_x(314,6949
+#define edge_size_x_middlez_lowy(315,6987
+#define edge_size_x_middley_lowz(316,7038
+#define edge_size_y(317,7089
+#define edge_size_z(318,7134
+#define edge_size_x(322,7204
+#define edge_size_x_middlez_lowy(323,7255
+#define edge_size_x_middley_lowz(324,7319
+#define edge_size_y(325,7383
+#define edge_size_z(326,7428
+#define edge_size_x(332,7529
+#define edge_size_x_middlez_lowy(333,7557
+#define edge_size_x_middley_lowz(334,7618
+#define edge_size_y(335,7679
+#define edge_size_z(336,7724
+#define edge_size_x(340,7796
+#define edge_size_x_middlez_lowy(341,7834
+#define edge_size_x_middley_lowz(342,7885
+#define edge_size_y(343,7936
+#define edge_size_z(344,7981
+#define edge_size_x(348,8051
+#define edge_size_x_middlez_lowy(349,8102
+#define edge_size_x_middley_lowz(350,8166
+#define edge_size_y(351,8230
+#define edge_size_z(352,8275
+#define Sxj(360,8362
+#define Sxk(361,8386
+#define Syj(362,8410
+#define Syk(363,8434
+#define Szj(364,8458
+#define Szk(365,8482
+#define lxp 380,8750
+#define lxm 381,8770
+#define ixm 383,8791
+#define ixp 384,8811
+#define lyp 387,8841
+#define lym 388,8869
+#define lyp 390,8903
+#define lym 391,8921
+#define lxp 394,8999
+#define lxm 395,9051
+#define ixm 397,9099
+#define ixp 398,9136
+#define lyp 401,9183
+#define lym 402,9204
+#define lyp 404,9231
+#define lym 405,9249
+#define lzp 410,9322
+#define lzm 411,9345
+#define lzp 413,9374
+#define lzm 414,9390
+#define l 418,9429
+#define l 420,9482
+#define l2D 422,9529
+#define l2D_int 423,9565
+#define lxp 428,9645
+#define lxm 429,9703
+#define ixm 430,9754
+#define ixp 431,9795
+#define lxp 435,9846
+#define lxm 436,9866
+#define ixp 437,9886
+#define ixm 438,9906
+#define lyp 443,9944
+#define lym 444,9968
+#define lyp 446,9998
+#define lym 447,10016
+#define lzp 451,10051
+#define lzm 452,10076
+#define lzp 454,10107
+#define lzm 455,10123
+#define l 458,10147
+#define l2D 459,10190
+#define l2D_int 460,10222
+#	 define H_X(466,10318
+#	 define H_Y(467,10343
+#	 define H_Z(468,10368
+#	 define H_X(471,10421
+#	 define H_Y(472,10451
+#	 define H_Z(473,10476
+#	 define H_X(476,10527
+#	 define H_Y(477,10557
+#	 define H_Z(478,10582
+#define FARGO_SAFE(492,10908
+#define FARGO_DEBUG(545,13473
+#define FARGO_SPEEDUP(559,14161
+#define GET 580,15344
+#define MARK 581,15370
+#define FREQUENCY 582,15396
+#define INPUT(585,15436
+#define OUTPUT(586,15496
+#define INPUT2D(587,15558
+#define OUTPUT2D(588,15622
+#define INPUT2DINT(589,15688
+#define OUTPUT2DINT(590,15758
+#define INPUT(592,15836
+#define OUTPUT(593,15896
+#define INPUT2D(594,15958
+#define OUTPUT2D(595,16022
+#define INPUT2DINT(596,16088
+#define OUTPUT2DINT(597,16158
+#define DRAFT(600,16238
+#define CUDAMEMCPY(603,16309
+#define CONSTANT(604,16408
+#define CUDAMEMCPY(606,16468
+#define CONSTANT(607,16534
+#define INSPECT_REAL(611,16611
+#define INSPECT_REAL(613,16679
+#define INSPECT_INT(616,16752
+#define pow 619,16827
+#define sin 620,16844
+#define cos 621,16861
+#define sqrt 622,16878
+#define xstr(625,16905
+#define str(626,16928
+#define DUMP_PPVAR(628,16947
+#define MULTIFLUID(629,17069
+#define index(634,17209
+#define SMALLVEL 636,17241
+#define SMALLTIME 637,17282
+#define CREATEFIELDALIAS(639,17334
+
+defout.c,48
+void ReadDefaultOut 7,212
+void SubsDef 20,599
+
+dh_boundary.c,648
+#define LEFT 3,22
+#define RIGHT 4,37
+#define DOWN 5,53
+#define UP 6,68
+#define INSIDE 7,81
+#define OUTSIDE 8,98
+static boolean BuffersReady 10,117
+static int StartAddress_CPU[StartAddress_CPU11,151
+static int StartAddress_GPU[StartAddress_GPU12,186
+static int Stride_j_CPU;13,221
+static int Stride_k_CPU;14,246
+static int Stride_j_GPU;15,271
+static int Stride_k_GPU;16,296
+static int Nj[Nj17,321
+static int Nk[Nk18,342
+static struct cudaMemcpy3DParms Inner[Inner21,375
+static struct cudaMemcpy3DParms Outer[Outer22,429
+void Prepare_DH_buffers 25,492
+void Input_Contour_Inside 105,3248
+void Output_Contour_Outside 130,4086
+
+differencing.c,110
+real dx(28,594
+real dxx(32,655
+real dq(36,729
+real dq2(40,846
+real GradDDotGrad(47,972
+real Lap(97,2436
+
+divrho.c,29
+void DivideByRho_cpu(10,107
+
+dust_function.c,36
+real C_dust(30,597
+real Cd(46,967
+
+fargo_mhd.c,63
+void Compute_Staggered_2D_fields 3,22
+void MHD_fargo 39,1077
+
+fargo_ppa_a.c,32
+void VanLeerX_PPA_a_cpu(10,107
+
+fargo_ppa_b.c,32
+void VanLeerX_PPA_b_cpu(10,107
+
+fargo_ppa_c.c,32
+void VanLeerX_PPA_c_cpu(10,107
+
+fargo_ppa_d_2d.c,35
+void VanLeerX_PPA_d_2d_cpu(10,107
+
+fargo_ppa_d.c,32
+void VanLeerX_PPA_d_cpu(10,107
+
+fargo_ppa_steep.c,98
+#define ETA1 15,563
+#define ETA2 16,581
+#define EPS 17,599
+void VanLeerX_PPA_steep_cpu(21,633
+
+fill_ghostsx.c,30
+void Fill_GhostsX_cpu 10,107
+
+floor.c,23
+void Floor_cpu(10,107
+
+fondam.h,887
+#define      G_SF 14,367
+#define  MSTAR_SF 15,390
+#define     R0_SF 16,413
+#define   R_MU_SF 17,436
+#define    MU0_SF 18,459
+#define      G_MKS 20,483
+#define  MSTAR_MKS 21,513
+#define     R0_MKS 22,543
+#define   R_MU_MKS 23,583
+#define    MU0_MKS 24,610
+#define      G_CGS 26,666
+#define  MSTAR_CGS 27,695
+#define     R0_CGS 28,725
+#define   R_MU_CGS 29,765
+#define    MU0_CGS 30,796
+#define		G	33,886
+#define     MSTAR 34,904
+#define        R0 35,939
+#define      R_MU 36,971
+#define       MU0 37,1005
+#define		G	42,1080
+#define     MSTAR 43,1099
+#define        R0 44,1135
+#define      R_MU 45,1168
+#define       MU0 46,1203
+#define		G	51,1262
+#define     MSTAR 52,1281
+#define        R0 53,1317
+#define      R_MU 54,1350
+#define       MU0 55,1385
+#define STEFANK 60,1449
+#define C0 63,1583
+#define TCMB 66,1707
+#define THRESHOLD_STELLAR_MASS 70,1861
+
+fresh.c,536
+void send2cpu(3,22
+void send2gpu(22,466
+void Input2D_CPU(41,910
+void Input2D_GPU(62,1473
+void Input2DInt_CPU(83,2036
+void Input2DInt_GPU(104,2611
+void Input_CPU(125,3186
+void Input_GPU(187,5723
+void Output_CPU(248,8229
+void Output_GPU(263,8681
+void Output2D_CPU(278,9133
+void Output2D_GPU(283,9252
+void Output2DInt_CPU(288,9371
+void Output2DInt_GPU(293,9496
+void Draft 298,9621
+void WhereIsField(304,9794
+void WhereIsFieldInt2D(315,10033
+void WhoOwns 326,10282
+void SynchronizeHD 330,10402
+void WhereIsWho 352,10965
+
+functions.c,142
+real bj(13,168
+real ws(22,277
+real aj(26,319
+real muj(30,359
+real nuj(34,426
+real mu1j(38,498
+real nu1j(42,548
+void make_D_cpu(47,627
+
+gauss.h,201
+  max_value 5,159
+  for(ir2=ir; ir2<NFLUIDS;NFLUIDS6,177
+  for(ir2=ir+1;ir2<NFLUIDS;NFLUIDS30,822
+    factor 31,857
+    for(ic=0; ic<NFLUIDS;NFLUIDS32,908
+  for(ic=NFLUIDS-1; ic>ir ir41,1207
+
+global.h,6206
+int CPU_Rank;3,24
+int CPU_Number;4,38
+boolean CPU_Master 5,54
+boolean Resistivity_Profiles_Filled 10,102
+boolean VxIsResidual 11,144
+boolean LogGrid 12,171
+boolean GuidingCenter 13,193
+boolean Corotating 14,221
+boolean Restart 15,246
+boolean Restart_Full 16,268
+boolean Stockholm 17,295
+boolean Merge 18,319
+boolean Merge_All 19,340
+boolean MonitorIntegral;20,364
+boolean TimeInfo 21,389
+boolean EverythingOnCPU 22,412
+boolean ForwardOneStep 23,442
+boolean Vtk2dat 24,471
+boolean Dat2vtk 25,493
+boolean PostRestart 26,515
+boolean OnlyInit 27,541
+boolean EarlyOutputRename 28,564
+boolean RedefineOptions 29,596
+boolean DeviceFileSpecified 30,626
+boolean StretchOldOutput 31,660
+boolean ThereArePlanets 32,691
+boolean ThereIsACentralBinary 33,721
+real    PhysicalTimeInitial;34,757
+real    PhysicalTime 35,786
+real    XAxisRotationAngle 36,812
+char    NewOutputdir[NewOutputdir37,846
+char    VersionString[VersionString38,874
+char    StickyOptions[StickyOptions39,903
+char    BoundaryFile[BoundaryFile40,932
+char    CommandLine[CommandLine41,960
+char    FirstCommand[FirstCommand42,987
+char    ArchFile[ArchFile43,1015
+char    ParameterFile[ParameterFile44,1039
+char    DefaultOut[DefaultOut45,1068
+char    DeviceFile[DeviceFile46,1094
+char    CurrentWorkingDirectory[CurrentWorkingDirectory47,1120
+char    *InputFile;InputFile48,1159
+char    *PlanetaryFile;PlanetaryFile49,1179
+char    *HostsList;HostsList50,1203
+int     TimeStep 51,1223
+int     FullArrayComms 52,1245
+int     ContourComms 53,1273
+int     DeviceManualSelection 54,1299
+int     ArrayNb 55,1335
+int     StretchNumber 56,1356
+int     BinaryStar1 57,1383
+int     BinaryStar2 58,1408
+real InnerBorder;60,1434
+real OuterBorder;61,1452
+double current_simulation_time;63,1471
+TimeProcess t_speedup_cpu;65,1504
+TimeProcess t_speedup_gpu;66,1531
+int t_speedup_count;67,1558
+real time_speedup_cpu;68,1579
+real time_speedup_gpu;69,1602
+PlanetarySystem *Sys;Sys71,1626
+Point DiskOnPrimaryAcceleration;72,1648
+Point IndirectTerm;73,1681
+real StepTime;75,1702
+real localforce[localforce77,1718
+real globalforce[globalforce78,1739
+Grid Gridd;82,1782
+Field *Vx;Vx84,1795
+Field *Vy;Vy85,1806
+Field *Vz;Vz86,1817
+Field *Vx_temp;Vx_temp88,1829
+Field *Vy_temp;Vy_temp89,1845
+Field *Vz_temp;Vz_temp90,1861
+Field *Vx_half;Vx_half92,1878
+Field *Vy_half;Vy_half93,1894
+Field *Vz_half;Vz_half94,1910
+Field *Slope;Slope96,1927
+Field *Mpx;Mpx98,1942
+Field *Mpy;Mpy99,1954
+Field *Mpz;Mpz100,1966
+Field *Mmx;Mmx101,1978
+Field *Mmy;Mmy102,1990
+Field *Mmz;Mmz103,2002
+Field *Pot;Pot105,2015
+Field *DivRho;DivRho107,2028
+Field *DensStar;DensStar108,2043
+Field *Qs;Qs109,2060
+Field *Density;Density111,2072
+Field *Energy;Energy112,2088
+Field *Pressure;Pressure113,2103
+Field *Total_Density;Total_Density115,2121
+Field *QL;QL117,2144
+Field *QR;QR118,2155
+Field *LapPPA;LapPPA119,2166
+Field2D *VxMed;VxMed122,2228
+Field2D *Vxhy;Vxhy123,2244
+Field2D *Vxhyr;Vxhyr124,2259
+Field2D *Vxhz;Vxhz125,2275
+Field2D *Vxhzr;Vxhzr126,2290
+Field2D *Reduction2D;Reduction2D127,2306
+Field2D *Eta_profile_xi;Eta_profile_xi128,2328
+Field2D *Eta_profile_xizi;Eta_profile_xizi129,2353
+Field2D *Eta_profile_zi;Eta_profile_zi130,2380
+FieldInt2D *Nxhy;Nxhy132,2406
+FieldInt2D *Nxhz;Nxhz133,2424
+FieldInt2D *Nshift;Nshift134,2442
+Field *Y1;Y1138,2494
+Field *Y2;Y2139,2505
+Field *Y3;Y3140,2516
+Field *Y4;Y4141,2527
+Field *Y5;Y5142,2538
+Field *Bx;Bx148,2594
+Field *By;By149,2605
+Field *Bz;Bz150,2616
+Field *B1_star;B1_star152,2628
+Field *B2_star;B2_star153,2644
+Field *V1_star;V1_star155,2661
+Field *V2_star;V2_star156,2677
+Field *Slope_b1;Slope_b1158,2694
+Field *Slope_v1;Slope_v1159,2711
+Field *Slope_b2;Slope_b2160,2728
+Field *Slope_v2;Slope_v2161,2745
+Field *Emfx;Emfx163,2763
+Field *Emfy;Emfy164,2777
+Field *Emfz;Emfz165,2790
+Field *Divergence;Divergence167,2804
+Field2D *Density0;Density0170,2833
+Field2D *Vx0;Vx0171,2852
+Field2D *Vy0;Vy0172,2866
+Field2D *Vz0;Vz0173,2880
+Field2D *Energy0;Energy0174,2894
+int Ncpu_x;178,2941
+int Ncpu_y;179,2983
+Buffer Bfd;181,3015
+Buffer Bfu;182,3033
+Buffer Bfl;183,3051
+Buffer Bfr;184,3069
+Buffer Bfcdl;185,3139
+Buffer Bfcdr;186,3184
+Buffer Bfcul;187,3202
+Buffer Bfcur;188,3220
+real Dx;194,3284
+real *Xmin;Xmin195,3293
+real *Ymin;Ymin196,3305
+real *Zmin;Zmin197,3317
+real *Xmed;Xmed198,3329
+real *Ymed;Ymed199,3341
+real *Zmed;Zmed200,3353
+real *InvDiffXmed;InvDiffXmed201,3365
+real *InvDiffYmed;InvDiffYmed202,3384
+real *InvDiffZmed;InvDiffZmed203,3403
+real *Sxj;Sxj204,3422
+real *Sxk;Sxk205,3433
+real *Syj;Syj206,3444
+real *Syk;Syk207,3455
+real *Szj;Szj208,3466
+real *Szk;Szk209,3477
+real *InvVj;InvVj210,3488
+real shift_buffer[shift_buffer211,3501
+real *Alpha;Alpha214,3554
+real *Alpha_d;Alpha_d215,3567
+real *Dx_d;Dx_d216,3582
+real *Xmin_d;Xmin_d217,3594
+real *Ymin_d;Ymin_d218,3608
+real *Zmin_d;Zmin_d219,3622
+real *Sxj_d;Sxj_d220,3636
+real *Sxk_d;Sxk_d221,3649
+real *Syj_d;Syj_d222,3662
+real *Syk_d;Syk_d223,3675
+real *Szj_d;Szj_d224,3688
+real *Szk_d;Szk_d225,3701
+real *InvVj_d;InvVj_d226,3714
+real shift_buffer_d[shift_buffer_d227,3729
+int Nx;231,3776
+int Ny;232,3784
+int Nz;233,3792
+int J;234,3800
+int K;235,3807
+int Y0;236,3814
+int Z0;237,3822
+int Stride_cpu;238,3830
+int Stride_gpu;239,3846
+int Pitch_cpu;240,3862
+int Pitch_gpu;241,3877
+int Pitch_Int_gpu;242,3892
+int Pitch2D;243,3911
+int Stride;244,3924
+int ix;245,3936
+int iy;246,3944
+int ycells;247,3952
+int zcells;248,3964
+int y0cell;249,3976
+int z0cell;250,3988
+Field *ListOfGrids ListOfGrids253,4016
+int Bounl;257,4066
+int Bounr;258,4077
+int Bounu;259,4088
+int Bound;260,4099
+real Xplanet;263,4129
+real Yplanet;264,4143
+real Zplanet;265,4157
+real VXplanet;266,4171
+real VYplanet;267,4186
+real VZplanet;268,4201
+real MplanetVirtual;269,4216
+MPI_Status fargostat;271,4238
+real OMEGAFRAME0;273,4261
+int Fscan;275,4280
+long VtkPosition 277,4292
+int Timestepcount 280,4339
+int Fluidtype;281,4362
+int FluidIndex;282,4377
+real Min[Min283,4393
+Fluid *Fluids[Fluids284,4412
+
+init_stockholm.c,57
+void _init_stockholm(3,22
+void init_stockholm(128,2594
+
+integrate.c,106
+void integrate_cpu(28,588
+void integrate1_cpu(103,1937
+void RK2_cpu(170,2962
+void Assign_cpu(261,4380
+
+integrate_emf.c,40
+void EMF_Upstream_Integrate_cpu 15,284
+
+light_global_dev.c,26
+void LightGlobalDev(5,98
+
+lorentz_force.c,58
+void LorentzForce(10,107
+void _LorentzForce_cpu(75,1402
+
+LowTasks.c,704
+void prs_exit(3,22
+void prs_error(8,83
+int PrimitiveVariables 13,166
+inline real Swap(41,518
+    real value;43,555
+    char b[b45,585
+    char b[b47,606
+void Check_CUDA_Blocks_Consistency 70,1069
+void MakeDir 112,2543
+FILE *fopen_prs fopen_prs136,3464
+FILE *master_fopen master_fopen162,4333
+void masterfprintf(177,4646
+void masterprint(185,4816
+void mastererr(193,4980
+void InitSpace(201,5142
+void InitSurfaces(432,10503
+void SelectFluid(540,12842
+void CreateFields(576,13615
+real ComputeMass(663,16444
+void SaveState 704,17140
+void SaveStateSecondary 728,17835
+void RestoreState 752,18589
+int RestartSimulation(770,19098
+void RestartVTK(843,20675
+void RestartDat(951,22911
+
+lowtasks.cu,513
+#define __NOPROTO1,0
+#define __GPU 2,18
+extern "C" void check_errors(6,56
+extern "C" int DevMalloc(17,326
+extern "C" int DevMemcpyD2H(32,717
+extern "C" int DevMemcpyH2D(47,1149
+extern "C" int DevMemcpyH2H(62,1581
+extern "C" int DevMemcpyD2D(77,2011
+extern "C" int Host2Dev3D(92,2445
+extern "C" int Dev2Dev3D(101,2867
+extern "C" int Dev2Host3D(110,3317
+extern "C" int Host2Dev2D 119,3739
+extern "C" int Dev2Host2D 129,4219
+extern "C" int Host2Dev2DInt 139,4711
+extern "C" int Dev2Host2DInt 144,4936
+
+main.c,107
+int   begin_i 10,142
+int   InnerOutputCounter=11,176
+real dt;12,225
+real dtemp 13,234
+int main(15,253
+
+makefile,5481
+SETUPSDIR=5,200
+BINDIR=6,220
+STDDIR=7,234
+SRCDIR=8,248
+ARCHDIR=9,262
+ARCHNAME 10,278
+SCRIPTSDIR=11,304
+GIT_VERSION 12,326
+ARCH_CREATE 13,410
+SHORTARCH 14,454
+BLACK=18,584
+BLUE=19,601
+GREEN=20,626
+CYAN=21,643
+RED=22,659
+PURPLE=23,674
+BROWN=24,692
+LIGHT_GRAY=25,709
+END_COLOR=26,731
+FARGO_OPT_FILE 83,1766
+VARFILE 84,1812
+FARGO_DISPLAY 87,1878
+FARGO_ARCH 93,2125
+CUDA 105,2398
+PYTHON_INCLUDE 108,2459
+CC_LINUX 113,2644
+SEQOPT_LINUX 114,2668
+PARAOPT_LINUX 115,2688
+PARACC_LINUX 116,2720
+LIBS_LINUX 117,2742
+INC_LINUX 118,2762
+NVCC_LINUX 119,2779
+CUDAOPT_LINUX 120,2800
+PARAINC_LINUX 121,2837
+PARALIB_LINUX 122,2854
+CUDAINC_LINUX 123,2870
+CUDALIB_LINUX 124,2905
+CUDALIB_LINUX 125,2948
+CXX_LINUX 126,3000
+CXXPARA_LINUX 127,3038
+CC_KEPLEROPENMPI 131,3235
+SEQOPT_KEPLEROPENMPI 132,3264
+PARAOPT_KEPLEROPENMPI 133,3304
+PARACC_KEPLEROPENMPI 134,3352
+LIBS_KEPLEROPENMPI 135,3382
+ENVRANK_KEPLEROPENMPI 136,3410
+INC_KEPLEROPENMPI 137,3461
+NVCC_KEPLEROPENMPI 138,3486
+CUDAOPT_KEPLEROPENMPI 139,3515
+PARAINC_KEPLEROPENMPI 140,3555
+PARALIB_KEPLEROPENMPI 141,3580
+CUDAINC_KEPLEROPENMPI 142,3604
+CUDALIB_KEPLEROPENMPI 143,3647
+CXX_KEPLEROPENMPI 144,3698
+CXXPARA_KEPLEROPENMPI 145,3744
+CC_KEPLERMVAPICH 149,3949
+SEQOPT_KEPLERMVAPICH 150,3978
+PARAOPT_KEPLERMVAPICH 151,4018
+PARACC_KEPLERMVAPICH 152,4066
+LIBS_KEPLERMVAPICH 153,4096
+ENVRANK_KEPLERMVAPICH 154,4124
+INC_KEPLERMVAPICH 155,4174
+NVCC_KEPLERMVAPICH 156,4199
+CUDAOPT_KEPLERMVAPICH 157,4228
+PARAINC_KEPLERMVAPICH 158,4268
+PARALIB_KEPLERMVAPICH 159,4293
+CUDAINC_KEPLERMVAPICH 160,4318
+CUDALIB_KEPLERMVAPICH 161,4361
+CXX_KEPLERMVAPICH 162,4438
+CXXPARA_KEPLERMVAPICH 163,4484
+CC_TESLAOPENMPI 167,4687
+SEQOPT_TESLAOPENMPI 168,4715
+PARAOPT_TESLAOPENMPI 169,4754
+PARACC_TESLAOPENMPI 170,4800
+LIBS_TESLAOPENMPI 171,4829
+ENVRANK_TESLAOPENMPI 172,4856
+INC_TESLAOPENMPI 173,4906
+NVCC_TESLAOPENMPI 174,4930
+CUDAOPT_TESLAOPENMPI 175,4958
+PARAINC_TESLAOPENMPI 176,4997
+PARALIB_TESLAOPENMPI 177,5021
+CUDAINC_TESLAOPENMPI 178,5044
+CUDALIB_TESLAOPENMPI 179,5086
+CXX_TESLAOPENMPI 180,5136
+CXXPARA_TESLAOPENMPI 181,5163
+CC_TESLAMVAPICH 185,5346
+SEQOPT_TESLAMVAPICH 186,5374
+PARAOPT_TESLAMVAPICH 187,5413
+PARACC_TESLAMVAPICH 188,5459
+LIBS_TESLAMVAPICH 189,5488
+ENVRANK_TESLAMVAPICH 190,5515
+INC_TESLAMVAPICH 191,5564
+NVCC_TESLAMVAPICH 192,5588
+CUDAOPT_TESLAMVAPICH 193,5616
+PARAINC_TESLAMVAPICH 194,5655
+PARALIB_TESLAMVAPICH 195,5679
+CUDAINC_TESLAMVAPICH 196,5719
+CUDALIB_TESLAMVAPICH 197,5761
+CXX_TESLAMVAPICH 198,5793
+CXXPARA_TESLAMVAPICH 199,5838
+CC_MENDIETA 203,6044
+SEQOPT_MENDIETA 204,6068
+PARAOPT_MENDIETA 205,6103
+PARACC_MENDIETA 206,6141
+LIBS_MENDIETA 207,6166
+ENVRANK_MENDIETA 208,6189
+INC_MENDIETA 209,6228
+NVCC_MENDIETA 210,6248
+CUDAOPT_MENDIETA 211,6272
+PARAINC_MENDIETA 212,6307
+PARALIB_MENDIETA 213,6327
+CUDAINC_MENDIETA 214,6363
+CUDALIB_MENDIETA 215,6401
+CXX_MENDIETA 216,6429
+CXXPARA_MENDIETA 217,6470
+CC_QUADRO 221,6652
+SEQOPT_QUADRO 222,6673
+PARAOPT_QUADRO 223,6708
+PARACC_QUADRO 224,6742
+LIBS_QUADRO 225,6765
+INC_QUADRO 226,6786
+NVCC_QUADRO 227,6804
+CUDAOPT_QUADRO 228,6850
+PARAINC_QUADRO 229,6868
+PARALIB_QUADRO 230,6916
+CUDALIB_QUADRO 231,6959
+CUDAINC_QUADRO 232,7002
+CXX_QUADRO 233,7038
+CXXPARA_QUADRO 234,7077
+CC_MacIntel 239,7369
+SEQOPT_MacIntel 240,7392
+PARAOPT_MacIntel 241,7464
+PARACC_MacIntel 242,7502
+ENVRANK_MacIntel 243,7527
+LIBS_MacIntel 244,7567
+INC_MacIntel 245,7587
+NVCC_MacIntel 246,7607
+CUDAOPT_MacIntel 247,7643
+PARAINC_MacIntel 248,7826
+PARALIB_MacIntel 249,7846
+CUDALIB_MacIntel 250,7866
+CUDAINC_MacIntel 251,7909
+CXX_MacIntel 252,7947
+CXXPARA_MacIntel 253,7988
+CC	255,8103
+SEQOPT 256,8129
+PARAOPT 257,8164
+PARACC 258,8200
+LIBS 259,8235
+NVCC 260,8268
+ENVRANK 261,8301
+CUDAOPT 262,8337
+PARAINC 263,8373
+PARALIB 264,8409
+CUDAINC 265,8445
+CUDALIB 266,8481
+CXX 267,8517
+CXXPARA 268,8549
+INCLUDE 269,8585
+MAKEFILE=273,8743
+MAKEFILE +=MAKEFILE +275,8763
+GLOBAL 277,8798
+GLOBAL +=GLOBAL +279,8864
+BOUNDARIES_DEP 281,8938
+MPIDUMMY 287,9055
+EXENAME 288,9112
+VPATH=291,9179
+MAINOBJ 294,9313
+GPU_OBJ 341,11656
+GPU_OBJBLOCKS 346,11773
+MAINOBJ +=MAINOBJ +383,13576
+MAINOBJ +=MAINOBJ +384,13634
+GPU_OBJ +=GPU_OBJ +385,13692
+GPU_OBJ +=GPU_OBJ +386,13754
+MAINOBJ +=MAINOBJ +390,13865
+MAINOBJ +=MAINOBJ +391,13923
+GPU_OBJ +=GPU_OBJ +392,13981
+GPU_OBJ +=GPU_OBJ +393,14043
+MAINOBJ +=MAINOBJ +397,14113
+GPUOBJ +=GPUOBJ +398,14139
+OBJECTS 418,14545
+OPTIONS 438,15164
+all:all445,15249
+allp:allp449,15366
+${EXENAME} 526,17681
+var.c:var.c550,18768
+${SETUP}.units:${SETUP}.units555,18935
+rescale.c:rescale.c558,18997
+.PHONY:.PHONY563,19179
+gitversion:gitversion564,19208
+clean:clean566,19294
+main.o:main.o573,19404
+change_arch.o 574,19423
+${SCRIPTSDIR}/bound_proto.code ${SCRIPTSDIR}/bound_cpu.code ${SCRIPTSDIR}/bound_gpu.code:${SCRIPTSDIR}/bound_proto.code ${SCRIPTSDIR}/bound_cpu.code ${SCRIPTSDIR}/bound_gpu.code578,19815
+collisions.cu:collisions.cu582,20003
+%_gpu.o 586,20135
+%.cu:%.cu591,20334
+reduction_sum_device.o:reduction_sum_device.o595,20435
+reduction_min_device.o:reduction_min_device.o600,20599
+ymin_bound_%.o:ymin_bound_%.o608,20919
+ymax_bound_%.o:ymax_bound_%.o611,21063
+zmin_bound_%.o:zmin_bound_%.o614,21207
+zmax_bound_%.o:zmax_bound_%.o617,21351
+ymin_bound_%.c ymax_bound_%.c zmin_bound_%.c zmax_bound_%.c:ymin_bound_%.c ymax_bound_%.c zmin_bound_%.c zmax_bound_%.c621,21496
+%.o 627,21788
+
+matplotlib.c,251
+#define YZSIM 4,42
+#define XZSIM 5,58
+#define XYSIM 6,74
+void pyrun(8,91
+void finalize_python(17,277
+int check_simtype(21,319
+void initialize_python(32,534
+void plot1d(49,1048
+void plot2d(163,3520
+void plot3d(298,6707
+void Display(379,8691
+
+mhd.c,54
+void ComputeMHD(4,23
+void ComputeDivergence(86,3720
+
+momenta_x.c,27
+void momenta_x_cpu(10,107
+
+momenta_y.c,27
+void momenta_y_cpu(10,107
+
+momenta_z.c,27
+void momenta_z_cpu(10,107
+
+mon_bxflux.c,28
+void mon_bxflux_cpu 10,107
+
+mon_dens.c,26
+void mon_dens_cpu 10,107
+
+monitor.c,484
+#define FORMAT 2,21
+#define MAX_MONITOR 3,46
+#define MAX_STRING 4,69
+int mon_kind[mon_kind8,128
+int mon_pldp[mon_pldp9,155
+char mon_name[mon_name10,182
+char mon_cent[mon_cent11,222
+static boolean func_declared 13,263
+static int MonCounter=14,298
+int Index(17,325
+void Write1DFile 25,414
+void InitMonitoring3D 38,712
+void InitMonitoring(50,921
+void InitFunctionMonitoring 62,1651
+void MonitorFunction 76,2108
+void DoMonitoring 214,6421
+void MonitorGlobal 238,7100
+
+mon_maxwell.c,29
+void mon_maxwell_cpu 10,107
+
+mon_momx.c,26
+void mon_momx_cpu 10,107
+
+mon_momy.c,26
+void mon_momy_cpu 10,107
+
+mon_momz.c,26
+void mon_momz_cpu 10,107
+
+mon_reynolds.c,30
+void mon_reynolds_cpu 10,107
+
+mon_torque.c,26
+void mon_torq_cpu 10,107
+
+mpi_dummy.c,399
+void MPI_Comm_rank 14,269
+void MPI_Comm_size 16,357
+void MPI_Init 18,455
+void MPI_Allreduce 27,935
+void MPI_Gather 44,1367
+void MPI_Reduce 64,1868
+void MPI_Finalize(82,2323
+void MPI_Bcast(83,2345
+void MPI_Isend(84,2364
+void MPI_Irecv(85,2383
+void MPI_Send(86,2402
+void MPI_Recv(87,2420
+void MPI_Barrier(88,2438
+void MPI_Wait(89,2459
+void MPI_Scan(90,2477
+void MPI_Comm_split(91,2538
+
+mpi_dummy.h,402
+#define MPI_COMM_WORLD 1,0
+#define MPI_IN_PLACE 2,25
+#define MPI_DOUBLE 3,48
+#define MPI_FLOAT 4,69
+#define MPI_CHAR 5,89
+#define MPI_LONG 6,108
+#define MPI_INT 7,127
+#define MPI_MIN 8,145
+#define MPI_MAX 9,163
+#define MPI_SUM 10,181
+#define MPI_STATUS_IGNORE 12,200
+typedef int MPI_Request;14,229
+typedef int MPI_Status;15,254
+typedef int MPI_Comm;16,278
+typedef long MPI_Offset;17,300
+
+newvel_x.c,31
+void NewVelocity_x_cpu 10,107
+
+newvel_y.c,31
+void NewVelocity_y_cpu 10,107
+
+newvel_z.c,31
+void NewVelocity_z_cpu 10,107
+
+output2d.c,43
+void Write2D 3,22
+boolean Read2D 62,2365
+
+output.c,551
+void SelectWriteMethod(3,22
+void EmptyPlanetSystemFiles 32,486
+void WritePlanetFile 46,807
+real GetfromPlanetFile 78,1505
+void RestartPlanetarySystem 116,2465
+void WriteTorqueAndWork(132,2967
+void WritePlanetSystemFile 186,4301
+void WriteDim 203,4697
+void WriteField2D(238,5898
+void WriteFieldInt2D(248,6169
+void WriteField(258,6448
+void WriteFieldGhost(273,6848
+void WriteMerging(288,7273
+void Write_offset(329,8246
+MPI_Offset ParallelIO(344,8566
+void WriteBinFile(515,12908
+void DumpAllFields 547,13550
+void WriteOutputs(562,13884
+
+output_vtk.c,118
+void write_vtk_header(3,22
+void write_vtk_coordinates(21,577
+void write_vtk_scalar(89,2224
+void WriteVTK(137,3014
+
+output_vtk_merging.c,27
+void WriteVTKMerging(3,22
+
+param.c,242
+Param Var_Set[Var_Set6,84
+int Id_Var 7,113
+void DumpToFargo3drc 9,130
+void init_var(70,1763
+void ReadVarFile(98,2757
+void var_assign(219,6638
+void ListVariables 329,10097
+void ListVariablesIDL 356,10902
+void ReadRedefined 382,11739
+
+planets.c,216
+void ComputeIndirectTerm 3,22
+Force ComputeForce(20,414
+Point ComputeAccel(68,1970
+void AdvanceSystemFromDisk(86,2532
+OrbitalElements SV2OE 116,3344
+void FindOrbitalElements 197,5104
+void SolveOrbits 216,5604
+
+postrestarthook.c,27
+void PostRestartHook 4,75
+
+potential.c,59
+void compute_potential(10,107
+void Potential_cpu(52,1398
+
+prototypes.h,34
+#define ex 2,13
+#define ex 4,42
+
+psys.c,302
+int FindNumberOfPlanets(3,22
+PlanetarySystem *AllocPlanetSystem(AllocPlanetSystem20,356
+void FreePlanetary 105,3022
+real ComputeInnerMass(117,3222
+PlanetarySystem *InitPlanetarySystem InitPlanetarySystem141,3758
+void ListPlanets 332,10451
+real GetPsysInfo 362,11300
+void RotatePsys 417,12413
+
+redefoptions.c,132
+HashParam CommandLineParams[CommandLineParams3,22
+long nbparamCL=4,82
+void OptionError 6,101
+void ParseRedefinedOptions 10,194
+
+reduction_arch35_gpu.cu,263
+#define __GPU7,280
+#define LOCAL_BLOCK_X 11,369
+#define LOCAL_BLOCK_Y 12,426
+#define LOCAL_BLOCK_Z 13,483
+#define WARPSIZE 14,540
+__global__ void kernel_reduction(17,563
+extern "C" void name_reduction_gpu(84,2529
+#define str(96,2988
+#define xstr(97,3006
+
+reduction_full_generic.c,30
+real name_full_reduction 1,0
+
+reduction_generic.c,31
+void name_reduction_cpu(5,218
+
+reduction_generic_gpu.cu,278
+#define __GPU7,280
+#define LOCAL_BLOCK_X 11,369
+#define LOCAL_BLOCK_Y 12,426
+#define LOCAL_BLOCK_Z 13,451
+__global__ void kernel_reduction(15,508
+__global__ void kernel_shift(72,3213
+extern "C" void name_reduction_gpu(85,3717
+#define str(103,4308
+#define xstr(104,4326
+
+reduction_min.c,20
+#define macro 3,22
+
+reduction_min_device.cu,19
+#define macro 1,0
+
+reduction_sum.c,20
+#define macro 3,22
+
+reduction_sum_device.cu,19
+#define macro 1,0
+
+rescale.c,19
+void rescale 4,23
+
+resetfield.c,29
+void Reset_field_cpu 10,107
+
+resist.c,45
+void Resist 10,107
+void _Resist_cpu 51,845
+
+resistivity.c,23
+real Resistivity 3,22
+
+runge_kutta.c,600
+static real k1[k110,178
+static real k1[MAX1D], k2[k210,178
+static real k1[MAX1D], k2[MAX1D], k3[k310,178
+static real k1[MAX1D], k2[MAX1D], k3[MAX1D], k4[k410,178
+static real k1[MAX1D], k2[MAX1D], k3[MAX1D], k4[MAX1D], k5[k510,178
+static real k1[MAX1D], k2[MAX1D], k3[MAX1D], k4[MAX1D], k5[MAX1D], k6[k610,178
+static real Dist[Dist11,256
+static real q0[q012,281
+static real q0[MAX1D], q1[q112,281
+static real q0[MAX1D], q1[MAX1D], PlanetMasses[PlanetMasses12,281
+void DerivMotionRK5(14,337
+void TranslatePlanetRK5(81,1945
+void RungeKutta(88,2158
+void AdvanceSystemRK5 120,3190
+
+select_device.c,59
+void SelectDevice(3,22
+void EarlyDeviceSelection 59,2131
+
+setuphook1.c,28
+void SetupHook1_cpu(10,107
+
+ShearingPeriodicBC.c,258
+static real SB_resi[SB_resi3,22
+static int  SB_nint[SB_nint4,46
+static real SlideVel;5,70
+void ShearBC 16,472
+void SB_slide 63,1600
+void ShearingPeriodicCondition 68,1718
+void SlideIntShearingBoundary 87,2420
+void SlideResShearingBoundary 114,3053
+
+split.c,93
+void buildprime(3,22
+void primefactors 23,435
+void repartition 39,746
+void split(76,1680
+
+stockholm.c,35
+void StockholmBoundary_cpu(10,107
+
+stretch.c,54
+void RestartStretch 3,22
+void StretchOutput 53,1402
+
+structs.h,4778
+struct param{param1,0
+  char name[name2,14
+  char *variable;variable3,31
+  int type;4,49
+  int need;5,61
+  int read;6,73
+struct hashparam 10,90
+  char name[name11,109
+  char stringvalue[stringvalue12,137
+  real floatvalue;13,172
+  long intvalue;14,191
+  long boolvalue;15,208
+struct planetary_system 22,325
+  int nb;23,351
+  real *mass;mass24,389
+  real *mass_cpu;mass_cpu25,435
+  real *mass_gpu;mass_gpu26,485
+  real *x;x27,535
+  real *x_cpu;x_cpu28,584
+  real *x_gpu;x_gpu29,637
+  real *y;y30,690
+  real *y_cpu;y_cpu31,739
+  real *y_gpu;y_gpu32,792
+  real *z;z33,845
+  real *z_cpu;z_cpu34,894
+  real *z_gpu;z_gpu35,947
+  real *vx;vx36,1000
+  real *vy;vy37,1061
+  real *vz;vz38,1129
+  real *acc;acc39,1197
+  char **name;name40,1252
+  boolean *FeelDisk;FeelDisk41,1297
+  boolean *FeelOthers;FeelOthers42,1384
+struct grid 46,1488
+  int nx;47,1547
+  int ny;48,1570
+  int nz;49,1593
+  int J;50,1616
+  int K;51,1651
+  int stride;52,1687
+  int bc_up;53,1727
+  int bc_down;54,1740
+  int bc_left;55,1755
+  int bc_right;56,1770
+  int NJ;57,1786
+  int NK;58,1857
+struct zmeanprop 61,1932
+  real PreviousDate;62,1951
+  real ResetDate;63,1972
+  boolean NeverReset;64,1990
+struct field 67,2016
+  char *name;name68,2079
+  real *field_cpu;field_cpu69,2093
+  real *backup;backup70,2112
+  real *secondary_backup;secondary_backup71,2189
+  real *field_gpu;field_gpu72,2229
+  int x_cpus;73,2248
+  int y_cpus;74,2262
+  int type;75,2276
+  boolean fresh_cpu;76,2288
+  boolean fresh_gpu;77,2309
+  boolean fresh_inside_contour_cpu[fresh_inside_contour_cpu78,2330
+  boolean fresh_inside_contour_gpu[fresh_inside_contour_gpu79,2369
+  boolean fresh_outside_contour_cpu[fresh_outside_contour_cpu80,2408
+  boolean fresh_outside_contour_gpu[fresh_outside_contour_gpu81,2448
+  struct field *next;next82,2488
+  struct field **owner;owner83,2524
+  struct cudaPitchedPtr gpu_pp;85,2578
+  struct cudaPitchedPtr cpu_pp;86,2610
+  char file_origin[file_origin88,2649
+  int line_origin;89,2684
+  real *x;x90,2703
+  real *y;y91,2714
+  real *z;z92,2725
+  double *zmean;zmean93,2736
+  struct zmeanprop zp;94,2753
+struct fluid 97,2780
+  char *name;name98,2795
+  int Fluidtype;99,2809
+  struct field2D *VxMed;VxMed100,2826
+  struct field *Density;Density101,2851
+  struct field *Energy;Energy102,2876
+  struct field *Vx;Vx103,2900
+  struct field *Vx_temp;Vx_temp104,2920
+  struct field *Vy;Vy105,2945
+  struct field *Vy_temp;Vy_temp106,2965
+  struct field *Vz;Vz107,2990
+  struct field *Vz_temp;Vz_temp108,3010
+  struct field *Vx_half;Vx_half109,3035
+  struct field *Vy_half;Vy_half110,3060
+  struct field *Vz_half;Vz_half111,3085
+	struct field *Y1;Y1113,3123
+	struct field *Y2;Y2114,3142
+	struct field *Y3;Y3115,3161
+	struct field *Y4;Y4116,3180
+  struct field2D *Density0;Density0119,3223
+  struct field2D *Energy0;Energy0120,3251
+  struct field2D *Vx0;Vx0121,3278
+  struct field2D *Vy0;Vy0122,3301
+  struct field2D *Vz0;Vz0123,3324
+struct field2D 127,3358
+  char *name;name128,3431
+  real *field_cpu;field_cpu129,3445
+  real *backup;backup130,3464
+  real *secondary_backup;secondary_backup131,3541
+  real *field_gpu;field_gpu132,3567
+  int x_cpus;133,3586
+  int y_cpus;134,3600
+  size_t pitch;135,3614
+  int kind;136,3630
+  boolean fresh_cpu;137,3642
+  boolean fresh_gpu;138,3663
+  struct field2D *next;next139,3684
+struct fieldint2D 142,3726
+  char *name;name143,3802
+  int *field_cpu;field_cpu144,3816
+  int *backup;backup145,3834
+  int *secondary_backup;secondary_backup146,3849
+  int *field_gpu;field_gpu147,3874
+  int x_cpus;148,3892
+  int y_cpus;149,3906
+  boolean fresh_cpu;150,3920
+  boolean fresh_gpu;151,3941
+  struct fieldint2D *next;next152,3962
+struct buffer 155,4007
+  real *buffer;buffer156,4023
+  int index;157,4039
+struct force 160,4056
+  real fx_inner;161,4074
+  real fy_inner;162,4185
+  real fz_inner;163,4296
+  real fx_ex_inner;164,4313
+  real fy_ex_inner;165,4427
+  real fz_ex_inner;166,4548
+  real fx_outer;167,4568
+  real fy_outer;168,4685
+  real fz_outer;169,4802
+  real fx_ex_outer;170,4819
+  real fy_ex_outer;171,4930
+  real fz_ex_outer;172,5048
+struct point 176,5073
+  real x;177,5088
+  real y;178,5098
+  real z;179,5108
+struct timeprocess 184,5243
+  char name[name185,5264
+  clock_t clicks;186,5281
+struct orbital_elements 189,5303
+  real a;190,5329
+  real e;191,5339
+  real i;192,5349
+  real an;193,5359
+  real per;194,5370
+  real ta;195,5382
+  real E;196,5393
+  real M;197,5433
+  real Perihelion_Phi;198,5443
+struct state_vector 201,5470
+  real x;202,5492
+  real y;203,5502
+  real z;204,5512
+  real vx;205,5522
+  real vy;206,5533
+  real vz;207,5544
+
+substep1_x.c,28
+void SubStep1_x_cpu 10,107
+
+substep1_y.c,28
+void SubStep1_y_cpu 10,107
+
+substep1_z.c,28
+void SubStep1_z_cpu 10,107
+
+substep2_a.c,28
+void SubStep2_a_cpu 10,107
+
+substep2_b.c,28
+void SubStep2_b_cpu 10,107
+
+substep3.c,26
+void SubStep3_cpu 10,107
+
+summary.c,190
+char dummy_end=5,65
+void SelectArchFileName 7,87
+void StoreFileToChar 21,457
+char *ExtractFromExecutable ExtractFromExecutable43,1029
+void GetHostsList 109,3132
+void Summary 135,3835
+
+timeinfo.c,540
+#define WALLCLOCK 3,22
+#define TIMETICKS 6,60
+#define TIMETICKS 8,92
+static clock_t  First,11,135
+static clock_t  First, Preceeding,11,135
+static clock_t  First, Preceeding, Current,11,135
+static clock_t  First, Preceeding, Current, FirstUser,11,135
+static clock_t  First, Preceeding, Current, FirstUser, CurrentUser,11,135
+static clock_t  First, Preceeding, Current, FirstUser, CurrentUser, PreceedingUser;11,135
+static long     Ticks;12,219
+void InitSpecificTime 15,263
+real GiveSpecificTime 30,594
+void GiveTimeInfo 54,1173
+
+totaldens.c,37
+void ComputeTotalDensity_cpu 10,107
+
+transport.c,142
+void VanLeerX(5,84
+void TransportX(11,249
+void TransportY(21,513
+void TransportZ(32,785
+void X_advection 43,1058
+void transport(63,1489
+
+types_def.h,695
+typedef char boolean;1,0
+typedef float real;3,35
+typedef double real;5,61
+typedef struct param Param;7,89
+typedef struct planetary_system PlanetarySystem;8,117
+typedef struct field Field;9,166
+typedef struct field2D Field2D;10,194
+typedef struct fieldint2D FieldInt2D;11,226
+typedef struct grid Grid;12,264
+typedef struct buffer Buffer;13,290
+typedef struct force Force;14,320
+typedef struct point Point;15,348
+typedef struct timeprocess TimeProcess;16,376
+typedef struct zmeanprop ZmeanProp;17,416
+typedef struct hashparam HashParam;18,452
+typedef struct state_vector StateVector;19,488
+typedef struct orbital_elements OrbitalElements;20,529
+typedef struct fluid Fluid;22,579
+
+update_density_x.c,32
+void UpdateDensityX_cpu(10,107
+
+update_density_y.c,32
+void UpdateDensityY_cpu(10,107
+
+update_density_z.c,32
+void UpdateDensityZ_cpu(10,107
+
+update_magnetic.c,71
+void UpdateMagneticField(10,107
+void _UpdateMagneticField_cpu(45,794
+
+update_x.c,25
+void UpdateX_cpu(10,107
+
+update_y.c,25
+void UpdateY_cpu(10,107
+
+update_z.c,25
+void UpdateZ_cpu(10,107
+
+usage.c,22
+void PrintUsage 3,22
+
+vanleer_x_a.c,28
+void VanLeerX_a_cpu(10,107
+
+vanleer_x_b.c,28
+void VanLeerX_b_cpu(10,107
+
+vanleerx_ppa.c,53
+void VanLeerX_PPA(3,22
+void VanLeerX_PPA_2D(14,300
+
+vanleer_y_a.c,28
+void VanLeerY_a_cpu(10,107
+
+vanleer_y_b.c,28
+void VanLeerY_b_cpu(10,107
+
+vanleer_z_a.c,28
+void VanLeerZ_a_cpu(10,107
+
+vanleer_z_b.c,28
+void VanLeerZ_b_cpu(10,107
+
+viscosity.c,21
+void viscosity(4,23
+
+visctensor_cart.c,33
+void visctensor_cart_cpu(10,107
+
+visctensor_cyl.c,32
+void visctensor_cyl_cpu(10,107
+
+visctensor_sph.c,32
+void visctensor_sph_cpu(10,107
+
+fargo3d.h,0

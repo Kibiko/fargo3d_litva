@@ -1,0 +1,1462 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ALL	define.h	28;"	d
+ARCHDIR	makefile	/^ARCHDIR=..\/arch$/;"	m
+ARCHNAME	makefile	/^ARCHNAME = source.tar.bz2$/;"	m
+ARCH_CREATE	makefile	/^ARCH_CREATE := $(shell mkdir -p $(ARCHDIR))$/;"	m
+AVG_MASS	define.h	116;"	d
+AVG_VOL	define.h	117;"	d
+AdvanceSystemFromDisk	planets.c	/^void AdvanceSystemFromDisk(real dt) {$/;"	f
+AdvanceSystemRK5	runge_kutta.c	/^void AdvanceSystemRK5 (real dt) {$/;"	f
+AdvectSHIFT	global.h	/^void (*AdvectSHIFT)(Field*,FieldInt2D*);$/;"	v
+AdvectSHIFT_cpu	advect_shift.c	/^void AdvectSHIFT_cpu (Field *F, FieldInt2D *NS) {$/;"	f
+AllocPlanetSystem	psys.c	/^PlanetarySystem *AllocPlanetSystem(int nb) {$/;"	f
+Alpha	global.h	/^real *Alpha;$/;"	v
+Alpha_d	global.h	/^real *Alpha_d;$/;"	v
+ArchFile	global.h	/^char    ArchFile[1024];$/;"	v
+ArrayNb	global.h	/^int     ArrayNb = 0;$/;"	v
+Assign_cpu	integrate.c	/^void Assign_cpu(real * E, real * Enew){$/;"	f
+AxiSym	checknans.c	/^void AxiSym (Field *f) {$/;"	f
+B1_star	global.h	/^Field *B1_star;$/;"	v
+B2_star	global.h	/^Field *B2_star;$/;"	v
+BINDIR	makefile	/^BINDIR=..\/bin$/;"	m
+BLACK	makefile	/^BLACK=\\033[0;30m$/;"	m
+BLUE	makefile	/^BLUE=\\033[1;34m #  \\e[m'$/;"	m
+BOOL	define.h	26;"	d
+BOUNDARIES_DEP	makefile	/^BOUNDARIES_DEP = boundparser.py boundary_template.c  \\$/;"	m
+BROWN	makefile	/^BROWN=\\033[0;33m$/;"	m
+BX	define.h	89;"	d
+BXFLUX	define.h	126;"	d
+BY	define.h	90;"	d
+BZ	define.h	91;"	d
+Bfcdl	global.h	/^Buffer Bfcdl; \/\/|                view comm.c$/;"	v
+Bfcdr	global.h	/^Buffer Bfcdr; \/\/|$/;"	v
+Bfcul	global.h	/^Buffer Bfcul; \/\/|$/;"	v
+Bfcur	global.h	/^Buffer Bfcur; \/\/|$/;"	v
+Bfd	global.h	/^Buffer Bfd;   \/\/|$/;"	v
+Bfl	global.h	/^Buffer Bfl;   \/\/|$/;"	v
+Bfr	global.h	/^Buffer Bfr;   \/\/|----> interface buffers for density field; (borders)$/;"	v
+Bfu	global.h	/^Buffer Bfu;   \/\/|$/;"	v
+BinaryStar1	global.h	/^int     BinaryStar1 = 0;$/;"	v
+BinaryStar2	global.h	/^int     BinaryStar2 = 0;$/;"	v
+Bound	global.h	/^int Bound;$/;"	v
+BoundaryFile	global.h	/^char    BoundaryFile[4096];$/;"	v
+Bounl	global.h	/^int Bounl;$/;"	v
+Bounr	global.h	/^int Bounr;$/;"	v
+Bounu	global.h	/^int Bounu;$/;"	v
+Buffer	types_def.h	/^typedef struct buffer Buffer;$/;"	t	typeref:struct:buffer
+BuffersReady	dh_boundary.c	/^static boolean BuffersReady = NO;$/;"	v	file:
+Bx	global.h	/^Field *Bx;$/;"	v
+By	global.h	/^Field *By;$/;"	v
+Bz	global.h	/^Field *Bz;$/;"	v
+C0	fondam.h	63;"	d
+CC	makefile	/^CC	 = ${CC_${FARGO_ARCH}}$/;"	m
+CC_KEPLERMVAPICH	makefile	/^CC_KEPLERMVAPICH      = gcc $/;"	m
+CC_KEPLEROPENMPI	makefile	/^CC_KEPLEROPENMPI      = gcc $/;"	m
+CC_LINUX	makefile	/^CC_LINUX      = gcc -g $/;"	m
+CC_MENDIETA	makefile	/^CC_MENDIETA      = gcc $/;"	m
+CC_MacIntel	makefile	/^CC_MacIntel      = gcc$/;"	m
+CC_QUADRO	makefile	/^CC_QUADRO      = gcc$/;"	m
+CC_TESLAMVAPICH	makefile	/^CC_TESLAMVAPICH      = gcc $/;"	m
+CC_TESLAOPENMPI	makefile	/^CC_TESLAOPENMPI      = gcc $/;"	m
+COMPILER	makefile	/^	COMPILER = ${CC}$/;"	m
+COMPILER	makefile	/^	COMPILER = ${PARACC}$/;"	m
+CONSTANT	define.h	604;"	d
+CONSTANT	define.h	607;"	d
+CPU_Master	global.h	/^boolean CPU_Master = YES;$/;"	v
+CPU_Number	global.h	/^int CPU_Number;$/;"	v
+CPU_Rank	global.h	/^int CPU_Rank;$/;"	v
+CREATEFIELDALIAS	define.h	639;"	d
+CUDA	makefile	/^CUDA           = \/usr\/local\/cuda$/;"	m
+CUDAINC	makefile	/^CUDAINC  = ${CUDAINC_${FARGO_ARCH}}$/;"	m
+CUDAINC_KEPLERMVAPICH	makefile	/^CUDAINC_KEPLERMVAPICH = -I${CUDA}\/include\/$/;"	m
+CUDAINC_KEPLEROPENMPI	makefile	/^CUDAINC_KEPLEROPENMPI = -I${CUDA}\/include\/$/;"	m
+CUDAINC_LINUX	makefile	/^CUDAINC_LINUX = -I${CUDA}\/include\/$/;"	m
+CUDAINC_MENDIETA	makefile	/^CUDAINC_MENDIETA = -I${CUDA}\/include\/$/;"	m
+CUDAINC_MacIntel	makefile	/^CUDAINC_MacIntel = -I${CUDA}\/include\/$/;"	m
+CUDAINC_QUADRO	makefile	/^CUDAINC_QUADRO = -I${CUDA}\/include\/$/;"	m
+CUDAINC_TESLAMVAPICH	makefile	/^CUDAINC_TESLAMVAPICH = -I${CUDA}\/include\/$/;"	m
+CUDAINC_TESLAOPENMPI	makefile	/^CUDAINC_TESLAOPENMPI = -I${CUDA}\/include\/$/;"	m
+CUDALIB	makefile	/^CUDALIB  = ${CUDALIB_${FARGO_ARCH}}$/;"	m
+CUDALIB_KEPLERMVAPICH	makefile	/^CUDALIB_KEPLERMVAPICH = -L${CUDA}\/lib64\/ -lcudart -L\/share\/apps\/mvapich2\/lib$/;"	m
+CUDALIB_KEPLEROPENMPI	makefile	/^CUDALIB_KEPLEROPENMPI = -L${CUDA}\/lib64\/  -lcudart$/;"	m
+CUDALIB_LINUX	makefile	/^CUDALIB_LINUX = -L${CUDA}\/lib64\/  -lcudart -lstdc++$/;"	m
+CUDALIB_LINUX	makefile	/^CUDALIB_LINUX = -L${CUDA}\/lib64\/  -lcudart$/;"	m
+CUDALIB_MENDIETA	makefile	/^CUDALIB_MENDIETA = -lcudart$/;"	m
+CUDALIB_MacIntel	makefile	/^CUDALIB_MacIntel = -L${CUDA}\/lib\/ -lcudart$/;"	m
+CUDALIB_QUADRO	makefile	/^CUDALIB_QUADRO = -L${CUDA}\/lib64\/ -lcudart$/;"	m
+CUDALIB_TESLAMVAPICH	makefile	/^CUDALIB_TESLAMVAPICH = -lcudart$/;"	m
+CUDALIB_TESLAOPENMPI	makefile	/^CUDALIB_TESLAOPENMPI = -L${CUDA}\/lib64\/  -lcudart$/;"	m
+CUDAMEMCPY	define.h	603;"	d
+CUDAMEMCPY	define.h	606;"	d
+CUDAOPT	makefile	/^CUDAOPT  = ${CUDAOPT_${FARGO_ARCH}}$/;"	m
+CUDAOPT_KEPLERMVAPICH	makefile	/^CUDAOPT_KEPLERMVAPICH = -O3 -arch=sm_35$/;"	m
+CUDAOPT_KEPLEROPENMPI	makefile	/^CUDAOPT_KEPLEROPENMPI = -O3 -arch=sm_35$/;"	m
+CUDAOPT_LINUX	makefile	/^CUDAOPT_LINUX = -O3 -w #-arch=sm_20 $/;"	m
+CUDAOPT_MENDIETA	makefile	/^CUDAOPT_MENDIETA = -O3 -arch=sm_20$/;"	m
+CUDAOPT_MacIntel	makefile	/^CUDAOPT_MacIntel = -arch=sm_30 -m64 -O3 --compiler-options '-Wno-return-type-c-linkage' -Xcudafe --diag_suppress=set_but_not_used -Xcudafe --diag_suppress=declared_but_not_referenced$/;"	m
+CUDAOPT_QUADRO	makefile	/^CUDAOPT_QUADRO = $/;"	m
+CUDAOPT_TESLAMVAPICH	makefile	/^CUDAOPT_TESLAMVAPICH = -O3 -arch=sm_20$/;"	m
+CUDAOPT_TESLAOPENMPI	makefile	/^CUDAOPT_TESLAOPENMPI = -O3 -arch=sm_20$/;"	m
+CVNL	define.h	10;"	d
+CVNR	define.h	9;"	d
+CXX	makefile	/^CXX      = ${CXX_${FARGO_ARCH}}$/;"	m
+CXXPARA	makefile	/^CXXPARA  = ${CXXPARA_${FARGO_ARCH}}$/;"	m
+CXXPARA_KEPLERMVAPICH	makefile	/^CXXPARA_KEPLERMVAPICH = mpic++ -stdlib=libstdc++$/;"	m
+CXXPARA_KEPLEROPENMPI	makefile	/^CXXPARA_KEPLEROPENMPI = mpic++ -stdlib=libstdc++$/;"	m
+CXXPARA_LINUX	makefile	/^CXXPARA_LINUX = mpic++ -stdlib=libstdc++$/;"	m
+CXXPARA_MENDIETA	makefile	/^CXXPARA_MENDIETA = mpic++ -stdlib=libstdc++$/;"	m
+CXXPARA_MacIntel	makefile	/^CXXPARA_MacIntel = mpic++ -stdlib=libstdc++$/;"	m
+CXXPARA_QUADRO	makefile	/^CXXPARA_QUADRO = mpic++ -stdlib=libstdc++$/;"	m
+CXXPARA_TESLAMVAPICH	makefile	/^CXXPARA_TESLAMVAPICH = mpic++ -stdlib=libstdc++$/;"	m
+CXXPARA_TESLAOPENMPI	makefile	/^CXXPARA_TESLAOPENMPI = mpic++$/;"	m
+CXX_KEPLERMVAPICH	makefile	/^CXX_KEPLERMVAPICH     = g++ -stdlib=libstdc++$/;"	m
+CXX_KEPLEROPENMPI	makefile	/^CXX_KEPLEROPENMPI     = g++ -stdlib=libstdc++$/;"	m
+CXX_LINUX	makefile	/^CXX_LINUX     = g++ -stdlib=libstdc++$/;"	m
+CXX_MENDIETA	makefile	/^CXX_MENDIETA     = g++ -stdlib=libstdc++$/;"	m
+CXX_MacIntel	makefile	/^CXX_MacIntel     = g++ -stdlib=libstdc++$/;"	m
+CXX_QUADRO	makefile	/^CXX_QUADRO     = g++ -stdlib=libstdc++$/;"	m
+CXX_TESLAMVAPICH	makefile	/^CXX_TESLAMVAPICH     = g++ -stdlib=libstdc++$/;"	m
+CXX_TESLAOPENMPI	makefile	/^CXX_TESLAOPENMPI     = g++$/;"	m
+CYAN	makefile	/^CYAN=\\033[1;36m$/;"	m
+C_dust	dust_function.c	/^real C_dust(real yp, real y, real ym, real fdp, real fd, real fdm,real h){$/;"	f
+Cd	dust_function.c	/^real Cd(real* P_current, real* P, real* rho, int i, int j, int k){$/;"	f
+CflFluidsMin	cfl_fluids_min.c	/^void CflFluidsMin() {$/;"	f
+ChangeArch	change_arch.c	/^void ChangeArch() {$/;"	f
+ChangeFrame	global.h	/^void (*ChangeFrame)(int,Field*,Field2D*);$/;"	v
+ChangeFrame_cpu	change_frame.c	/^void ChangeFrame_cpu(int sign, Field *V, Field2D *Vm) {$/;"	f
+CheckAxiSym	checknans.c	/^int CheckAxiSym (Field *f) {$/;"	f
+CheckMuteY	global.h	/^void (*CheckMuteY)();$/;"	v
+CheckMuteY_cpu	checkmute_y.c	/^void CheckMuteY_cpu() {$/;"	f
+CheckMuteZ	global.h	/^void (*CheckMuteZ)();$/;"	v
+CheckMuteZ_cpu	checkmute_z.c	/^void CheckMuteZ_cpu() {$/;"	f
+CheckNans	checknans.c	/^void CheckNans (char *string){$/;"	f
+CheckNansField	checknans.c	/^int CheckNansField (Field *f) {$/;"	f
+Check_CUDA_Blocks_Consistency	LowTasks.c	/^void Check_CUDA_Blocks_Consistency () {$/;"	f
+CloseBoundaries_cpu	closed_bc.c	/^void CloseBoundaries_cpu(Field *Vy, Field *Vz){$/;"	f
+ColRate	colrate.c	/^void ColRate(real colrate, int i, int j, int feedback) {$/;"	f
+Collisions	collisions.c	/^void Collisions(real dt, int option) {$/;"	f
+CommandLine	global.h	/^char    CommandLine[1024];$/;"	v
+CommandLineParams	redefoptions.c	/^HashParam CommandLineParams[100]; \/* should be enough... *\/$/;"	v
+Communicator	comm.c	/^typedef struct communicator Communicator;$/;"	t	typeref:struct:communicator	file:
+CompareAllFields	compfields.c	/^void CompareAllFields () {$/;"	f
+CompareField	compfields.c	/^boolean CompareField (Field *f) { \/\/ Compare a field to its secondary backup$/;"	f
+ComputeAccel	planets.c	/^Point ComputeAccel(real x, real y, real z,$/;"	f
+ComputeDivergence	mhd.c	/^void ComputeDivergence(Field *CompX, Field *CompY, Field *CompZ){$/;"	f
+ComputeEmf	compute_emf.c	/^void ComputeEmf(real dt, int idx, int idy, int idz, $/;"	f
+ComputeForce	planets.c	/^Force ComputeForce(real x, real y, real z,$/;"	f
+ComputeIndirectTerm	planets.c	/^void ComputeIndirectTerm () {$/;"	f
+ComputeInnerMass	psys.c	/^real ComputeInnerMass(real r) {$/;"	f
+ComputeMHD	mhd.c	/^void ComputeMHD(real dt) {$/;"	f
+ComputeMass	LowTasks.c	/^real ComputeMass() {$/;"	f
+ComputeMean	Compute_Mean.c	/^real ComputeMean(Field *F) {$/;"	f
+ComputePressureFieldAd	global.h	/^void (*ComputePressureFieldAd)();$/;"	v
+ComputePressureFieldAd_cpu	CompPresAd.c	/^void ComputePressureFieldAd_cpu () {$/;"	f
+ComputePressureFieldIso	global.h	/^void (*ComputePressureFieldIso)();$/;"	v
+ComputePressureFieldIso_cpu	CompPresIso.c	/^void ComputePressureFieldIso_cpu () {$/;"	f
+ComputePressureFieldPoly	global.h	/^void (*ComputePressureFieldPoly)();$/;"	v
+ComputePressureFieldPoly_cpu	CompPresPoly.c	/^void ComputePressureFieldPoly_cpu () {$/;"	f
+ComputeResidual	global.h	/^void (*ComputeResidual)(real);$/;"	v
+ComputeResidual_cpu	compute_residual.c	/^void ComputeResidual_cpu(real dt) {$/;"	f
+ComputeSlopes	global.h	/^void (*ComputeSlopes)(int,int,int,Field*,Field*);$/;"	v
+ComputeSlopes_cpu	compute_slopes.c	/^void ComputeSlopes_cpu(int idx, int idy, int idz, Field *f, Field *s) {$/;"	f
+ComputeStar	compute_star.c	/^void ComputeStar(real dt, int idx1, int idy1, int idz1,			 $/;"	f
+ComputeTotalDensity	global.h	/^void (*ComputeTotalDensity)();$/;"	v
+ComputeTotalDensity_cpu	totaldens.c	/^void ComputeTotalDensity_cpu () {$/;"	f
+ComputeVmed	compute_vmed.c	/^void ComputeVmed(Field *V) {$/;"	f
+Compute_Staggered_2D_fields	fargo_mhd.c	/^void Compute_Staggered_2D_fields (real dt)  {$/;"	f
+CondInit	condinit.c	/^void CondInit () {$/;"	f
+ContourComms	global.h	/^int     ContourComms = 0;$/;"	v
+Corotating	global.h	/^boolean Corotating = NO;$/;"	v
+CorrectVtheta	global.h	/^void (*CorrectVtheta)(real);$/;"	v
+CorrectVtheta_cpu	correct_vtheta.c	/^void CorrectVtheta_cpu(real domega) {$/;"	f
+CreateField	allocate.c	/^Field *CreateField(char *name, int type, boolean sx, boolean sy, boolean sz) {$/;"	f
+CreateField2D	allocate.c	/^Field2D *CreateField2D(char *name, int dim) {$/;"	f
+CreateFieldAlias	allocate.c	/^Field *CreateFieldAlias(char *name, Field *clone, int type) {$/;"	f
+CreateFieldInt2D	allocate.c	/^FieldInt2D *CreateFieldInt2D(char *name) {$/;"	f
+CreateFields	LowTasks.c	/^void CreateFields() {$/;"	f
+CreateFluid	allocate.c	/^Fluid *CreateFluid(char *name, int fluidtype) {$/;"	f
+Current	timeinfo.c	/^static clock_t  First, Preceeding, Current, FirstUser, CurrentUser, PreceedingUser;$/;"	v	file:
+CurrentUser	timeinfo.c	/^static clock_t  First, Preceeding, Current, FirstUser, CurrentUser, PreceedingUser;$/;"	v	file:
+CurrentWorkingDirectory	global.h	/^char    CurrentWorkingDirectory[1024];$/;"	v
+DENS	define.h	84;"	d
+DEP_PLANET	define.h	120;"	d
+DOWN	comm.c	4;"	d	file:
+DOWN	comm_device.c	4;"	d	file:
+DOWN	dh_boundary.c	5;"	d	file:
+DOWNLEFT	comm.c	8;"	d	file:
+DOWNLEFT	comm_device.c	8;"	d	file:
+DOWNRIGHT	comm.c	9;"	d	file:
+DOWNRIGHT	comm_device.c	9;"	d	file:
+DRAFT	define.h	600;"	d
+DUMP_PPVAR	define.h	628;"	d
+DUST	define.h	13;"	d
+Dat2vtk	global.h	/^boolean Dat2vtk = NO;$/;"	v
+DefaultOut	global.h	/^char    DefaultOut[1024];$/;"	v
+DensStar	global.h	/^Field *DensStar;$/;"	v
+Density	global.h	/^Field *Density;$/;"	v
+Density	structs.h	/^  struct field *Density;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Density0	global.h	/^Field2D *Density0;$/;"	v
+Density0	structs.h	/^  struct field2D *Density0;$/;"	m	struct:fluid	typeref:struct:fluid::field2D
+DerivMotionRK5	runge_kutta.c	/^void DerivMotionRK5(real *q_init, real *masses, \\$/;"	f
+DeviceFile	global.h	/^char    DeviceFile[1024];$/;"	v
+DeviceFileSpecified	global.h	/^boolean DeviceFileSpecified = NO;$/;"	v
+DeviceManualSelection	global.h	/^int     DeviceManualSelection = -1;$/;"	v
+DiskOnPrimaryAcceleration	global.h	/^Point DiskOnPrimaryAcceleration;$/;"	v
+Display	matplotlib.c	/^void Display() {$/;"	f
+Dist	runge_kutta.c	/^static real Dist[MAX1D];$/;"	v	file:
+DivRho	global.h	/^Field *DivRho;$/;"	v
+Divergence	global.h	/^Field *Divergence;$/;"	v
+DivideByRho	global.h	/^void (*DivideByRho)(Field*);$/;"	v
+DivideByRho_cpu	divrho.c	/^void DivideByRho_cpu(Field *Q) {$/;"	f
+DoMonitoring	monitor.c	/^void DoMonitoring (int idx, int r, char *dir) {$/;"	f
+Draft	fresh.c	/^void Draft (Field *field, int line, const char *string) {$/;"	f
+DumpAllFields	output.c	/^void DumpAllFields (int number) {$/;"	f
+DumpToFargo3drc	param.c	/^void DumpToFargo3drc (int argc, char *argv[]) {$/;"	f
+Dx	global.h	/^real Dx;$/;"	v
+Dx_d	global.h	/^real *Dx_d;$/;"	v
+E	structs.h	/^  real E; \/\/Additional useful anomalies$/;"	m	struct:orbital_elements
+EMFX	define.h	92;"	d
+EMFY	define.h	93;"	d
+EMFZ	define.h	94;"	d
+EMF_Upstream_Integrate	global.h	/^void (*EMF_Upstream_Integrate)(real);$/;"	v
+EMF_Upstream_Integrate_cpu	integrate_emf.c	/^void EMF_Upstream_Integrate_cpu (real dt) {$/;"	f
+END_COLOR	makefile	/^END_COLOR=\\033[0m$/;"	m
+ENERGY	define.h	88;"	d
+ENVRANK	makefile	/^ENVRANK  = ${ENVRANK_${FARGO_ARCH}}$/;"	m
+ENVRANK_KEPLERMVAPICH	makefile	/^ENVRANK_KEPLERMVAPICH = MV2_COMM_WORLD_LOCAL_RANK$/;"	m
+ENVRANK_KEPLEROPENMPI	makefile	/^ENVRANK_KEPLEROPENMPI = OMPI_COMM_WORLD_LOCAL_RANK$/;"	m
+ENVRANK_MENDIETA	makefile	/^ENVRANK_MENDIETA = MV2_COMM_WORLD_RANK$/;"	m
+ENVRANK_MacIntel	makefile	/^ENVRANK_MacIntel = OMPI_COMM_WORLD_RANK$/;"	m
+ENVRANK_TESLAMVAPICH	makefile	/^ENVRANK_TESLAMVAPICH = MV2_COMM_WORLD_LOCAL_RANK$/;"	m
+ENVRANK_TESLAOPENMPI	makefile	/^ENVRANK_TESLAOPENMPI = OMPI_COMM_WORLD_LOCAL_RANK$/;"	m
+EPS	fargo_ppa_steep.c	17;"	d	file:
+ETA1	fargo_ppa_steep.c	15;"	d	file:
+ETA2	fargo_ppa_steep.c	16;"	d	file:
+EXENAME	makefile	/^EXENAME  = ..\/fargo3d  #Name and location of the executable file$/;"	m
+EarlyDeviceSelection	select_device.c	/^void EarlyDeviceSelection () {$/;"	f
+EarlyOutputRename	global.h	/^boolean EarlyOutputRename = NO;$/;"	v
+Emfx	global.h	/^Field *Emfx; $/;"	v
+Emfy	global.h	/^Field *Emfy;$/;"	v
+Emfz	global.h	/^Field *Emfz;$/;"	v
+EmptyPlanetSystemFiles	output.c	/^void EmptyPlanetSystemFiles () {$/;"	f
+Energy	global.h	/^Field *Energy;$/;"	v
+Energy	structs.h	/^  struct field *Energy;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Energy0	global.h	/^Field2D *Energy0;$/;"	v
+Energy0	structs.h	/^  struct field2D *Energy0;$/;"	m	struct:fluid	typeref:struct:fluid::field2D
+Eta_profile_xi	global.h	/^Field2D *Eta_profile_xi;$/;"	v
+Eta_profile_xizi	global.h	/^Field2D *Eta_profile_xizi;$/;"	v
+Eta_profile_zi	global.h	/^Field2D *Eta_profile_zi;$/;"	v
+EverythingOnCPU	global.h	/^boolean EverythingOnCPU = NO;$/;"	v
+ExtractFromExecutable	summary.c	/^char *ExtractFromExecutable (boolean tostring, char *filename, int position) {$/;"	f
+FALSE	define.h	33;"	d
+FARGO_ARCH	makefile	/^FARGO_ARCH  = LINUX$/;"	m
+FARGO_DEBUG	define.h	545;"	d
+FARGO_DEBUG	makefile	/^	FARGO_DEBUG = 1$/;"	m
+FARGO_DISPLAY	makefile	/^FARGO_DISPLAY = NONE$/;"	m
+FARGO_GPU	makefile	/^	FARGO_GPU   = 0$/;"	m
+FARGO_GPU	makefile	/^	FARGO_GPU   = 1$/;"	m
+FARGO_OPT_FILE	makefile	/^	FARGO_OPT_FILE = ${SETUPSDIR}\/${SETUP}\/${SETUP}.opt$/;"	m
+FARGO_OPT_FILE	makefile	/^FARGO_OPT_FILE = ${SETUPSDIR}\/fargo\/fargo.opt$/;"	m
+FARGO_SAFE	define.h	492;"	d
+FARGO_SPEEDUP	define.h	559;"	d
+FLUX_Y	define.h	127;"	d
+FLUX_Z	define.h	129;"	d
+FORMAT	monitor.c	2;"	d	file:
+FREQUENCY	define.h	45;"	d
+FREQUENCY	define.h	582;"	d
+FeelDisk	structs.h	/^  boolean *FeelDisk;		\/**< For each planet tells if it feels the disk (ie migrates) *\/$/;"	m	struct:planetary_system
+FeelOthers	structs.h	/^  boolean *FeelOthers;		\/**< For each planet tells if it feels$/;"	m	struct:planetary_system
+Field	types_def.h	/^typedef struct field Field;$/;"	t	typeref:struct:field
+Field2D	types_def.h	/^typedef struct field2D Field2D;$/;"	t	typeref:struct:field2D
+FieldInt2D	types_def.h	/^typedef struct fieldint2D FieldInt2D;$/;"	t	typeref:struct:fieldint2D
+FillGhosts	algogas.c	/^void FillGhosts (int var) {$/;"	f
+Fill_GhostsX	global.h	/^void (*Fill_GhostsX)();$/;"	v
+Fill_GhostsX_cpu	fill_ghostsx.c	/^void Fill_GhostsX_cpu () {$/;"	f
+Fill_Resistivity_Profiles	algogas.c	/^void Fill_Resistivity_Profiles () {$/;"	f
+FindNumberOfPlanets	psys.c	/^int FindNumberOfPlanets(char *filename) {$/;"	f
+FindOrbitalElements	planets.c	/^void FindOrbitalElements (v,m,n)$/;"	f
+First	timeinfo.c	/^static clock_t  First, Preceeding, Current, FirstUser, CurrentUser, PreceedingUser;$/;"	v	file:
+FirstCommand	global.h	/^char    FirstCommand[1024];$/;"	v
+FirstUser	timeinfo.c	/^static clock_t  First, Preceeding, Current, FirstUser, CurrentUser, PreceedingUser;$/;"	v	file:
+Floor	global.h	/^void (*Floor)();$/;"	v
+Floor_cpu	floor.c	/^void Floor_cpu() {$/;"	f
+Fluid	types_def.h	/^typedef struct fluid Fluid;$/;"	t	typeref:struct:fluid
+FluidIndex	global.h	/^int FluidIndex;$/;"	v
+Fluids	global.h	/^Fluid *Fluids[NFLUIDS];$/;"	v
+Fluidtype	global.h	/^int Fluidtype;$/;"	v
+Fluidtype	structs.h	/^  int Fluidtype;$/;"	m	struct:fluid
+Force	types_def.h	/^typedef struct force Force;$/;"	t	typeref:struct:force
+ForwardOneStep	global.h	/^boolean ForwardOneStep = NO;$/;"	v
+FreePlanetary	psys.c	/^void FreePlanetary () {$/;"	f
+Fscan	global.h	/^int Fscan;$/;"	v
+FullArrayComms	global.h	/^int     FullArrayComms = 0;$/;"	v
+G	fondam.h	33;"	d
+G	fondam.h	42;"	d
+G	fondam.h	51;"	d
+GAS	define.h	12;"	d
+GET	define.h	43;"	d
+GET	define.h	580;"	d
+GHOSTINC	define.h	113;"	d
+GIT_VERSION	makefile	/^GIT_VERSION := $(shell git describe --abbrev=8 --dirty --always --tags 2>\/dev\/null)$/;"	m
+GLOBAL	makefile	/^GLOBAL   = ${MAKEFILE} ${SCRIPTSDIR}\/c2cuda.py ${FARGO_OPT_FILE}$/;"	m
+GPU_OBJ	makefile	/^GPU_OBJ  =  reduction_sum_device.o reduction_min_device.o	\\$/;"	m
+GPU_OBJBLOCKS	makefile	/^GPU_OBJBLOCKS =  CompPresIso_gpu.o CompPresAd_gpu.o 		\\$/;"	m
+GREEN	makefile	/^GREEN=\\033[1;32m$/;"	m
+G_CGS	fondam.h	26;"	d
+G_MKS	fondam.h	20;"	d
+G_SF	fondam.h	14;"	d
+GetHostsList	summary.c	/^void GetHostsList () {$/;"	f
+GetPsysInfo	psys.c	/^real GetPsysInfo (boolean action) {$/;"	f
+GetfromPlanetFile	output.c	/^real GetfromPlanetFile (TimeStep, column, n)$/;"	f
+GiveSpecificTime	timeinfo.c	/^real GiveSpecificTime (process_name)$/;"	f
+GiveStats	compfields.c	/^void GiveStats (char *name, real *f1, real *f2, int size) {$/;"	f
+GiveTimeInfo	timeinfo.c	/^void GiveTimeInfo (number)$/;"	f
+GpuCommunicator	comm_device.c	/^typedef struct gpucommunicator GpuCommunicator;$/;"	t	typeref:struct:gpucommunicator	file:
+GradDDotGrad	differencing.c	/^real GradDDotGrad(real* P,real* rho, real CS, int i, int j, int k, int pitch, int stride){$/;"	f
+Grid	types_def.h	/^typedef struct grid Grid;$/;"	t	typeref:struct:grid
+Gridd	global.h	/^Grid Gridd;$/;"	v
+GuidingCenter	global.h	/^boolean GuidingCenter = NO;$/;"	v
+H_X	define.h	466;"	d
+H_X	define.h	471;"	d
+H_X	define.h	476;"	d
+H_Y	define.h	467;"	d
+H_Y	define.h	472;"	d
+H_Y	define.h	477;"	d
+H_Z	define.h	468;"	d
+H_Z	define.h	473;"	d
+H_Z	define.h	478;"	d
+HashParam	types_def.h	/^typedef struct hashparam HashParam;$/;"	t	typeref:struct:hashparam
+HostsList	global.h	/^char    *HostsList;$/;"	v
+INCLUDE	makefile	/^INCLUDE  = ${INC_${FARGO_ARCH}} ${CUDAINC_${FARGO_ARCH}} \\$/;"	m
+INC_KEPLERMVAPICH	makefile	/^INC_KEPLERMVAPICH     = $/;"	m
+INC_KEPLEROPENMPI	makefile	/^INC_KEPLEROPENMPI     = $/;"	m
+INC_LINUX	makefile	/^INC_LINUX     = $/;"	m
+INC_MENDIETA	makefile	/^INC_MENDIETA     = $/;"	m
+INC_MacIntel	makefile	/^INC_MacIntel     = $/;"	m
+INC_QUADRO	makefile	/^INC_QUADRO     = $/;"	m
+INC_TESLAMVAPICH	makefile	/^INC_TESLAMVAPICH     = $/;"	m
+INC_TESLAOPENMPI	makefile	/^INC_TESLAOPENMPI     = $/;"	m
+INDEP_PLANET	define.h	119;"	d
+INIT_REDUCTION	define.h	173;"	d
+INPUT	define.h	585;"	d
+INPUT	define.h	592;"	d
+INPUT2D	define.h	587;"	d
+INPUT2D	define.h	594;"	d
+INPUT2DINT	define.h	589;"	d
+INPUT2DINT	define.h	596;"	d
+INSIDE	dh_boundary.c	7;"	d	file:
+INSPECT_INT	define.h	616;"	d
+INSPECT_REAL	define.h	611;"	d
+INSPECT_REAL	define.h	613;"	d
+INT	define.h	23;"	d
+IRRELEVANT	define.h	38;"	d
+Id_Var	param.c	/^int Id_Var = 0;$/;"	v
+Index	monitor.c	/^int Index(int v) {$/;"	f
+IndirectTerm	global.h	/^Point IndirectTerm;$/;"	v
+InitFunctionMonitoring	monitor.c	/^void InitFunctionMonitoring (int bittype, void (*f)(), char *name,\\$/;"	f
+InitMonitoring	monitor.c	/^void InitMonitoring() {$/;"	f
+InitMonitoring3D	monitor.c	/^void InitMonitoring3D (int bitchoice) {$/;"	f
+InitPlanetarySystem	psys.c	/^PlanetarySystem *InitPlanetarySystem (char *filename) {$/;"	f
+InitSpace	LowTasks.c	/^void InitSpace() {$/;"	f
+InitSpecificTime	timeinfo.c	/^void InitSpecificTime (process_name, title)$/;"	f
+InitSurfaces	LowTasks.c	/^void InitSurfaces() {$/;"	f
+Inner	dh_boundary.c	/^static struct cudaMemcpy3DParms Inner[4] = {0,0,0,0};$/;"	v	typeref:struct:cudaMemcpy3DParms	file:
+InnerBorder	global.h	/^real InnerBorder;$/;"	v
+InnerOutputCounter	main.c	/^int   InnerOutputCounter=0, StillWriteOneOutput;$/;"	v
+Input	define.h	15;"	d
+Input2DInt_CPU	fresh.c	/^void Input2DInt_CPU(FieldInt2D *field, int line, const char *string){$/;"	f
+Input2DInt_GPU	fresh.c	/^void Input2DInt_GPU(FieldInt2D *field, int line, const char *string){$/;"	f
+Input2D_CPU	fresh.c	/^void Input2D_CPU(Field2D *field, int line, const char *string){$/;"	f
+Input2D_GPU	fresh.c	/^void Input2D_GPU(Field2D *field, int line, const char *string){$/;"	f
+InputFile	global.h	/^char    *InputFile;$/;"	v
+Input_CPU	fresh.c	/^void Input_CPU(Field *field, int line, const char *string){$/;"	f
+Input_Contour_Inside	dh_boundary.c	/^void Input_Contour_Inside (Field *f, int side) { \/\/ Active zones go from D to H$/;"	f
+Input_GPU	fresh.c	/^void Input_GPU(Field *field, int line, const char *string){$/;"	f
+InvDiffXmed	define.h	232;"	d
+InvDiffXmed	global.h	/^real *InvDiffXmed;$/;"	v
+InvDiffYmed	define.h	233;"	d
+InvDiffYmed	global.h	/^real *InvDiffYmed;$/;"	v
+InvDiffZmed	define.h	234;"	d
+InvDiffZmed	global.h	/^real *InvDiffZmed;$/;"	v
+InvVj	define.h	242;"	d
+InvVj	global.h	/^real *InvVj;$/;"	v
+InvVj_d	global.h	/^real *InvVj_d;$/;"	v
+InvVol	define.h	239;"	d
+InvVol	define.h	251;"	d
+J	global.h	/^int J;$/;"	v
+J	structs.h	/^  int J;  \/\/|--> Global index in X$/;"	m	struct:grid
+K	global.h	/^int K;$/;"	v
+K	structs.h	/^  int K;  \/\/| --> Global index in Y$/;"	m	struct:grid
+LEFT	comm.c	2;"	d	file:
+LEFT	comm_device.c	2;"	d	file:
+LEFT	dh_boundary.c	3;"	d	file:
+LIBS	makefile	/^LIBS     = ${LIBS_${FARGO_ARCH}}$/;"	m
+LIBS_KEPLERMVAPICH	makefile	/^LIBS_KEPLERMVAPICH    = -lm$/;"	m
+LIBS_KEPLEROPENMPI	makefile	/^LIBS_KEPLEROPENMPI    = -lm$/;"	m
+LIBS_LINUX	makefile	/^LIBS_LINUX    = -lm$/;"	m
+LIBS_MENDIETA	makefile	/^LIBS_MENDIETA    = -lm$/;"	m
+LIBS_MacIntel	makefile	/^LIBS_MacIntel    = $/;"	m
+LIBS_QUADRO	makefile	/^LIBS_QUADRO    = -lm$/;"	m
+LIBS_TESLAMVAPICH	makefile	/^LIBS_TESLAMVAPICH    = -lm$/;"	m
+LIBS_TESLAOPENMPI	makefile	/^LIBS_TESLAOPENMPI    = -lm$/;"	m
+LIGHT_GRAY	makefile	/^LIGHT_GRAY=\\033[0;37m$/;"	m
+LINKER	makefile	/^	LINKER = ${COMPILER}$/;"	m
+Lap	differencing.c	/^real Lap(real* FF, int i, int j, int k, int pitch, int stride){$/;"	f
+LapPPA	global.h	/^Field *LapPPA;$/;"	v
+LightGlobalDev	light_global_dev.c	/^void LightGlobalDev(){$/;"	f
+ListOfGrids	global.h	/^Field *ListOfGrids = NULL;$/;"	v
+ListPlanets	psys.c	/^void ListPlanets () {$/;"	f
+ListStart	comm.c	/^static Communicator *ListStart = NULL;$/;"	v	file:
+ListStart	comm_device.c	/^static GpuCommunicator *ListStart = NULL;$/;"	v	file:
+ListVariables	param.c	/^void ListVariables (char *filename) {$/;"	f
+ListVariablesIDL	param.c	/^void ListVariablesIDL (char *filename)$/;"	f
+LogGrid	global.h	/^boolean LogGrid = NO;$/;"	v
+LorentzForce	lorentz_force.c	/^void LorentzForce(real dt, Field *Bs1, Field *Bs2, int idx, int idy, int idz) {$/;"	f
+M	structs.h	/^  real M;$/;"	m	struct:orbital_elements
+MAGBETA	define.h	125;"	d
+MAINOBJ	makefile	/^MAINOBJ  = LowTasks.o psys.o main.o param.o var.o usage.o   	    \\$/;"	m
+MAKEFILE	makefile	/^MAKEFILE= makefile$/;"	m
+MARK	define.h	44;"	d
+MARK	define.h	581;"	d
+MASS	define.h	124;"	d
+MAX	define.h	147;"	d
+MAX	define.h	150;"	d
+MAX1D	define.h	6;"	d
+MAXLINELENGTH	define.h	3;"	d
+MAXNAMELENGTH	define.h	4;"	d
+MAXPRIME	define.h	7;"	d
+MAXSTART	define.h	158;"	d
+MAXVARIABLES	define.h	2;"	d
+MAXWELL	define.h	135;"	d
+MAX_FIELDS	define.h	8;"	d
+MAX_FIELDS_PER_COMM	comm.c	11;"	d	file:
+MAX_FIELDS_PER_COMM	comm_device.c	11;"	d	file:
+MAX_MONITOR	monitor.c	3;"	d	file:
+MAX_STRING	monitor.c	4;"	d	file:
+MERGE	define.h	142;"	d
+MHD_fargo	fargo_mhd.c	/^void MHD_fargo (real dt) {$/;"	f
+MIN	define.h	146;"	d
+MIN	define.h	149;"	d
+MINSTART	define.h	157;"	d
+MOM_X	define.h	130;"	d
+MOM_Y	define.h	131;"	d
+MOM_Z	define.h	132;"	d
+MONITOR2D	define.h	106;"	d
+MONITORSCALAR	define.h	105;"	d
+MONITORY	define.h	107;"	d
+MONITORY_RAW	define.h	108;"	d
+MONITORZ	define.h	109;"	d
+MONITORZ_RAW	define.h	110;"	d
+MPIDUMMY	makefile	/^MPIDUMMY = mpi_dummy.o #dummy file, for sequential runs.$/;"	m
+MPI_Allreduce	mpi_dummy.c	/^void MPI_Allreduce (void *ptr, void *ptr2, int count, int type, int foo3, int foo4) {$/;"	f
+MPI_Barrier	mpi_dummy.c	/^void MPI_Barrier(){}$/;"	f
+MPI_Bcast	mpi_dummy.c	/^void MPI_Bcast(){}$/;"	f
+MPI_CHAR	mpi_dummy.h	5;"	d
+MPI_COMM_WORLD	mpi_dummy.h	1;"	d
+MPI_Comm	mpi_dummy.h	/^typedef int MPI_Comm;$/;"	t
+MPI_Comm_rank	mpi_dummy.c	/^void MPI_Comm_rank (int a, int *b) {*b = 0;} \/* Only one process, with rank zero... *\/$/;"	f
+MPI_Comm_size	mpi_dummy.c	/^void MPI_Comm_size (int a, int *b) {*b = 1;} \/* Only one process in the world communicator... *\/$/;"	f
+MPI_Comm_split	mpi_dummy.c	/^void MPI_Comm_split(){}$/;"	f
+MPI_DOUBLE	mpi_dummy.h	3;"	d
+MPI_FLOAT	mpi_dummy.h	4;"	d
+MPI_Finalize	mpi_dummy.c	/^void MPI_Finalize(){}$/;"	f
+MPI_Gather	mpi_dummy.c	/^void MPI_Gather (void *s, int n, int type, void *r, int m, int type2, int root, int foo) {$/;"	f
+MPI_INT	mpi_dummy.h	7;"	d
+MPI_IN_PLACE	mpi_dummy.h	2;"	d
+MPI_Init	mpi_dummy.c	/^void MPI_Init (int *argc, char **argv[]) {$/;"	f
+MPI_Irecv	mpi_dummy.c	/^void MPI_Irecv(){}$/;"	f
+MPI_Isend	mpi_dummy.c	/^void MPI_Isend(){}$/;"	f
+MPI_LONG	mpi_dummy.h	6;"	d
+MPI_MAX	mpi_dummy.h	9;"	d
+MPI_MIN	mpi_dummy.h	8;"	d
+MPI_Offset	mpi_dummy.h	/^typedef long MPI_Offset;$/;"	t
+MPI_Recv	mpi_dummy.c	/^void MPI_Recv(){}$/;"	f
+MPI_Reduce	mpi_dummy.c	/^void MPI_Reduce (void *ptr, void *ptr2, int count, int type, int foo3, int foo4, int foo5) {$/;"	f
+MPI_Request	mpi_dummy.h	/^typedef int MPI_Request;$/;"	t
+MPI_STATUS_IGNORE	mpi_dummy.h	12;"	d
+MPI_SUM	mpi_dummy.h	10;"	d
+MPI_Scan	mpi_dummy.c	/^void MPI_Scan(){} \/\/In place scans require no special action$/;"	f
+MPI_Send	mpi_dummy.c	/^void MPI_Send(){}$/;"	f
+MPI_Status	mpi_dummy.h	/^typedef int MPI_Status;$/;"	t
+MPI_Wait	mpi_dummy.c	/^void MPI_Wait(){}$/;"	f
+MSTAR	fondam.h	34;"	d
+MSTAR	fondam.h	43;"	d
+MSTAR	fondam.h	52;"	d
+MSTAR_CGS	fondam.h	27;"	d
+MSTAR_MKS	fondam.h	21;"	d
+MSTAR_SF	fondam.h	15;"	d
+MU0	fondam.h	37;"	d
+MU0	fondam.h	46;"	d
+MU0	fondam.h	55;"	d
+MU0_CGS	fondam.h	30;"	d
+MU0_MKS	fondam.h	24;"	d
+MU0_SF	fondam.h	18;"	d
+MULTIFLUID	define.h	629;"	d
+MakeCommunicator	comm.c	/^void MakeCommunicator (int src, int dest, int direction,			\\$/;"	f
+MakeCommunicatorGPU	comm_device.c	/^void MakeCommunicatorGPU (int src, int dest, int direction,			\\$/;"	f
+MakeDir	LowTasks.c	/^void MakeDir (char *string) {$/;"	f
+Merge	global.h	/^boolean Merge = YES;$/;"	v
+Merge_All	global.h	/^boolean Merge_All = NO;$/;"	v
+Min	global.h	/^real Min[NFLUIDS];$/;"	v
+Mmx	global.h	/^Field *Mmx;$/;"	v
+Mmy	global.h	/^Field *Mmy;$/;"	v
+Mmz	global.h	/^Field *Mmz;$/;"	v
+MonCounter	monitor.c	/^static int MonCounter=0;$/;"	v	file:
+MonitorFunction	monitor.c	/^void MonitorFunction (int idx, int r, char *CurrentFineGrainDir, int plnb) {$/;"	f
+MonitorGlobal	monitor.c	/^void MonitorGlobal (int bitchoice) {$/;"	f
+MonitorIntegral	global.h	/^boolean MonitorIntegral;$/;"	v
+MplanetVirtual	global.h	/^real MplanetVirtual;$/;"	v
+Mpx	global.h	/^Field *Mpx;$/;"	v
+Mpy	global.h	/^Field *Mpy;$/;"	v
+Mpz	global.h	/^Field *Mpz;$/;"	v
+NGHX	define.h	51;"	d
+NGHX	define.h	53;"	d
+NGHX	define.h	66;"	d
+NGHY	define.h	58;"	d
+NGHY	define.h	69;"	d
+NGHZ	define.h	62;"	d
+NGHZ	define.h	72;"	d
+NJ	structs.h	/^  int NJ; \/\/ --> Size of array of processors, in Y (same for everyone)$/;"	m	struct:grid
+NK	structs.h	/^  int NK; \/\/ --> Size of array of processors, in Z (same for everyone)$/;"	m	struct:grid
+NO	define.h	37;"	d
+NOGHOSTINC	define.h	112;"	d
+NVCC	makefile	/^NVCC     = ${NVCC_${FARGO_ARCH}}$/;"	m
+NVCC_KEPLERMVAPICH	makefile	/^NVCC_KEPLERMVAPICH    = nvcc$/;"	m
+NVCC_KEPLEROPENMPI	makefile	/^NVCC_KEPLEROPENMPI    = nvcc$/;"	m
+NVCC_LINUX	makefile	/^NVCC_LINUX    = nvcc$/;"	m
+NVCC_MENDIETA	makefile	/^NVCC_MENDIETA    = nvcc$/;"	m
+NVCC_MacIntel	makefile	/^NVCC_MacIntel    = ${CUDA}\/bin\/nvcc$/;"	m
+NVCC_QUADRO	makefile	/^NVCC_QUADRO    = ${CUDA}\/bin\/nvcc -arch=sm_20$/;"	m
+NVCC_TESLAMVAPICH	makefile	/^NVCC_TESLAMVAPICH    = nvcc$/;"	m
+NVCC_TESLAOPENMPI	makefile	/^NVCC_TESLAOPENMPI    = nvcc$/;"	m
+NbCom	comm.c	/^static int NbCom=0;$/;"	v	file:
+NbCom	comm_device.c	/^static int NbCom=0;$/;"	v	file:
+NbRestart	main.c	/^int   begin_i = 0, NbRestart = 0;$/;"	v
+Ncpu_x	global.h	/^int Ncpu_x; \/\/ Numbers of cpus in x-axis;$/;"	v
+Ncpu_y	global.h	/^int Ncpu_y; \/\/ Idem in y-axis;$/;"	v
+NeverReset	structs.h	/^  boolean NeverReset;$/;"	m	struct:zmeanprop
+NewOutputdir	global.h	/^char    NewOutputdir[1024];$/;"	v
+NewVelocity_x	global.h	/^void (*NewVelocity_x)();$/;"	v
+NewVelocity_x_cpu	newvel_x.c	/^void NewVelocity_x_cpu () {$/;"	f
+NewVelocity_y	global.h	/^void (*NewVelocity_y)();$/;"	v
+NewVelocity_y_cpu	newvel_y.c	/^void NewVelocity_y_cpu () {$/;"	f
+NewVelocity_z	global.h	/^void (*NewVelocity_z)();$/;"	v
+NewVelocity_z_cpu	newvel_z.c	/^void NewVelocity_z_cpu () {$/;"	f
+Nj	dh_boundary.c	/^static int Nj[4][2];$/;"	v	file:
+Nk	dh_boundary.c	/^static int Nk[4][2];$/;"	v	file:
+Nshift	global.h	/^FieldInt2D *Nshift;$/;"	v
+Nx	global.h	/^int Nx;$/;"	v
+Nxhy	global.h	/^FieldInt2D *Nxhy;$/;"	v
+Nxhz	global.h	/^FieldInt2D *Nxhz;$/;"	v
+Ny	global.h	/^int Ny;$/;"	v
+Nz	global.h	/^int Nz;$/;"	v
+OBJECTS	makefile	/^OBJECTS = ${MAINOBJ}$/;"	m
+OMEGAFRAME0	global.h	/^real OMEGAFRAME0;$/;"	v
+OPTIONS	makefile	/^OPTIONS = -g$/;"	m
+OUTPUT	define.h	586;"	d
+OUTPUT	define.h	593;"	d
+OUTPUT2D	define.h	588;"	d
+OUTPUT2D	define.h	595;"	d
+OUTPUT2DINT	define.h	590;"	d
+OUTPUT2DINT	define.h	597;"	d
+OUTSIDE	dh_boundary.c	8;"	d	file:
+OnDst	comm_device.c	/^  struct cudaMemcpy3DParms OnDst;$/;"	m	struct:gpucommunicator	typeref:struct:gpucommunicator::cudaMemcpy3DParms	file:
+OnSrc	comm_device.c	/^  struct cudaMemcpy3DParms OnSrc;$/;"	m	struct:gpucommunicator	typeref:struct:gpucommunicator::cudaMemcpy3DParms	file:
+OnlyInit	global.h	/^boolean OnlyInit = NO;$/;"	v
+OptionError	redefoptions.c	/^void OptionError () {$/;"	f
+OrbitalElements	types_def.h	/^typedef struct orbital_elements OrbitalElements;$/;"	t	typeref:struct:orbital_elements
+Outer	dh_boundary.c	/^static struct cudaMemcpy3DParms Outer[4] = {0,0,0,0};$/;"	v	typeref:struct:cudaMemcpy3DParms	file:
+OuterBorder	global.h	/^real OuterBorder;$/;"	v
+Output	define.h	16;"	d
+Output2DInt_CPU	fresh.c	/^void Output2DInt_CPU(FieldInt2D *field, int line, const char *string){$/;"	f
+Output2DInt_GPU	fresh.c	/^void Output2DInt_GPU(FieldInt2D *field, int line, const char *string){$/;"	f
+Output2D_CPU	fresh.c	/^void Output2D_CPU(Field2D *field, int line, const char *string){$/;"	f
+Output2D_GPU	fresh.c	/^void Output2D_GPU(Field2D *field, int line, const char *string){$/;"	f
+Output_CPU	fresh.c	/^void Output_CPU(Field *field, int line, const char *string){$/;"	f
+Output_Contour_Outside	dh_boundary.c	/^void Output_Contour_Outside (Field *f, int side) { \/\/ Ghost zones go from H to D$/;"	f
+Output_GPU	fresh.c	/^void Output_GPU(Field *field, int line, const char *string){$/;"	f
+PARACC	makefile	/^PARACC   = ${PARACC_${FARGO_ARCH}}$/;"	m
+PARACC_KEPLERMVAPICH	makefile	/^PARACC_KEPLERMVAPICH  = mpicc$/;"	m
+PARACC_KEPLEROPENMPI	makefile	/^PARACC_KEPLEROPENMPI  = mpicc$/;"	m
+PARACC_LINUX	makefile	/^PARACC_LINUX  = mpicc$/;"	m
+PARACC_MENDIETA	makefile	/^PARACC_MENDIETA  = mpicc$/;"	m
+PARACC_MacIntel	makefile	/^PARACC_MacIntel  = mpicc$/;"	m
+PARACC_QUADRO	makefile	/^PARACC_QUADRO  = mpicc$/;"	m
+PARACC_TESLAMVAPICH	makefile	/^PARACC_TESLAMVAPICH  = mpicc$/;"	m
+PARACC_TESLAOPENMPI	makefile	/^PARACC_TESLAOPENMPI  = mpicc$/;"	m
+PARAINC	makefile	/^PARAINC  = ${PARAINC_${FARGO_ARCH}}$/;"	m
+PARAINC_KEPLERMVAPICH	makefile	/^PARAINC_KEPLERMVAPICH = $/;"	m
+PARAINC_KEPLEROPENMPI	makefile	/^PARAINC_KEPLEROPENMPI = $/;"	m
+PARAINC_LINUX	makefile	/^PARAINC_LINUX = $/;"	m
+PARAINC_MENDIETA	makefile	/^PARAINC_MENDIETA = $/;"	m
+PARAINC_MacIntel	makefile	/^PARAINC_MacIntel = $/;"	m
+PARAINC_QUADRO	makefile	/^PARAINC_QUADRO = -I\/usr\/include\/openmpi-x86_64\/$/;"	m
+PARAINC_TESLAMVAPICH	makefile	/^PARAINC_TESLAMVAPICH = $/;"	m
+PARAINC_TESLAOPENMPI	makefile	/^PARAINC_TESLAOPENMPI = $/;"	m
+PARALIB	makefile	/^PARALIB  = ${PARALIB_${FARGO_ARCH}}$/;"	m
+PARALIB_KEPLERMVAPICH	makefile	/^PARALIB_KEPLERMVAPICH = $/;"	m
+PARALIB_KEPLEROPENMPI	makefile	/^PARALIB_KEPLEROPENMPI =$/;"	m
+PARALIB_LINUX	makefile	/^PARALIB_LINUX =$/;"	m
+PARALIB_MENDIETA	makefile	/^PARALIB_MENDIETA = -lmpich -lOpenCL$/;"	m
+PARALIB_MacIntel	makefile	/^PARALIB_MacIntel = $/;"	m
+PARALIB_QUADRO	makefile	/^PARALIB_QUADRO = -L\/usr\/lib64\/openmpi\/lib\/$/;"	m
+PARALIB_TESLAMVAPICH	makefile	/^PARALIB_TESLAMVAPICH = -lmpich -lOpenCL$/;"	m
+PARALIB_TESLAOPENMPI	makefile	/^PARALIB_TESLAOPENMPI =$/;"	m
+PARAOPT	makefile	/^PARAOPT  = ${PARAOPT_${FARGO_ARCH}}$/;"	m
+PARAOPT_KEPLERMVAPICH	makefile	/^PARAOPT_KEPLERMVAPICH = ${SEQOPT_KEPLERMVAPICH}$/;"	m
+PARAOPT_KEPLEROPENMPI	makefile	/^PARAOPT_KEPLEROPENMPI = ${SEQOPT_KEPLEROPENMPI}$/;"	m
+PARAOPT_LINUX	makefile	/^PARAOPT_LINUX = ${SEQOPT_LINUX}$/;"	m
+PARAOPT_MENDIETA	makefile	/^PARAOPT_MENDIETA = ${SEQOPT_MENDIETA}$/;"	m
+PARAOPT_MacIntel	makefile	/^PARAOPT_MacIntel = ${SEQOPT_MacIntel}$/;"	m
+PARAOPT_QUADRO	makefile	/^PARAOPT_QUADRO = ${SEQOPT_QUADRO}$/;"	m
+PARAOPT_TESLAMVAPICH	makefile	/^PARAOPT_TESLAMVAPICH = ${SEQOPT_TESLAMVAPICH}$/;"	m
+PARAOPT_TESLAOPENMPI	makefile	/^PARAOPT_TESLAOPENMPI = ${SEQOPT_TESLAOPENMPI}$/;"	m
+PARFILE	makefile	/^	PARFILE = ${SETUPSDIR}\/${SETUP}\/${SETUP}.par$/;"	m
+PURPLE	makefile	/^PURPLE=\\033[1;35m$/;"	m
+PYTHON_INCLUDE	makefile	/^PYTHON_INCLUDE = \/usr\/include\/python2.7$/;"	m
+ParallelIO	output.c	/^MPI_Offset ParallelIO(Field *field, int n, int mode, MPI_Offset file_offset, int writeoffset) {$/;"	f
+Param	types_def.h	/^typedef struct param Param;$/;"	t	typeref:struct:param
+ParameterFile	global.h	/^char    ParameterFile[1024];$/;"	v
+ParseRedefinedOptions	redefoptions.c	/^void ParseRedefinedOptions (char *CommandLineRedefinedOptions) $/;"	f
+Perihelion_Phi	structs.h	/^  real Perihelion_Phi;$/;"	m	struct:orbital_elements
+PhysicalTime	global.h	/^real    PhysicalTime = 0;$/;"	v
+PhysicalTimeInitial	global.h	/^real    PhysicalTimeInitial;$/;"	v
+Pitch2D	global.h	/^int Pitch2D;$/;"	v
+Pitch_Int_gpu	global.h	/^int Pitch_Int_gpu;$/;"	v
+Pitch_cpu	global.h	/^int Pitch_cpu;$/;"	v
+Pitch_gpu	global.h	/^int Pitch_gpu;$/;"	v
+PlanetMasses	runge_kutta.c	/^static real q0[MAX1D], q1[MAX1D], PlanetMasses[MAX1D];$/;"	v	file:
+PlanetaryFile	global.h	/^char    *PlanetaryFile;$/;"	v
+PlanetarySystem	types_def.h	/^typedef struct planetary_system PlanetarySystem;$/;"	t	typeref:struct:planetary_system
+Point	types_def.h	/^typedef struct point Point;$/;"	t	typeref:struct:point
+PostRestart	global.h	/^boolean PostRestart = NO;$/;"	v
+PostRestartHook	postrestarthook.c	/^void PostRestartHook () {$/;"	f
+Pot	global.h	/^Field *Pot;$/;"	v
+Potential	global.h	/^void (*Potential)();$/;"	v
+Potential_cpu	potential.c	/^void Potential_cpu() {$/;"	f
+Preceeding	timeinfo.c	/^static clock_t  First, Preceeding, Current, FirstUser, CurrentUser, PreceedingUser;$/;"	v	file:
+PreceedingUser	timeinfo.c	/^static clock_t  First, Preceeding, Current, FirstUser, CurrentUser, PreceedingUser;$/;"	v	file:
+Prepare_DH_buffers	dh_boundary.c	/^void Prepare_DH_buffers () {$/;"	f
+Pressure	global.h	/^Field *Pressure;$/;"	v
+PreviousDate	structs.h	/^  real PreviousDate;$/;"	m	struct:zmeanprop
+PrimitiveVariables	LowTasks.c	/^int PrimitiveVariables () {$/;"	f
+PrintUsage	usage.c	/^void PrintUsage (char *execname)$/;"	f
+QL	global.h	/^Field *QL;$/;"	v
+QR	global.h	/^Field *QR;$/;"	v
+Qs	global.h	/^Field *Qs;$/;"	v
+R0	fondam.h	35;"	d
+R0	fondam.h	44;"	d
+R0	fondam.h	53;"	d
+R0_CGS	fondam.h	28;"	d
+R0_MKS	fondam.h	22;"	d
+R0_SF	fondam.h	16;"	d
+REAL	define.h	24;"	d
+RED	makefile	/^RED=\\033[1;31m$/;"	m
+REDEFINED	define.h	39;"	d
+RESET_REDUCTION	define.h	172;"	d
+REYNOLDS	define.h	134;"	d
+RIGHT	comm.c	3;"	d	file:
+RIGHT	comm_device.c	3;"	d	file:
+RIGHT	dh_boundary.c	4;"	d	file:
+RK2_cooling_cpu	cooling.c	/^void RK2_cooling_cpu(real dt){$/;"	f
+RK2_cpu	integrate.c	/^void RK2_cpu(real dt){$/;"	f
+R_MU	fondam.h	36;"	d
+R_MU	fondam.h	45;"	d
+R_MU	fondam.h	54;"	d
+R_MU_CGS	fondam.h	29;"	d
+R_MU_MKS	fondam.h	23;"	d
+R_MU_SF	fondam.h	17;"	d
+Read2D	output2d.c	/^boolean Read2D (Field2D *f, char *filename, char *dir, int kind) {$/;"	f
+ReadDefaultOut	defout.c	/^void ReadDefaultOut () {$/;"	f
+ReadRedefined	param.c	/^void ReadRedefined () {$/;"	f
+ReadVarFile	param.c	/^void ReadVarFile(char *filename) {$/;"	f
+RedefineOptions	global.h	/^boolean RedefineOptions = NO;$/;"	v
+Reduction2D	global.h	/^Field2D *Reduction2D;$/;"	v
+ResetBuffers	comm.c	/^void ResetBuffers() {$/;"	f
+ResetBuffersGPU	comm_device.c	/^void ResetBuffersGPU() {$/;"	f
+ResetDate	structs.h	/^  real ResetDate;$/;"	m	struct:zmeanprop
+Reset_field	global.h	/^void (*Reset_field)(Field*);$/;"	v
+Reset_field_cpu	resetfield.c	/^void Reset_field_cpu (Field *f) {$/;"	f
+Resist	resist.c	/^void Resist (int idx, int idy, int idz) {$/;"	f
+Resistivity	resistivity.c	/^real Resistivity (real y, real z) {$/;"	f
+Resistivity_Profiles_Filled	global.h	/^boolean Resistivity_Profiles_Filled = NO;$/;"	v
+Restart	global.h	/^boolean Restart = NO;$/;"	v
+RestartDat	LowTasks.c	/^void RestartDat(Field *field, int n) {$/;"	f
+RestartPlanetarySystem	output.c	/^void RestartPlanetarySystem (timestep, sys)$/;"	f
+RestartSimulation	LowTasks.c	/^int RestartSimulation(int n) {$/;"	f
+RestartStretch	stretch.c	/^void RestartStretch (Field *field, int n) {$/;"	f
+RestartVTK	LowTasks.c	/^void RestartVTK(Field *f, int n) {$/;"	f
+Restart_Full	global.h	/^boolean Restart_Full = NO;$/;"	v
+RestoreState	LowTasks.c	/^void RestoreState () {$/;"	f
+RotatePsys	psys.c	/^void RotatePsys (real angle) {$/;"	f
+RungeKutta	runge_kutta.c	/^void RungeKutta(real *q0, real dt, real *masses, real *q1,$/;"	f
+SB_nint	ShearingPeriodicBC.c	/^static int  SB_nint[2];$/;"	v	file:
+SB_resi	ShearingPeriodicBC.c	/^static real SB_resi[2];$/;"	v	file:
+SB_slide	ShearingPeriodicBC.c	/^void SB_slide (Field *F) {$/;"	f
+SCRIPTSDIR	makefile	/^SCRIPTSDIR=..\/scripts$/;"	m
+SEQOPT	makefile	/^SEQOPT   = ${SEQOPT_${FARGO_ARCH}}$/;"	m
+SEQOPT_KEPLERMVAPICH	makefile	/^SEQOPT_KEPLERMVAPICH  = -O3 -ffast-math$/;"	m
+SEQOPT_KEPLEROPENMPI	makefile	/^SEQOPT_KEPLEROPENMPI  = -O3 -ffast-math$/;"	m
+SEQOPT_LINUX	makefile	/^SEQOPT_LINUX  = -O3$/;"	m
+SEQOPT_MENDIETA	makefile	/^SEQOPT_MENDIETA  = -O3 -ffast-math$/;"	m
+SEQOPT_MacIntel	makefile	/^SEQOPT_MacIntel  = -O3 -arch x86_64 -Wmissing-prototypes #-Wall -Wextra$/;"	m
+SEQOPT_QUADRO	makefile	/^SEQOPT_QUADRO  = -O3 #-ffast-math $/;"	m
+SEQOPT_TESLAMVAPICH	makefile	/^SEQOPT_TESLAMVAPICH  = -O3 -ffast-math$/;"	m
+SEQOPT_TESLAOPENMPI	makefile	/^SEQOPT_TESLAOPENMPI  = -O3 -ffast-math$/;"	m
+SETUPSDIR	makefile	/^SETUPSDIR=..\/setups$/;"	m
+SHORTARCH	makefile	/^SHORTARCH := $(shell echo $(ARCHDIR) | sed -e 's|..\/||')$/;"	m
+SMALLTIME	define.h	637;"	d
+SMALLVEL	define.h	636;"	d
+SPECIFIC	define.h	29;"	d
+SRCDIR	makefile	/^SRCDIR=..\/src$/;"	m
+STDDIR	makefile	/^STDDIR=..\/std$/;"	m
+STEFANK	fondam.h	60;"	d
+STRING	define.h	25;"	d
+SUM	define.h	156;"	d
+SUMSTART	define.h	159;"	d
+SV2OE	planets.c	/^OrbitalElements SV2OE (StateVector v, real m) {$/;"	f
+SaveState	LowTasks.c	/^void SaveState () {$/;"	f
+SaveStateSecondary	LowTasks.c	/^void SaveStateSecondary () {$/;"	f
+SelectArchFileName	summary.c	/^void SelectArchFileName () {$/;"	f
+SelectDevice	select_device.c	/^void SelectDevice(int myrank){$/;"	f
+SelectFluid	LowTasks.c	/^void SelectFluid(int n) {$/;"	f
+SelectWriteMethod	output.c	/^void SelectWriteMethod() {$/;"	f
+SetupHook1	global.h	/^void (*SetupHook1)();$/;"	v
+SetupHook1_cpu	setuphook1.c	/^void SetupHook1_cpu() {  \/\/ Empty function. May be used as a template for custom function in setup directory.$/;"	f
+ShearBC	ShearingPeriodicBC.c	/^void ShearBC (int var) {$/;"	f
+ShearingPeriodicCondition	ShearingPeriodicBC.c	/^void ShearingPeriodicCondition () {$/;"	f
+SlideIntShearingBoundary	ShearingPeriodicBC.c	/^void SlideIntShearingBoundary (Field *F) {$/;"	f
+SlideResShearingBoundary	ShearingPeriodicBC.c	/^void SlideResShearingBoundary (Field *Q) {$/;"	f
+SlideVel	ShearingPeriodicBC.c	/^static real SlideVel;$/;"	v	file:
+Slope	global.h	/^Field *Slope;$/;"	v
+Slope_b1	global.h	/^Field *Slope_b1;$/;"	v
+Slope_b2	global.h	/^Field *Slope_b2;$/;"	v
+Slope_v1	global.h	/^Field *Slope_v1;$/;"	v
+Slope_v2	global.h	/^Field *Slope_v2;$/;"	v
+SolveOrbits	planets.c	/^void SolveOrbits (sys)$/;"	f
+Sources	algogas.c	/^void Sources(real dt) {$/;"	f
+StartAddress_CPU	dh_boundary.c	/^static int StartAddress_CPU[4][2];$/;"	v	file:
+StartAddress_GPU	dh_boundary.c	/^static int StartAddress_GPU[4][2];$/;"	v	file:
+StateVector	types_def.h	/^typedef struct state_vector StateVector;$/;"	t	typeref:struct:state_vector
+StepTime	global.h	/^real StepTime;$/;"	v
+StickyOptions	global.h	/^char    StickyOptions[1024];$/;"	v
+StillWriteOneOutput	main.c	/^int   InnerOutputCounter=0, StillWriteOneOutput;$/;"	v
+Stockholm	global.h	/^boolean Stockholm = NO;$/;"	v
+StockholmBoundary	global.h	/^void (*StockholmBoundary)(real);$/;"	v
+StockholmBoundary_cpu	stockholm.c	/^void StockholmBoundary_cpu(real dt) {$/;"	f
+StoreFileToChar	summary.c	/^void StoreFileToChar (char **string, char *filename) {$/;"	f
+StretchNumber	global.h	/^int     StretchNumber = 0;$/;"	v
+StretchOldOutput	global.h	/^boolean StretchOldOutput = NO;$/;"	v
+StretchOutput	stretch.c	/^void StretchOutput (int n) {$/;"	f
+Stride	global.h	/^int Stride;$/;"	v
+Stride_cpu	global.h	/^int Stride_cpu;$/;"	v
+Stride_gpu	global.h	/^int Stride_gpu;$/;"	v
+Stride_j_CPU	dh_boundary.c	/^static int Stride_j_CPU;$/;"	v	file:
+Stride_j_GPU	dh_boundary.c	/^static int Stride_j_GPU;$/;"	v	file:
+Stride_k_CPU	dh_boundary.c	/^static int Stride_k_CPU;$/;"	v	file:
+Stride_k_GPU	dh_boundary.c	/^static int Stride_k_GPU;$/;"	v	file:
+SubStep1_x	global.h	/^void (*SubStep1_x)(real);$/;"	v
+SubStep1_x_cpu	substep1_x.c	/^void SubStep1_x_cpu (real dt) {$/;"	f
+SubStep1_y	global.h	/^void (*SubStep1_y)(real);$/;"	v
+SubStep1_y_cpu	substep1_y.c	/^void SubStep1_y_cpu (real dt) {$/;"	f
+SubStep1_z	global.h	/^void (*SubStep1_z)(real);$/;"	v
+SubStep1_z_cpu	substep1_z.c	/^void SubStep1_z_cpu (real dt) {$/;"	f
+SubStep2_a	global.h	/^void (*SubStep2_a)(real);$/;"	v
+SubStep2_a_cpu	substep2_a.c	/^void SubStep2_a_cpu (real dt) {$/;"	f
+SubStep2_b	global.h	/^void (*SubStep2_b)(real);$/;"	v
+SubStep2_b_cpu	substep2_b.c	/^void SubStep2_b_cpu (real dt) {$/;"	f
+SubStep3	global.h	/^void (*SubStep3)(real);$/;"	v
+SubStep3_cpu	substep3.c	/^void SubStep3_cpu (real dt) {$/;"	f
+SubsDef	defout.c	/^void SubsDef (target, def)$/;"	f
+Summary	summary.c	/^void Summary (int nout) {$/;"	f
+SurfX	define.h	245;"	d
+SurfX	define.h	256;"	d
+SurfY	define.h	246;"	d
+SurfY	define.h	257;"	d
+SurfZ	define.h	247;"	d
+SurfZ	define.h	258;"	d
+Swap	LowTasks.c	/^inline real Swap(real f) {$/;"	f
+Sxj	define.h	360;"	d
+Sxj	global.h	/^real *Sxj;$/;"	v
+Sxj_d	global.h	/^real *Sxj_d;$/;"	v
+Sxk	define.h	361;"	d
+Sxk	global.h	/^real *Sxk;$/;"	v
+Sxk_d	global.h	/^real *Sxk_d;$/;"	v
+Syj	define.h	362;"	d
+Syj	global.h	/^real *Syj;$/;"	v
+Syj_d	global.h	/^real *Syj_d;$/;"	v
+Syk	define.h	363;"	d
+Syk	global.h	/^real *Syk;$/;"	v
+Syk_d	global.h	/^real *Syk_d;$/;"	v
+SynchronizeHD	fresh.c	/^void SynchronizeHD () {$/;"	f
+Sys	global.h	/^PlanetarySystem *Sys;$/;"	v
+Szj	define.h	364;"	d
+Szj	global.h	/^real *Szj;$/;"	v
+Szj_d	global.h	/^real *Szj_d;$/;"	v
+Szk	define.h	365;"	d
+Szk	global.h	/^real *Szk;$/;"	v
+Szk_d	global.h	/^real *Szk_d;$/;"	v
+TCMB	fondam.h	66;"	d
+THRESHOLD_STELLAR_MASS	fondam.h	70;"	d
+TIMETICKS	timeinfo.c	6;"	d	file:
+TIMETICKS	timeinfo.c	8;"	d	file:
+TORQ	define.h	133;"	d
+TOTAL	define.h	115;"	d
+TRUE	define.h	32;"	d
+ThereArePlanets	global.h	/^boolean ThereArePlanets = NO;$/;"	v
+ThereIsACentralBinary	global.h	/^boolean ThereIsACentralBinary = NO;$/;"	v
+Ticks	timeinfo.c	/^static long     Ticks;$/;"	v	file:
+TimeInfo	global.h	/^boolean TimeInfo = NO;$/;"	v
+TimeProcess	types_def.h	/^typedef struct timeprocess TimeProcess;$/;"	t	typeref:struct:timeprocess
+TimeStep	global.h	/^int     TimeStep = 0;$/;"	v
+Timestepcount	global.h	/^int Timestepcount = 0;$/;"	v
+Total_Density	global.h	/^Field *Total_Density;$/;"	v
+TranslatePlanetRK5	runge_kutta.c	/^void TranslatePlanetRK5(real *qold, real c1, real c2, real c3,$/;"	f
+Transport	algogas.c	/^void Transport(real dt) {$/;"	f
+TransportX	transport.c	/^void TransportX(Field *Q, Field *Qs, Field *Vx_t, real dt) { $/;"	f
+TransportY	transport.c	/^void TransportY(Field *Q, Field *Qs, real dt) {$/;"	f
+TransportZ	transport.c	/^void TransportZ(Field *Q, Field *Qs, real dt) {$/;"	f
+UP	comm.c	5;"	d	file:
+UP	comm_device.c	5;"	d	file:
+UP	dh_boundary.c	6;"	d	file:
+UPLEFT	comm.c	7;"	d	file:
+UPLEFT	comm_device.c	7;"	d	file:
+UPRIGHT	comm.c	6;"	d	file:
+UPRIGHT	comm_device.c	6;"	d	file:
+UpdateDensityX	global.h	/^void (*UpdateDensityX)(real,Field*,Field*);$/;"	v
+UpdateDensityX_cpu	update_density_x.c	/^void UpdateDensityX_cpu(real dt, Field *Q, Field *Vx_t) {$/;"	f
+UpdateDensityY	global.h	/^void (*UpdateDensityY)(real,Field*);$/;"	v
+UpdateDensityY_cpu	update_density_y.c	/^void UpdateDensityY_cpu(real dt, Field *Q) {$/;"	f
+UpdateDensityZ	global.h	/^void (*UpdateDensityZ)(real,Field*);$/;"	v
+UpdateDensityZ_cpu	update_density_z.c	/^void UpdateDensityZ_cpu(real dt, Field *Q) {$/;"	f
+UpdateMagneticField	update_magnetic.c	/^void UpdateMagneticField(real dt,int idx, int idy, int idz) { $/;"	f
+UpdateX	global.h	/^void (*UpdateX)(real,Field*,Field*,Field*);$/;"	v
+UpdateX_cpu	update_x.c	/^void UpdateX_cpu(real dt, Field *Q, Field *Qs, Field *Vx_t) {$/;"	f
+UpdateY	global.h	/^void (*UpdateY)(real,Field*,Field*);$/;"	v
+UpdateY_cpu	update_y.c	/^void UpdateY_cpu(real dt, Field *Q, Field *Qs) {$/;"	f
+UpdateZ	global.h	/^void (*UpdateZ)(real,Field*,Field*);$/;"	v
+UpdateZ_cpu	update_z.c	/^void UpdateZ_cpu(real dt, Field *Q, Field *Qs) {$/;"	f
+V1_star	global.h	/^Field *V1_star;$/;"	v
+V2VTEMP	define.h	140;"	d
+V2_star	global.h	/^Field *V2_star;$/;"	v
+VARFILE	makefile	/^	VARFILE = ${SETUPSDIR}\/${SETUP}\/${SETUP}.var$/;"	m
+VARFILE	makefile	/^VARFILE = ${SETUPSDIR}\/fargo\/fargo.var$/;"	m
+VPATH	makefile	/^VPATH=${SETUPSDIR}\/${SETUP}:${STDDIR}:${SCRIPTSDIR}:${SRCDIR}$/;"	m
+VTEMP2V	define.h	139;"	d
+VX	define.h	86;"	d
+VXTEMP	define.h	95;"	d
+VXplanet	global.h	/^real VXplanet;$/;"	v
+VY	define.h	85;"	d
+VYTEMP	define.h	96;"	d
+VYplanet	global.h	/^real VYplanet;$/;"	v
+VZ	define.h	87;"	d
+VZTEMP	define.h	97;"	d
+VZplanet	global.h	/^real VZplanet;$/;"	v
+VanLeerX	transport.c	/^void VanLeerX(Field *Density, Field *DensStar, Field *Vx_t, real dt) {$/;"	f
+VanLeerX_PPA	vanleerx_ppa.c	/^void VanLeerX_PPA(Field *Q, Field *Qs, Field *Vx_t, real dt) {$/;"	f
+VanLeerX_PPA_2D	vanleerx_ppa.c	/^void VanLeerX_PPA_2D(Field *Q, Field *Qs, Field2D *Vx_t, real dt) {$/;"	f
+VanLeerX_PPA_a	global.h	/^void (*VanLeerX_PPA_a)(Field*);$/;"	v
+VanLeerX_PPA_a_cpu	fargo_ppa_a.c	/^void VanLeerX_PPA_a_cpu(Field *Q){$/;"	f
+VanLeerX_PPA_b	global.h	/^void (*VanLeerX_PPA_b)(Field*);$/;"	v
+VanLeerX_PPA_b_cpu	fargo_ppa_b.c	/^void VanLeerX_PPA_b_cpu(Field *Q){$/;"	f
+VanLeerX_PPA_c	global.h	/^void (*VanLeerX_PPA_c)(Field*);$/;"	v
+VanLeerX_PPA_c_cpu	fargo_ppa_c.c	/^void VanLeerX_PPA_c_cpu(Field *Q){$/;"	f
+VanLeerX_PPA_d	global.h	/^void (*VanLeerX_PPA_d)(real,Field*,Field*,Field*);$/;"	v
+VanLeerX_PPA_d_2d	global.h	/^void (*VanLeerX_PPA_d_2d)(real,Field*,Field*,Field2D*);$/;"	v
+VanLeerX_PPA_d_2d_cpu	fargo_ppa_d_2d.c	/^void VanLeerX_PPA_d_2d_cpu(real dt, Field *Q, Field *Qs, Field2D *Vx_t){$/;"	f
+VanLeerX_PPA_d_cpu	fargo_ppa_d.c	/^void VanLeerX_PPA_d_cpu(real dt, Field *Q, Field *Qs, Field *Vx_t){$/;"	f
+VanLeerX_PPA_steep	global.h	/^void (*VanLeerX_PPA_steep)(Field*);$/;"	v
+VanLeerX_PPA_steep_cpu	fargo_ppa_steep.c	/^void VanLeerX_PPA_steep_cpu(Field *Q){$/;"	f
+VanLeerX_a	global.h	/^void (*VanLeerX_a)(Field*);$/;"	v
+VanLeerX_a_cpu	vanleer_x_a.c	/^void VanLeerX_a_cpu(Field *Q){$/;"	f
+VanLeerX_b	global.h	/^void (*VanLeerX_b)(real,Field*,Field*,Field*);$/;"	v
+VanLeerX_b_cpu	vanleer_x_b.c	/^void VanLeerX_b_cpu(real dt, Field *Q, Field *Qs, Field *Vx_t){$/;"	f
+VanLeerY_a	global.h	/^void (*VanLeerY_a)(Field*);$/;"	v
+VanLeerY_a_cpu	vanleer_y_a.c	/^void VanLeerY_a_cpu(Field *Q){$/;"	f
+VanLeerY_b	global.h	/^void (*VanLeerY_b)(real,Field*,Field*);$/;"	v
+VanLeerY_b_cpu	vanleer_y_b.c	/^void VanLeerY_b_cpu(real dt, Field *Q, Field *Qs){$/;"	f
+VanLeerZ_a	global.h	/^void (*VanLeerZ_a)(Field*);$/;"	v
+VanLeerZ_a_cpu	vanleer_z_a.c	/^void VanLeerZ_a_cpu(Field *Q){$/;"	f
+VanLeerZ_b	global.h	/^void (*VanLeerZ_b)(real,Field*,Field*);$/;"	v
+VanLeerZ_b_cpu	vanleer_z_b.c	/^void VanLeerZ_b_cpu(real dt, Field *Q, Field *Qs){$/;"	f
+Var_Set	param.c	/^Param Var_Set[MAXVARIABLES];$/;"	v
+VersionString	global.h	/^char    VersionString[1024];$/;"	v
+Vol	define.h	240;"	d
+Vol	define.h	252;"	d
+Vtk2dat	global.h	/^boolean Vtk2dat = NO;$/;"	v
+VtkPosition	global.h	/^long VtkPosition = 0; $/;"	v
+Vx	global.h	/^Field *Vx;$/;"	v
+Vx	structs.h	/^  struct field *Vx;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Vx0	global.h	/^Field2D *Vx0;$/;"	v
+Vx0	structs.h	/^  struct field2D *Vx0;$/;"	m	struct:fluid	typeref:struct:fluid::field2D
+VxIsResidual	global.h	/^boolean VxIsResidual = NO;$/;"	v
+VxMed	global.h	/^Field2D *VxMed;$/;"	v
+VxMed	structs.h	/^  struct field2D *VxMed;$/;"	m	struct:fluid	typeref:struct:fluid::field2D
+Vx_half	global.h	/^Field *Vx_half;$/;"	v
+Vx_half	structs.h	/^  struct field *Vx_half;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Vx_temp	global.h	/^Field *Vx_temp;$/;"	v
+Vx_temp	structs.h	/^  struct field *Vx_temp;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Vxhy	global.h	/^Field2D *Vxhy;$/;"	v
+Vxhyr	global.h	/^Field2D *Vxhyr;$/;"	v
+Vxhz	global.h	/^Field2D *Vxhz;$/;"	v
+Vxhzr	global.h	/^Field2D *Vxhzr;$/;"	v
+Vy	global.h	/^Field *Vy;$/;"	v
+Vy	structs.h	/^  struct field *Vy;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Vy0	global.h	/^Field2D *Vy0;$/;"	v
+Vy0	structs.h	/^  struct field2D *Vy0;$/;"	m	struct:fluid	typeref:struct:fluid::field2D
+Vy_half	global.h	/^Field *Vy_half;$/;"	v
+Vy_half	structs.h	/^  struct field *Vy_half;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Vy_temp	global.h	/^Field *Vy_temp;$/;"	v
+Vy_temp	structs.h	/^  struct field *Vy_temp;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Vz	global.h	/^Field *Vz;$/;"	v
+Vz	structs.h	/^  struct field *Vz;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Vz0	global.h	/^Field2D *Vz0;$/;"	v
+Vz0	structs.h	/^  struct field2D *Vz0;$/;"	m	struct:fluid	typeref:struct:fluid::field2D
+Vz_half	global.h	/^Field *Vz_half;$/;"	v
+Vz_half	structs.h	/^  struct field *Vz_half;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Vz_temp	global.h	/^Field *Vz_temp;$/;"	v
+Vz_temp	structs.h	/^  struct field *Vz_temp;$/;"	m	struct:fluid	typeref:struct:fluid::field
+WALLCLOCK	timeinfo.c	3;"	d	file:
+WIDESCREEN	define.h	5;"	d
+WhereIsField	fresh.c	/^void WhereIsField(Field *field) {$/;"	f
+WhereIsFieldInt2D	fresh.c	/^void WhereIsFieldInt2D(FieldInt2D *field) {$/;"	f
+WhereIsWho	fresh.c	/^void WhereIsWho () {$/;"	f
+WhoOwns	fresh.c	/^void WhoOwns (Field *field) {$/;"	f
+Write1DFile	monitor.c	/^void Write1DFile (char *filename, real *x, real *y, int n) {$/;"	f
+Write2D	output2d.c	/^void Write2D (Field2D *f, char *filename, char *dir, int kind) {$/;"	f
+WriteBinFile	output.c	/^void WriteBinFile(int n1, int n2, int n3,	\\$/;"	f
+WriteDim	output.c	/^void WriteDim () {$/;"	f
+WriteField	output.c	/^void WriteField(Field *f, int n) {$/;"	f
+WriteField2D	output.c	/^void WriteField2D(Field2D *f, int n) {$/;"	f
+WriteFieldGhost	output.c	/^void WriteFieldGhost(Field *f, int n) { \/\/ Diagnostic function$/;"	f
+WriteFieldInt2D	output.c	/^void WriteFieldInt2D(FieldInt2D *f, int n) {$/;"	f
+WriteMerging	output.c	/^void WriteMerging(Field *f, int n) {$/;"	f
+WriteOutputs	output.c	/^void WriteOutputs(int type) {$/;"	f
+WritePlanetFile	output.c	/^void WritePlanetFile (int TimeStep, int n, boolean big) {$/;"	f
+WritePlanetSystemFile	output.c	/^void WritePlanetSystemFile (int t, boolean big) {$/;"	f
+WriteTorqueAndWork	output.c	/^void WriteTorqueAndWork(int TimeStep, int n) {$/;"	f
+WriteVTK	output_vtk.c	/^void WriteVTK(Field *f, int n) {$/;"	f
+WriteVTKMerging	output_vtk_merging.c	/^void WriteVTKMerging(Field *f, int n) {$/;"	f
+Write_offset	output.c	/^void Write_offset(int file_offset, char* fieldname, char* fluidname){$/;"	f
+XAxisRotationAngle	global.h	/^real    XAxisRotationAngle = 0.0;$/;"	v
+XC	define.h	178;"	d
+XC	define.h	183;"	d
+XC	define.h	188;"	d
+XIM	define.h	77;"	d
+XIM	define.h	80;"	d
+XIP	define.h	76;"	d
+XIP	define.h	79;"	d
+XY	define.h	18;"	d
+XYSIM	matplotlib.c	6;"	d	file:
+XZSIM	matplotlib.c	5;"	d	file:
+X_advection	transport.c	/^void X_advection (Field *Vx_t, real dt) {$/;"	f
+Xmed	define.h	225;"	d
+Xmed	global.h	/^real *Xmed;$/;"	v
+Xmin	define.h	222;"	d
+Xmin	global.h	/^real *Xmin;$/;"	v
+Xmin_d	global.h	/^real *Xmin_d;$/;"	v
+Xplanet	global.h	/^real Xplanet;$/;"	v
+Y0	global.h	/^int Y0;$/;"	v
+Y1	global.h	/^Field *Y1;$/;"	v
+Y1	structs.h	/^	struct field *Y1;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Y1_COMM	define.h	98;"	d
+Y2	global.h	/^Field *Y2;$/;"	v
+Y2	structs.h	/^	struct field *Y2;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Y2_COMM	define.h	99;"	d
+Y3	global.h	/^Field *Y3;$/;"	v
+Y3	structs.h	/^	struct field *Y3;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Y3_COMM	define.h	100;"	d
+Y4	global.h	/^Field *Y4;$/;"	v
+Y4	structs.h	/^	struct field *Y4;$/;"	m	struct:fluid	typeref:struct:fluid::field
+Y4_COMM	define.h	101;"	d
+Y5	global.h	/^Field *Y5;$/;"	v
+YC	define.h	179;"	d
+YC	define.h	184;"	d
+YC	define.h	189;"	d
+YES	define.h	36;"	d
+YZ	define.h	19;"	d
+YZSIM	matplotlib.c	4;"	d	file:
+Ymed	define.h	226;"	d
+Ymed	global.h	/^real *Ymed;$/;"	v
+Ymin	define.h	223;"	d
+Ymin	global.h	/^real *Ymin;$/;"	v
+Ymin_d	global.h	/^real *Ymin_d;$/;"	v
+Yplanet	global.h	/^real Yplanet;$/;"	v
+Z0	global.h	/^int Z0;$/;"	v
+ZC	define.h	180;"	d
+ZC	define.h	185;"	d
+ZC	define.h	190;"	d
+ZX	define.h	20;"	d
+ZmeanProp	types_def.h	/^typedef struct zmeanprop ZmeanProp;$/;"	t	typeref:struct:zmeanprop
+Zmed	define.h	227;"	d
+Zmed	global.h	/^real *Zmed;$/;"	v
+Zmin	define.h	224;"	d
+Zmin	global.h	/^real *Zmin;$/;"	v
+Zmin_d	global.h	/^real *Zmin_d;$/;"	v
+Zplanet	global.h	/^real Zplanet;$/;"	v
+_ComputeEmf	global.h	/^void (*_ComputeEmf)(real,int,int,int,int,int,int,Field*,Field*,Field*,Field*,Field*,Field*,Field*,Field*,Field*);$/;"	v
+_ComputeEmf_cpu	compute_emf.c	/^void _ComputeEmf_cpu(real dt, int idx1, int idy1, int idz1, int idx2, int idy2, int idz2, Field *Bs1, Field *Vs1, Field *Bs2, Field *Vs2, Field* B1, Field*B2, Field* V1, Field* V2, Field* Emf) {$/;"	f
+_ComputeForce	global.h	/^void (*_ComputeForce)(real,real,real,real,real);$/;"	v
+_ComputeForce_cpu	compute_force.c	/^void _ComputeForce_cpu(real x, real y, real z, real rsmoothing, real mass) {$/;"	f
+_ComputeStar	global.h	/^void (*_ComputeStar)(real,int,int,int,int,int,int,int,int,int,Field*,Field*,Field*,Field*,Field*,Field*,Field*,Field*,Field*,Field*);$/;"	v
+_ComputeStar_cpu	compute_star.c	/^void _ComputeStar_cpu(real dt, int idx1, int idy1, int idz1, int idx2, int idy2, int idz2, int index, int stride1, int stride2, Field* B1, Field* B2, Field* V1, Field* V2, Field* Bs, Field* Vs, Field* Slope_b, Field* Slope_v, Field* Slope_bvl, Field* Slope_vvl) {$/;"	f
+_LorentzForce	global.h	/^void (*_LorentzForce)(real,int,int,int,int,int,int,int,int,int,int,int,Field*,Field*,Field*,Field*,Field*);$/;"	v
+_LorentzForce_cpu	lorentz_force.c	/^void _LorentzForce_cpu(real dt, int idx, int idy, int idz, int idx1, int idy1, int idz1, int idx2, int idy2, int idz2, int stride1, int stride2, Field* B1, Field* B2,Field*V, Field *Bs1,Field *Bs2) {$/;"	f
+_Resist	global.h	/^void (*_Resist)(int,int,int,int,int,int,int,int,int,Field*,Field*,Field*,Field2D*);$/;"	v
+_Resist_cpu	resist.c	/^void _Resist_cpu (int idx, int idy, int idz, int idx1, int idy1, int idz1, int idx2, int idy2, int idz2, Field *B1, Field *B2, Field *Emf, Field2D *Eta) {$/;"	f
+_UpdateMagneticField	global.h	/^void (*_UpdateMagneticField)(real,int,int,int,int,int,int,int,int,int,Field*,Field*,Field*);$/;"	v
+_UpdateMagneticField_cpu	update_magnetic.c	/^void _UpdateMagneticField_cpu(real dt,int idx,int idy,int idz,int idx1,int idy1,int idz1, int idx2,int idy2,int idz2, Field* B,Field* Emf1,Field* Emf2) {$/;"	f
+__Restart	global.h	/^void (*__Restart)(Field*,int);$/;"	v
+__VanLeerX	transport.c	/^static void (*__VanLeerX) (Field *, Field *, Field *, real);$/;"	v	file:
+__WriteField	global.h	/^void (*__WriteField)();$/;"	v
+_collisions	global.h	/^void (*_collisions)(real,int,int,int,int);$/;"	v
+_collisions_cpu	collisions.c	/^void _collisions_cpu(real dt, int id1, int id2, int id3, int option) {$/;"	f
+_init_stockholm	init_stockholm.c	/^void _init_stockholm() {$/;"	f
+a	structs.h	/^  real a;$/;"	m	struct:orbital_elements
+acc	structs.h	/^  real *acc;			\/**< The planets' accretion times^-1 *\/$/;"	m	struct:planetary_system
+addviscosity_cart	global.h	/^void (*addviscosity_cart)(real);$/;"	v
+addviscosity_cart_cpu	addviscosity_cart.c	/^void addviscosity_cart_cpu(real dt) {$/;"	f
+addviscosity_cyl	global.h	/^void (*addviscosity_cyl)(real);$/;"	v
+addviscosity_cyl_cpu	addviscosity_cyl.c	/^void addviscosity_cyl_cpu(real dt) {$/;"	f
+addviscosity_sph	global.h	/^void (*addviscosity_sph)(real);$/;"	v
+addviscosity_sph_cpu	addviscosity_sph.c	/^void addviscosity_sph_cpu(real dt) {$/;"	f
+aj	functions.c	/^real aj(int J){$/;"	f
+alpha	define.h	203;"	d
+alpha	define.h	229;"	d
+an	structs.h	/^  real an;$/;"	m	struct:orbital_elements
+backup	structs.h	/^  int *backup;$/;"	m	struct:fieldint2D
+backup	structs.h	/^  real *backup; \/\/ used for creation of check points in debugging CPU vs GPU$/;"	m	struct:field
+backup	structs.h	/^  real *backup; \/\/ used for creation of check points in debugging CPU vs GPU$/;"	m	struct:field2D
+bc_down	structs.h	/^  int bc_down;$/;"	m	struct:grid
+bc_left	structs.h	/^  int bc_left;$/;"	m	struct:grid
+bc_right	structs.h	/^  int bc_right;$/;"	m	struct:grid
+bc_up	structs.h	/^  int bc_up;$/;"	m	struct:grid
+begin_i	main.c	/^int   begin_i = 0, NbRestart = 0;$/;"	v
+bj	functions.c	/^real bj(int J){$/;"	f
+boolean	types_def.h	/^typedef char boolean;$/;"	t
+boolvalue	structs.h	/^  long boolvalue;$/;"	m	struct:hashparam
+boundaries	boundary.c	/^void boundaries() {$/;"	f
+boundary_ymax	global.h	/^void (*boundary_ymax[NFLUIDS])();$/;"	v
+boundary_ymin	global.h	/^void (*boundary_ymin[NFLUIDS])();$/;"	v
+boundary_zmax	global.h	/^void (*boundary_zmax[NFLUIDS])();$/;"	v
+boundary_zmin	global.h	/^void (*boundary_zmin[NFLUIDS])();$/;"	v
+buffer	comm.c	/^  real *buffer; 		\/* Will be allocated according to size *\/$/;"	m	struct:communicator	file:
+buffer	comm_device.c	/^  struct cudaPitchedPtr buffer;    \/* Will be allocated according to$/;"	m	struct:gpucommunicator	typeref:struct:gpucommunicator::cudaPitchedPtr	file:
+buffer	structs.h	/^  real *buffer;$/;"	m	struct:buffer
+buffer	structs.h	/^struct buffer {$/;"	s
+buffer2d	comm_device.c	/^  void *buffer2d;$/;"	m	struct:gpucommunicator	file:
+buildprime	split.c	/^void buildprime(int *prime) {$/;"	f
+calcDmax_cpu	calc_dmax.c	/^real calcDmax_cpu(){$/;"	f
+cfl	global.h	/^void (*cfl)(void);$/;"	v
+cfl_b	cfl_b.c	/^void cfl_b(){$/;"	f
+cfl_cpu	cfl.c	/^void cfl_cpu() {$/;"	f
+check_simtype	matplotlib.c	/^int check_simtype() {$/;"	f
+clicks	structs.h	/^  clock_t clicks;$/;"	m	struct:timeprocess
+comm	global.h	/^void (*comm)();$/;"	v
+comm_cpu	comm.c	/^void comm_cpu (int options) {$/;"	f
+comm_gpu	comm_device.c	/^void comm_gpu (int options) {$/;"	f
+communicator	comm.c	/^struct communicator {$/;"	s	file:
+compute_potential	potential.c	/^void compute_potential(real dt) {$/;"	f
+cooling_cpu	cooling.c	/^void cooling_cpu(real dt){$/;"	f
+copy_velocities	global.h	/^void (*copy_velocities)(int);$/;"	v
+copy_velocities_cpu	cpvel.c	/^void copy_velocities_cpu(int option) {$/;"	f
+copy_velocities_gpu	cpvel.c	/^void copy_velocities_gpu(int option) {$/;"	f
+cos	define.h	621;"	d
+cpu_pp	structs.h	/^  struct cudaPitchedPtr cpu_pp;$/;"	m	struct:field	typeref:struct:field::cudaPitchedPtr
+current_simulation_time	algogas.c	/^double current_simulation_time=0.0;$/;"	v
+current_simulation_time	global.h	/^double current_simulation_time;$/;"	v
+direction	comm.c	/^  int direction;$/;"	m	struct:communicator	file:
+direction	comm_device.c	/^  int direction;$/;"	m	struct:gpucommunicator	file:
+dq	differencing.c	/^real dq(real fp, real f, real fm, real hi, real hm){$/;"	f
+dq2	differencing.c	/^real dq2(real fp, real f, real fm, real hi, real hm){$/;"	f
+dst	comm.c	/^  int dst;$/;"	m	struct:communicator	file:
+dst	comm_device.c	/^  int dst;$/;"	m	struct:gpucommunicator	file:
+dt	main.c	/^real dt;$/;"	v
+dtemp	main.c	/^real dtemp = 0.0;$/;"	v
+dummy_end	summary.c	/^char dummy_end='\\0';$/;"	v
+dwbytes	comm_device.c	/^  int dwbytes;$/;"	m	struct:gpucommunicator	file:
+dx	differencing.c	/^real dx(real ip, real im, real h){$/;"	f
+dxx	differencing.c	/^real dxx(real ip, real i, real im, real h){$/;"	f
+dz	comm_device.c	/^  int dz;$/;"	m	struct:gpucommunicator	file:
+e	structs.h	/^  real e;$/;"	m	struct:orbital_elements
+edge_size_x	define.h	306;"	d
+edge_size_x	define.h	314;"	d
+edge_size_x	define.h	322;"	d
+edge_size_x	define.h	332;"	d
+edge_size_x	define.h	340;"	d
+edge_size_x	define.h	348;"	d
+edge_size_x_middley_lowz	define.h	308;"	d
+edge_size_x_middley_lowz	define.h	316;"	d
+edge_size_x_middley_lowz	define.h	324;"	d
+edge_size_x_middley_lowz	define.h	334;"	d
+edge_size_x_middley_lowz	define.h	342;"	d
+edge_size_x_middley_lowz	define.h	350;"	d
+edge_size_x_middlez_lowy	define.h	307;"	d
+edge_size_x_middlez_lowy	define.h	315;"	d
+edge_size_x_middlez_lowy	define.h	323;"	d
+edge_size_x_middlez_lowy	define.h	333;"	d
+edge_size_x_middlez_lowy	define.h	341;"	d
+edge_size_x_middlez_lowy	define.h	349;"	d
+edge_size_y	define.h	309;"	d
+edge_size_y	define.h	317;"	d
+edge_size_y	define.h	325;"	d
+edge_size_y	define.h	335;"	d
+edge_size_y	define.h	343;"	d
+edge_size_y	define.h	351;"	d
+edge_size_z	define.h	310;"	d
+edge_size_z	define.h	318;"	d
+edge_size_z	define.h	326;"	d
+edge_size_z	define.h	336;"	d
+edge_size_z	define.h	344;"	d
+edge_size_z	define.h	352;"	d
+ex	prototypes.h	2;"	d
+ex	prototypes.h	4;"	d
+fargostat	global.h	/^MPI_Status fargostat;$/;"	v
+field	structs.h	/^struct field { \/\/Multiple fields on code (density, vx, vy,...)$/;"	s
+field2D	structs.h	/^struct field2D { \/\/Multiple 2D fields on code (azimuthal averages, etc.)$/;"	s
+field_cpu	structs.h	/^  int *field_cpu;$/;"	m	struct:fieldint2D
+field_cpu	structs.h	/^  real *field_cpu;$/;"	m	struct:field
+field_cpu	structs.h	/^  real *field_cpu;$/;"	m	struct:field2D
+field_gpu	structs.h	/^  int *field_gpu;$/;"	m	struct:fieldint2D
+field_gpu	structs.h	/^  real *field_gpu;$/;"	m	struct:field
+field_gpu	structs.h	/^  real *field_gpu;$/;"	m	struct:field2D
+fieldint2D	structs.h	/^struct fieldint2D { \/\/Multiple 2D fields on code (azimuthal averages, etc.)$/;"	s
+file_origin	structs.h	/^  char file_origin[MAXLINELENGTH];$/;"	m	struct:field
+finalize_python	matplotlib.c	/^void finalize_python() {$/;"	f
+floatvalue	structs.h	/^  real floatvalue;$/;"	m	struct:hashparam
+fluid	structs.h	/^struct fluid {$/;"	s
+fopen_prs	LowTasks.c	/^FILE *fopen_prs (char *string, char *mode) {$/;"	f
+force	structs.h	/^struct force {			$/;"	s
+fresh_cpu	structs.h	/^  boolean fresh_cpu;$/;"	m	struct:field
+fresh_cpu	structs.h	/^  boolean fresh_cpu;$/;"	m	struct:field2D
+fresh_cpu	structs.h	/^  boolean fresh_cpu;$/;"	m	struct:fieldint2D
+fresh_gpu	structs.h	/^  boolean fresh_gpu;$/;"	m	struct:field
+fresh_gpu	structs.h	/^  boolean fresh_gpu;$/;"	m	struct:field2D
+fresh_gpu	structs.h	/^  boolean fresh_gpu;$/;"	m	struct:fieldint2D
+fresh_inside_contour_cpu	structs.h	/^  boolean fresh_inside_contour_cpu[4];$/;"	m	struct:field
+fresh_inside_contour_gpu	structs.h	/^  boolean fresh_inside_contour_gpu[4];$/;"	m	struct:field
+fresh_outside_contour_cpu	structs.h	/^  boolean fresh_outside_contour_cpu[4];$/;"	m	struct:field
+fresh_outside_contour_gpu	structs.h	/^  boolean fresh_outside_contour_gpu[4];$/;"	m	struct:field
+func_declared	monitor.c	/^static boolean func_declared = NO;$/;"	v	file:
+function_kernel	define.h	168;"	d
+function_name	define.h	164;"	d
+function_name_cpu	define.h	160;"	d
+function_name_full	define.h	170;"	d
+function_name_gpu	define.h	162;"	d
+function_shift_kernel	define.h	166;"	d
+fx_ex_inner	structs.h	/^  real fx_ex_inner;    \/**< x-component of the force arising from the inner disk, with Hill sphere avoidance  *\/	$/;"	m	struct:force
+fx_ex_outer	structs.h	/^  real fx_ex_outer;	\/**< x-component of the force arising from the outer disk, with Hill sphere avoidance  *\/	$/;"	m	struct:force
+fx_inner	structs.h	/^  real fx_inner;		\/**< x-component of the force arising from the inner disk, without Hill sphere avoidance  *\/$/;"	m	struct:force
+fx_outer	structs.h	/^  real fx_outer;         \/**< x-component of the force arising from the outer disk, without Hill sphere avoidance *\/$/;"	m	struct:force
+fy_ex_inner	structs.h	/^  real fy_ex_inner;    \/**< y-component of the force arising from the inner disk, with Hill sphere avoidance  *\/        $/;"	m	struct:force
+fy_ex_outer	structs.h	/^  real fy_ex_outer;	\/**< x-component of the force arising from the outer disk, with Hill sphere avoidance  *\/        $/;"	m	struct:force
+fy_inner	structs.h	/^  real fy_inner;		\/**< y-component of the force arising from the inner disk, without Hill sphere avoidance  *\/$/;"	m	struct:force
+fy_outer	structs.h	/^  real fy_outer;	        \/**< y-component of the force arising from the outer disk, without Hill sphere avoidance *\/$/;"	m	struct:force
+fz_ex_inner	structs.h	/^  real fz_ex_inner;$/;"	m	struct:force
+fz_ex_outer	structs.h	/^  real fz_ex_outer;$/;"	m	struct:force
+fz_inner	structs.h	/^  real fz_inner;$/;"	m	struct:force
+fz_outer	structs.h	/^  real fz_outer;$/;"	m	struct:force
+globalforce	global.h	/^real globalforce[12];$/;"	v
+gpu_pp	structs.h	/^  struct cudaPitchedPtr gpu_pp;$/;"	m	struct:field	typeref:struct:field::cudaPitchedPtr
+gpucommunicator	comm_device.c	/^struct gpucommunicator {$/;"	s	file:
+grid	structs.h	/^struct grid {   \/\/ Store all relevant information for grid$/;"	s
+hashparam	structs.h	/^struct hashparam {$/;"	s
+i	structs.h	/^  real i;$/;"	m	struct:orbital_elements
+index	define.h	634;"	d
+index	structs.h	/^  int index;$/;"	m	struct:buffer
+init_stockholm	init_stockholm.c	/^void init_stockholm() {$/;"	f
+init_var	param.c	/^void init_var(char *name, char *variable, int type, int need, char *value) {$/;"	f
+initialize_python	matplotlib.c	/^void initialize_python() {$/;"	f
+integrate1_cpu	integrate.c	/^void integrate1_cpu(real dt, real * F0, real * Fnew, int S){$/;"	f
+integrate_cpu	integrate.c	/^void integrate_cpu(real dt, real * F1, real * F2, real * Fnew, int J, int S){$/;"	f
+intvalue	structs.h	/^  long intvalue;$/;"	m	struct:hashparam
+invDiffXmed	define.h	218;"	d
+invDiffYmed	define.h	219;"	d
+invDiffZmed	define.h	220;"	d
+invVj	define.h	243;"	d
+ix	global.h	/^int ix;$/;"	v
+ixm	define.h	383;"	d
+ixm	define.h	397;"	d
+ixm	define.h	430;"	d
+ixm	define.h	438;"	d
+ixp	define.h	384;"	d
+ixp	define.h	398;"	d
+ixp	define.h	431;"	d
+ixp	define.h	437;"	d
+iy	global.h	/^int iy;$/;"	v
+k1	runge_kutta.c	/^static real k1[MAX1D], k2[MAX1D], k3[MAX1D], k4[MAX1D], k5[MAX1D], k6[MAX1D];$/;"	v	file:
+k2	runge_kutta.c	/^static real k1[MAX1D], k2[MAX1D], k3[MAX1D], k4[MAX1D], k5[MAX1D], k6[MAX1D];$/;"	v	file:
+k3	runge_kutta.c	/^static real k1[MAX1D], k2[MAX1D], k3[MAX1D], k4[MAX1D], k5[MAX1D], k6[MAX1D];$/;"	v	file:
+k4	runge_kutta.c	/^static real k1[MAX1D], k2[MAX1D], k3[MAX1D], k4[MAX1D], k5[MAX1D], k6[MAX1D];$/;"	v	file:
+k5	runge_kutta.c	/^static real k1[MAX1D], k2[MAX1D], k3[MAX1D], k4[MAX1D], k5[MAX1D], k6[MAX1D];$/;"	v	file:
+k6	runge_kutta.c	/^static real k1[MAX1D], k2[MAX1D], k3[MAX1D], k4[MAX1D], k5[MAX1D], k6[MAX1D];$/;"	v	file:
+kernel_reduction	define.h	169;"	d
+kernel_shift	define.h	167;"	d
+kind	structs.h	/^  int kind;$/;"	m	struct:field2D
+l	define.h	418;"	d
+l	define.h	420;"	d
+l	define.h	458;"	d
+l2D	define.h	422;"	d
+l2D	define.h	459;"	d
+l2D_int	define.h	423;"	d
+l2D_int	define.h	460;"	d
+line_origin	structs.h	/^  int line_origin;$/;"	m	struct:field
+localforce	global.h	/^real localforce[12];$/;"	v
+lxm	define.h	381;"	d
+lxm	define.h	395;"	d
+lxm	define.h	429;"	d
+lxm	define.h	436;"	d
+lxp	define.h	380;"	d
+lxp	define.h	394;"	d
+lxp	define.h	428;"	d
+lxp	define.h	435;"	d
+lym	define.h	388;"	d
+lym	define.h	391;"	d
+lym	define.h	402;"	d
+lym	define.h	405;"	d
+lym	define.h	444;"	d
+lym	define.h	447;"	d
+lyp	define.h	387;"	d
+lyp	define.h	390;"	d
+lyp	define.h	401;"	d
+lyp	define.h	404;"	d
+lyp	define.h	443;"	d
+lyp	define.h	446;"	d
+lzm	define.h	411;"	d
+lzm	define.h	414;"	d
+lzm	define.h	452;"	d
+lzm	define.h	455;"	d
+lzp	define.h	410;"	d
+lzp	define.h	413;"	d
+lzp	define.h	451;"	d
+lzp	define.h	454;"	d
+macro	reduction_full_generic.c	/^real name_full_reduction (macro) (Field *F, int ymin, int ymax, int zmin, int zmax) {$/;"	f
+macro	reduction_generic.c	/^void name_reduction_cpu(macro) (Field *F, int ymin, int ymax, int zmin, int zmax) {$/;"	f
+macro	reduction_min.c	3;"	d	file:
+macro	reduction_sum.c	3;"	d	file:
+main	main.c	/^int main(int argc, char *argv[]) {$/;"	f
+make_D_cpu	functions.c	/^void make_D_cpu(){$/;"	f
+mass	structs.h	/^  real *mass;			\/**< Masses of the planets *\/$/;"	m	struct:planetary_system
+mass_cpu	structs.h	/^  real *mass_cpu;			\/**< Masses of the planets *\/$/;"	m	struct:planetary_system
+mass_gpu	structs.h	/^  real *mass_gpu;			\/**< Masses of the planets *\/$/;"	m	struct:planetary_system
+master_fopen	LowTasks.c	/^FILE *master_fopen (char *filename, char *mode) {$/;"	f
+mastererr	LowTasks.c	/^void mastererr(const char *template, ...) {$/;"	f
+masterfprintf	LowTasks.c	/^void masterfprintf(FILE *f, const char *template, ...) {$/;"	f
+masterprint	LowTasks.c	/^void masterprint(const char *template, ...) {$/;"	f
+max2	define.h	152;"	d
+max3	define.h	153;"	d
+momenta_x	global.h	/^void (*momenta_x)();$/;"	v
+momenta_x_cpu	momenta_x.c	/^void momenta_x_cpu() {$/;"	f
+momenta_y	global.h	/^void (*momenta_y)();$/;"	v
+momenta_y_cpu	momenta_y.c	/^void momenta_y_cpu() {$/;"	f
+momenta_z	global.h	/^void (*momenta_z)();$/;"	v
+momenta_z_cpu	momenta_z.c	/^void momenta_z_cpu() {$/;"	f
+mon_bxflux	global.h	/^void (*mon_bxflux)();$/;"	v
+mon_bxflux_cpu	mon_bxflux.c	/^void mon_bxflux_cpu () {$/;"	f
+mon_cent	monitor.c	/^char mon_cent[MAX_MONITOR][MAX_STRING];$/;"	v
+mon_dens	global.h	/^void (*mon_dens)();$/;"	v
+mon_dens_cpu	mon_dens.c	/^void mon_dens_cpu () {$/;"	f
+mon_func	monitor.c	/^void (*mon_func[MAX_MONITOR])();$/;"	v
+mon_kind	monitor.c	/^int mon_kind[MAX_MONITOR];$/;"	v
+mon_maxwell	global.h	/^void (*mon_maxwell)();$/;"	v
+mon_maxwell_cpu	mon_maxwell.c	/^void mon_maxwell_cpu () {$/;"	f
+mon_momx	global.h	/^void (*mon_momx)();$/;"	v
+mon_momx_cpu	mon_momx.c	/^void mon_momx_cpu () {$/;"	f
+mon_momy	global.h	/^void (*mon_momy)();$/;"	v
+mon_momy_cpu	mon_momy.c	/^void mon_momy_cpu () {$/;"	f
+mon_momz	global.h	/^void (*mon_momz)();$/;"	v
+mon_momz_cpu	mon_momz.c	/^void mon_momz_cpu () {$/;"	f
+mon_name	monitor.c	/^char mon_name[MAX_MONITOR][MAX_STRING];$/;"	v
+mon_pldp	monitor.c	/^int mon_pldp[MAX_MONITOR];$/;"	v
+mon_reynolds	global.h	/^void (*mon_reynolds)();$/;"	v
+mon_reynolds_cpu	mon_reynolds.c	/^void mon_reynolds_cpu () {$/;"	f
+mon_torq	global.h	/^void (*mon_torq)();$/;"	v
+mon_torq_cpu	mon_torque.c	/^void mon_torq_cpu () {$/;"	f
+mu1j	functions.c	/^real mu1j(int J, int s){$/;"	f
+muj	functions.c	/^real muj(int J){$/;"	f
+name	structs.h	/^  char **name;  		\/**< The planets' names *\/$/;"	m	struct:planetary_system
+name	structs.h	/^  char *name;$/;"	m	struct:field
+name	structs.h	/^  char *name;$/;"	m	struct:field2D
+name	structs.h	/^  char *name;$/;"	m	struct:fieldint2D
+name	structs.h	/^  char *name;$/;"	m	struct:fluid
+name	structs.h	/^  char name[80];$/;"	m	struct:param
+name	structs.h	/^  char name[80];$/;"	m	struct:timeprocess
+name	structs.h	/^  char name[MAXLINELENGTH];$/;"	m	struct:hashparam
+name_full_reduction	define.h	171;"	d
+name_reduction	define.h	165;"	d
+name_reduction_cpu	define.h	161;"	d
+name_reduction_gpu	define.h	163;"	d
+nb	structs.h	/^  int nb;			\/**< Number of planets *\/$/;"	m	struct:planetary_system
+nbparamCL	redefoptions.c	/^long nbparamCL=0;$/;"	v
+need	structs.h	/^  int need;$/;"	m	struct:param
+next	comm.c	/^  struct communicator *next;	\/* We use a chained (or linked) list *\/$/;"	m	struct:communicator	typeref:struct:communicator::communicator	file:
+next	comm_device.c	/^  struct gpucommunicator *next;	\/* We use a chained list *\/$/;"	m	struct:gpucommunicator	typeref:struct:gpucommunicator::gpucommunicator	file:
+next	structs.h	/^  struct field *next; \/\/ Linkedlist$/;"	m	struct:field	typeref:struct:field::field
+next	structs.h	/^  struct field2D *next; \/\/ Linkedlist$/;"	m	struct:field2D	typeref:struct:field2D::field2D
+next	structs.h	/^  struct fieldint2D *next; \/\/ Linkedlist$/;"	m	struct:fieldint2D	typeref:struct:fieldint2D::fieldint2D
+nu1j	functions.c	/^real nu1j(int J, int s){$/;"	f
+nuj	functions.c	/^real nuj(int J){$/;"	f
+nvarmax	comm.c	/^  int nvarmax;			\/* Maximal number of variables handled$/;"	m	struct:communicator	file:
+nvarmax	comm_device.c	/^  int nvarmax;			\/* Maximal number of variables handled$/;"	m	struct:gpucommunicator	file:
+nx	structs.h	/^  int nx; \/\/Nsec --> j$/;"	m	struct:grid
+ny	structs.h	/^  int ny; \/\/Nrad --> i$/;"	m	struct:grid
+nz	structs.h	/^  int nz; \/\/Ncol --> k$/;"	m	struct:grid
+offset_dst	comm_device.c	/^  int offset_dst;$/;"	m	struct:gpucommunicator	file:
+offset_src	comm_device.c	/^  int offset_src;$/;"	m	struct:gpucommunicator	file:
+orbital_elements	structs.h	/^struct orbital_elements {$/;"	s
+owner	structs.h	/^  struct field **owner; \/\/used for aliases$/;"	m	struct:field	typeref:struct:field::field
+param	structs.h	/^struct param{$/;"	s
+parity	comm.c	/^  int parity;$/;"	m	struct:communicator	file:
+parity	comm_device.c	/^  int parity;$/;"	m	struct:gpucommunicator	file:
+per	structs.h	/^  real per;$/;"	m	struct:orbital_elements
+pitch	comm_device.c	/^  size_t pitch;$/;"	m	struct:gpucommunicator	file:
+pitch	structs.h	/^  size_t pitch;$/;"	m	struct:field2D
+planetary_system	structs.h	/^struct planetary_system {$/;"	s
+plot1d	matplotlib.c	/^void plot1d(char* name, int n, int merge) {$/;"	f
+plot2d	matplotlib.c	/^void plot2d(char* name, int n, int merge) {$/;"	f
+plot3d	matplotlib.c	/^void plot3d(char* name, int n, int merge) {$/;"	f
+point	structs.h	/^struct point {$/;"	s
+pow	define.h	619;"	d
+primefactors	split.c	/^void primefactors (int n, int *factors, int *nfact) {$/;"	f
+prs_error	LowTasks.c	/^void prs_error(char *string){$/;"	f
+prs_exit	LowTasks.c	/^void prs_exit(int numb) {$/;"	f
+pyrun	matplotlib.c	/^void pyrun(const char *command, ...) {$/;"	f
+q0	runge_kutta.c	/^static real q0[MAX1D], q1[MAX1D], PlanetMasses[MAX1D];$/;"	v	file:
+q1	runge_kutta.c	/^static real q0[MAX1D], q1[MAX1D], PlanetMasses[MAX1D];$/;"	v	file:
+read	structs.h	/^  int read;$/;"	m	struct:param
+real	types_def.h	/^typedef double real;$/;"	t
+real	types_def.h	/^typedef float real;$/;"	t
+reduction_MIN	global.h	/^void (*reduction_MIN)(Field*,int,int,int,int); $/;"	v
+reduction_SUM	global.h	/^void (*reduction_SUM)(Field*,int,int,int,int); $/;"	v
+repartition	split.c	/^void repartition (int *nx, int ncpu, int *MX) {$/;"	f
+rescale	rescale.c	/^void rescale () {$/;"	f
+secondary_backup	structs.h	/^  int *secondary_backup;$/;"	m	struct:fieldint2D
+secondary_backup	structs.h	/^  real *secondary_backup; \/\/ same thing$/;"	m	struct:field
+secondary_backup	structs.h	/^  real *secondary_backup;$/;"	m	struct:field2D
+send2cpu	fresh.c	/^void send2cpu() {$/;"	f
+send2gpu	fresh.c	/^void send2gpu() {$/;"	f
+shift_buffer	global.h	/^real shift_buffer[MAX1D];$/;"	v
+shift_buffer_d	global.h	/^real shift_buffer_d[MAX1D];$/;"	v
+sin	define.h	620;"	d
+size	comm.c	/^  int size;			\/* Size of buffer in YZ plane *\/$/;"	m	struct:communicator	file:
+size	comm_device.c	/^  int size;			\/* Size of buffer in YZ plane *\/$/;"	m	struct:gpucommunicator	file:
+split	split.c	/^void split(Grid *g) {$/;"	f
+sqrt	define.h	622;"	d
+src	comm.c	/^  int src; 			\/* rank of source and destination *\/$/;"	m	struct:communicator	file:
+src	comm_device.c	/^  int src; 			\/* rank of source and destination *\/$/;"	m	struct:gpucommunicator	file:
+state_vector	structs.h	/^struct state_vector {$/;"	s
+str	define.h	626;"	d
+stride	comm.c	/^  int stride;$/;"	m	struct:communicator	file:
+stride	structs.h	/^  int stride; \/\/ init in CreateField();$/;"	m	struct:grid
+stringvalue	structs.h	/^  char stringvalue[MAXLINELENGTH];$/;"	m	struct:hashparam
+t_Comm	algogas.c	/^TimeProcess t_Comm;$/;"	v
+t_Hydro	algogas.c	/^TimeProcess t_Hydro;$/;"	v
+t_Mhd	algogas.c	/^TimeProcess t_Mhd;$/;"	v
+t_speedup_count	global.h	/^int t_speedup_count;$/;"	v
+t_speedup_cpu	global.h	/^TimeProcess t_speedup_cpu;$/;"	v
+t_speedup_gpu	global.h	/^TimeProcess t_speedup_gpu;$/;"	v
+t_sub1	algogas.c	/^TimeProcess t_sub1;$/;"	v
+t_sub1_x	algogas.c	/^TimeProcess t_sub1_x;$/;"	v
+t_sub1_y	algogas.c	/^TimeProcess t_sub1_y;$/;"	v
+t_sub1_z	algogas.c	/^TimeProcess t_sub1_z;$/;"	v
+ta	structs.h	/^  real ta;$/;"	m	struct:orbital_elements
+time_speedup_cpu	global.h	/^real time_speedup_cpu;$/;"	v
+time_speedup_gpu	global.h	/^real time_speedup_gpu;$/;"	v
+timeprocess	structs.h	/^struct timeprocess {$/;"	s
+transport	transport.c	/^void transport(real dt){$/;"	f
+type	structs.h	/^  int type;$/;"	m	struct:field
+type	structs.h	/^  int type;$/;"	m	struct:param
+var_assign	param.c	/^void var_assign(){$/;"	f
+variable	structs.h	/^  char *variable;$/;"	m	struct:param
+viscosity	viscosity.c	/^void viscosity(real dt){$/;"	f
+visctensor_cart	global.h	/^void (*visctensor_cart)();$/;"	v
+visctensor_cart_cpu	visctensor_cart.c	/^void visctensor_cart_cpu(){$/;"	f
+visctensor_cyl	global.h	/^void (*visctensor_cyl)();$/;"	v
+visctensor_cyl_cpu	visctensor_cyl.c	/^void visctensor_cyl_cpu(){$/;"	f
+visctensor_sph	global.h	/^void (*visctensor_sph)();$/;"	v
+visctensor_sph_cpu	visctensor_sph.c	/^void visctensor_sph_cpu(){$/;"	f
+vx	structs.h	/^  real *vx;			\/**< x-coordinate of the planets'velocities *\/$/;"	m	struct:planetary_system
+vx	structs.h	/^  real vx;$/;"	m	struct:state_vector
+vy	structs.h	/^  real *vy;		        \/**< y-coordinate of the planets'velocities *\/$/;"	m	struct:planetary_system
+vy	structs.h	/^  real vy;$/;"	m	struct:state_vector
+vz	structs.h	/^  real *vz;		        \/**< z-coordinate of the planets'velocities *\/$/;"	m	struct:planetary_system
+vz	structs.h	/^  real vz;$/;"	m	struct:state_vector
+write_vtk_coordinates	output_vtk.c	/^void write_vtk_coordinates(FILE *ofile, Field *field) {$/;"	f
+write_vtk_header	output_vtk.c	/^void write_vtk_header(FILE *ofile, Field *field, int n) {$/;"	f
+write_vtk_scalar	output_vtk.c	/^void write_vtk_scalar(FILE *ofile, Field *f) {$/;"	f
+ws	functions.c	/^real ws(int s){$/;"	f
+x	structs.h	/^  real *x;			\/**< x-coordinate of the planets *\/$/;"	m	struct:planetary_system
+x	structs.h	/^  real *x;$/;"	m	struct:field
+x	structs.h	/^  real x;$/;"	m	struct:point
+x	structs.h	/^  real x;$/;"	m	struct:state_vector
+x_cpu	structs.h	/^  real *x_cpu;			\/**< x-coordinate of the planets *\/$/;"	m	struct:planetary_system
+x_cpus	structs.h	/^  int x_cpus;$/;"	m	struct:field
+x_cpus	structs.h	/^  int x_cpus;$/;"	m	struct:field2D
+x_cpus	structs.h	/^  int x_cpus;$/;"	m	struct:fieldint2D
+x_gpu	structs.h	/^  real *x_gpu;			\/**< x-coordinate of the planets *\/$/;"	m	struct:planetary_system
+xmed	define.h	199;"	d
+xmed	define.h	213;"	d
+xmin	define.h	196;"	d
+xmin_d	define.h	208;"	d
+xstr	define.h	625;"	d
+y	structs.h	/^  real *y;			\/**< y-coordinate of the planets *\/$/;"	m	struct:planetary_system
+y	structs.h	/^  real *y;$/;"	m	struct:field
+y	structs.h	/^  real y;$/;"	m	struct:point
+y	structs.h	/^  real y;$/;"	m	struct:state_vector
+y0cell	global.h	/^int y0cell;$/;"	v
+y_cpu	structs.h	/^  real *y_cpu;			\/**< y-coordinate of the planets *\/$/;"	m	struct:planetary_system
+y_cpus	structs.h	/^  int y_cpus;$/;"	m	struct:field
+y_cpus	structs.h	/^  int y_cpus;$/;"	m	struct:field2D
+y_cpus	structs.h	/^  int y_cpus;$/;"	m	struct:fieldint2D
+y_gpu	structs.h	/^  real *y_gpu;			\/**< y-coordinate of the planets *\/$/;"	m	struct:planetary_system
+ycells	global.h	/^int ycells;$/;"	v
+ymaxdst	comm.c	/^  int ymaxdst;$/;"	m	struct:communicator	file:
+ymaxsrc	comm.c	/^  int ymaxsrc;$/;"	m	struct:communicator	file:
+ymed	define.h	200;"	d
+ymed	define.h	214;"	d
+ymin	define.h	197;"	d
+ymin_d	define.h	209;"	d
+ymindst	comm.c	/^  int ymindst;			\/* location on destination *\/$/;"	m	struct:communicator	file:
+yminsrc	comm.c	/^  int yminsrc;			\/* location on source *\/$/;"	m	struct:communicator	file:
+z	structs.h	/^  real *z;			\/**< z-coordinate of the planets *\/$/;"	m	struct:planetary_system
+z	structs.h	/^  real *z;$/;"	m	struct:field
+z	structs.h	/^  real z;$/;"	m	struct:point
+z	structs.h	/^  real z;$/;"	m	struct:state_vector
+z0cell	global.h	/^int z0cell;$/;"	v
+z_cpu	structs.h	/^  real *z_cpu;			\/**< z-coordinate of the planets *\/$/;"	m	struct:planetary_system
+z_gpu	structs.h	/^  real *z_gpu;			\/**< z-coordinate of the planets *\/$/;"	m	struct:planetary_system
+zcells	global.h	/^int zcells;$/;"	v
+zmaxdst	comm.c	/^  int zmaxdst;$/;"	m	struct:communicator	file:
+zmaxsrc	comm.c	/^  int zmaxsrc;$/;"	m	struct:communicator	file:
+zmean	structs.h	/^  double *zmean;$/;"	m	struct:field
+zmeanprop	structs.h	/^struct zmeanprop {$/;"	s
+zmed	define.h	201;"	d
+zmed	define.h	215;"	d
+zmin	define.h	198;"	d
+zmin_d	define.h	210;"	d
+zmindst	comm.c	/^  int zmindst;$/;"	m	struct:communicator	file:
+zminsrc	comm.c	/^  int zminsrc;$/;"	m	struct:communicator	file:
+zone_size_x	define.h	264;"	d
+zone_size_x	define.h	270;"	d
+zone_size_x	define.h	276;"	d
+zone_size_x	define.h	284;"	d
+zone_size_x	define.h	290;"	d
+zone_size_x	define.h	296;"	d
+zone_size_y	define.h	265;"	d
+zone_size_y	define.h	271;"	d
+zone_size_y	define.h	277;"	d
+zone_size_y	define.h	285;"	d
+zone_size_y	define.h	291;"	d
+zone_size_y	define.h	297;"	d
+zone_size_z	define.h	266;"	d
+zone_size_z	define.h	272;"	d
+zone_size_z	define.h	278;"	d
+zone_size_z	define.h	286;"	d
+zone_size_z	define.h	292;"	d
+zone_size_z	define.h	298;"	d
+zp	structs.h	/^  struct zmeanprop zp;$/;"	m	struct:field	typeref:struct:field::zmeanprop

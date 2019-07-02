@@ -1,0 +1,27 @@
+#Boundaries configuration file for sod1d test problem
+#             REFLECTING 1D BOX in Z
+#----------------------------------------------------
+
+Density:
+	Zmin: NOBOUNDARY
+	Zmax: NOBOUNDARY
+
+Y1:
+	Zmin: NOBOUNDARY
+	Zmax: NOBOUNDARY
+Y2:
+	Zmin: NOBOUNDARY
+	Zmax: NOBOUNDARY
+Y3:
+	Zmin: NOBOUNDARY
+	Zmax: NOBOUNDARY
+
+Energy:
+	Zmin: NOBOUNDARY
+	Zmax: NOBOUNDARY
+
+Vz:
+	Zmin:	NOBOUNDARY
+	Zmax: NOBOUNDARY
+
+
