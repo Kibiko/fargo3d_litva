@@ -126,6 +126,24 @@ CUDALIB_LINUX = -L${CUDA}/lib64/  -lcudart -lstdc++
 CXX_LINUX     = g++ -stdlib=libstdc++
 CXXPARA_LINUX = mpic++ -stdlib=libstdc++
 #---------------------------------------------------------------------
+#NXN PLATFORM (GENERIC, default)
+#FARGO_ARCH must be set to NXN
+CC_NXN      = icc  
+SEQOPT_NXN  = -O3 -fast
+PARAOPT_NXN = ${SEQOPT_LINUX}
+PARACC_NXN  = mpicc
+LIBS_NXN    = -lm
+INC_NXN     = 
+NVCC_NXN    = nvcc
+CUDAOPT_NXN = -O3 -w #-arch=sm_20 
+PARAINC_NXN = 
+PARALIB_NXN =
+CUDAINC_NXN = -I${CUDA}/include/
+CUDALIB_NXN = -L${CUDA}/lib64/  -lcudart
+CUDALIB_NXN = -L${CUDA}/lib64/  -lcudart -lstdc++
+CXX_NXN     = icpc -stdlib=libstdc++
+CXXPARA_NXN = mpicpc -stdlib=libstdc++
+#---------------------------------------------------------------------
 #KEPLER PLATFORM WITH OPENMPI-1.7.4 AT UNAM
 #FARGO_ARCH must be set to KEPLEROPENMPI
 CC_KEPLEROPENMPI      = gcc 

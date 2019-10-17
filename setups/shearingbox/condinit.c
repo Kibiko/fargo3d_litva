@@ -46,8 +46,8 @@ void Init() {
 	real* y4 = Y4->field_cpu;
 	current_simulation_time=0.0;
 
-	real a = 0.05;
-	real b = 0.0125;
+	real a = 0.1;//bigger vortex
+	real b = 0.025;
 
   real* vx = Vx->field_cpu;
   real* vy = Vy->field_cpu;
@@ -65,7 +65,7 @@ void Init() {
 				y2[ll]	 =e0;
 				y3[ll]	 =e0;
 				y4[ll]	 =e0;
-				rho[ll]	 =rho0;
+				rho[ll]	 =(xmed(i)*xmed(i)/a + ymed(j)*ymed(j)/b)<1.0?4.0*rho0:rho0;
 				vy[ll]	 =vortexVYinit(ymed(j),xmed(i),0.0,0.0,a,b);
 				vx[ll]	 =vortexVZinit(ymed(j),xmed(i),0.0,0.0,a,b);
 			}

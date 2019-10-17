@@ -1,3 +1,8 @@
+## This is a clone of fargo3d with minor modifications!
+
+
+
+
 # FARGO3D #
 
 #### A versatile MULTIFLUID HD/MHD code that runs on clusters of CPUs or GPUs, with special emphasis on protoplanetary disks. 
