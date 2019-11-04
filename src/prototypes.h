@@ -57,8 +57,9 @@ ex int calcSubsteps(real);
 //dusty vortex prototypes
 ex real shearVZ(real, real);
 ex real shearVY(real, real);
-ex real vortexVZ(real, real);
-ex real vortexVY(real, real);
+ex real vortexVZ(real, real, real, real, real, real);
+ex real vortexVY(real, real, real, real, real, real);
+ex void burnin(int);
 
 real maskfunction(real);
 real shearVX(real, real);

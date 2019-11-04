@@ -14,5 +14,6 @@
 #MAINOBJ += RKL1.o
 #MAINOBJ += testbound.o
 MAINOBJ += waveKilling.o
+MAINOBJ += burnin.o
 #GPUOBJ += vortex_gpu.o
 

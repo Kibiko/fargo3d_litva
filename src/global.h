@@ -147,6 +147,10 @@ real RHODUST;
 //#endif
 //#endif
 
+//Vortex variables
+real vortexA;
+real vortexB;
+
 //MHD FIELDS
 //#ifdef MHD
 Field *Bx;

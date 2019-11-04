@@ -21,10 +21,11 @@ FARGO_OPT  += -DSHEARINGBOX
 FARGO_OPT  += -DSHEARINGBC
 FARGO_OPT  += -DSHEARPARAM=1.5
 
-FARGO_OPT	 += -DSWK	 #shearing wave killer
+FARGO_OPT  += -DSWK	            #shearing wave killer
+FARGO_OPT  += -DVORTEXBURNIN     #vortex initial condition burnin routine
 #Equation of State
 FARGO_OPT  += -DADIABATIC
-FARGO_OPT	 += -DDUSTY
+FARGO_OPT  += -DDUSTY
 FARGO_OPT  += -DTS_CCART
 
 #Transport Algorithm

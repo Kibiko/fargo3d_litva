@@ -404,6 +404,9 @@ OMEGAFRAME (which is used afterwards to build the initial Vx field. */
 #ifdef SWK
 			FARGO_SAFE(waveKiller(dt));
 #endif
+#ifdef VORTEXBURNIN
+            FARGO_SAFE(burnin(Timestepcount));
+#endif
 
       //We apply comms and boundaries at the end of the step
       MULTIFLUID(FillGhosts(PrimitiveVariables()));

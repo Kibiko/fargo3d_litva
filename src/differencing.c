@@ -10,7 +10,7 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  YOUR NAME (), 
+ *         Author:  Francesco Lovascio 
  *   Organization:  
  *
  * =====================================================================================
@@ -43,11 +43,9 @@ real dq2(real fp, real f, real fm, real hi, real hm){
 
 
 
-//#ifdef STABLE
 real GradDDotGrad(real* P,real* rho, real CS, int i, int j, int k, int pitch, int stride){
 	real cs = CS;
 	//real ts = TSCONST;
-	////<\EXTERNAL>
 	real GdG=0.;
 	int ll =l;
 	real FM;
@@ -59,10 +57,8 @@ real GradDDotGrad(real* P,real* rho, real CS, int i, int j, int k, int pitch, in
 	real DX=zone_size_x(j,k);
 	FM=1.-(P[llxm]/(CS*CS*rho[llxm]));
 	FP=1.-(P[llxp]/(CS*CS*rho[llxp]));
-	real x=dx(FP,FM,DX)*dx(P[llxp],P[llxm],DX)/(H_X(i,j,k)*H_X(i,j,k));
-	//(1/(H_X(i,j,k)*H_X(i,j,k)))*((P[llxp]-P[llxm])*(FP-FM)/(4.*DX*DX));
+	real x=dx(FP,FM,DX)*dx(P[llxp],P[llxm],DX);
 	GdG+=x;
-	//	printf("x=%f",x);
 #endif
 #ifdef Y
 	int llyp=lyp;
@@ -72,9 +68,10 @@ real GradDDotGrad(real* P,real* rho, real CS, int i, int j, int k, int pitch, in
 	FM=1.-(P[llym]/(CS*CS*rho[llym]));
 	FP=1.-(P[llyp]/(CS*CS*rho[llyp]));
 	F=1.-(P[ll]/(CS*CS*rho[ll]));
-	real y=dq(FP,F,FM,DY,DYM)*dq(P[llyp],P[ll],P[llym],DY,DYM)/(H_Y(i,j,k)*H_Y(i,j,k));
-	//(1/(H_Y(i,j,k)*H_Y(i,j,k)))*(DYM/(DY-DYM))*(DY*(P[ll]-P[llym])-DYM*(P[llyp]-P[ll]))*(DYM/(DY-DYM))*(DY*(F-FM)-DYM*(FP-F));
-	//	printf("y=%f",y);
+	real y=dq(FP,F,FM,DY,DYM)*dq(P[llyp],P[ll],P[llym],DY,DYM);
+#   ifdef CYLINDRICAL
+    y=y/(ymed(j)*ymed(j));
+#   endif
 	GdG+=y;
 #endif
 #ifdef Z
@@ -85,12 +82,9 @@ real GradDDotGrad(real* P,real* rho, real CS, int i, int j, int k, int pitch, in
 	FM=1.-(P[llzm]/(CS*CS*rho[llzm]));
 	FP=1.-(P[llzp]/(CS*CS*rho[llzp]));
 	F=1.-(P[ll]/(CS*CS*rho[ll]));
-	real z=dq(FP,F,FM,DZ,DZM)*dq(P[llzp],P[ll],P[llzm],DZ,DZM);//(H_Z(i,j,k)*H_Z(i,j,k));
-	//(1/(H_Z(i,j,k)*H_Z(i,j,k)))*(DZM/(DZ-DZM))*(DZ*(P[ll]-P[llzm])-DZM*(P[llzp]-P[ll]))*(DZM/(DZ-DZM))*(DZ*(F-FM)-DZM*(FP-F));
-	//	printf("z=%f",z);
+	real z=dq(FP,F,FM,DZ,DZM)*dq(P[llzp],P[ll],P[llzm],DZ,DZM);
 	GdG+=z;
 #endif
-	//printf(" GdG[%d]=%f ",ll,GdG);
 	return GdG;
 }
 
@@ -108,9 +102,9 @@ real Lap(real* FF, int i, int j, int k, int pitch, int stride){
 	int iixm=ixm;
 	real DX=zone_size_x(j,k);
 	real x=dxx(FF[llxp],FF[ll],FF[llxm],DX);
-		//((H_Y(i,j,k)*H_Z(i,j,k)/H_X(i,j,k))*((FF[llxp]+FF[llxm]-2*FF[ll])/(DX*DX)))+
-		//(((FF[llxp]-FF[llxm])/(2.*DX)))*(((H_Y(iixp,j,k)*H_Z(iixp,j,k)/H_X(iixp,j,k))-(H_Y(iixm,j,k)*H_Z(iixm,j,k)/H_X(iixm,j,k)))/2.*DX);
-	//printf("x=%f",x);
+#   ifdef CYLINDRICAL
+    x=x/(ymed(j)*ymed(j));
+#   endif
 	lap+=x;
 #endif
 #ifdef Y
@@ -119,9 +113,9 @@ real Lap(real* FF, int i, int j, int k, int pitch, int stride){
 	real DYM=ymed(j)-ymed(j-1);
 	real DY=ymed(j+1)-ymed(j);
 	real y=dq2(FF[llyp],FF[ll],FF[llym],DY,DYM);
-		//((H_X(i,j,k)*H_Z(i,j,k)/H_Y(i,j,k))*(2./(DY*DY*DYM+DYM*DYM*DY))*((DYM*FF[llyp])+(DY*FF[llym])-((DY+DYM)*FF[ll])))+
-		//(DYM/(DY-DYM))*(DY*(FF[ll]-FF[llym])-DYM*(FF[llyp]-FF[ll]))*(DYM/(DY-DYM))*(DY*((H_X(i,j,k)*H_Z(i,j,k)/H_Y(i,j,k))-((H_X(i,j-1,k)*H_Z(i,j-1,k)/H_Y(i,j-1,k))))-DYM*((H_X(i,j+1,k)*H_Z(i,j+1,k)/H_Y(i,j+1,k))-(H_X(i,j,k)*H_Z(i,j,k)/H_Y(i,j,k))));
-	//printf("y=%f",y);
+#ifdef CYLINDRICAL
+    y=y+dq(FF[llyp],FF[ll],FF[llym],DY,DYM)/ymed(j);
+#endif
 	lap+=y;
 #endif
 #ifdef Z
@@ -130,13 +124,8 @@ real Lap(real* FF, int i, int j, int k, int pitch, int stride){
 	real DZM=zmed(k)-zmed(k-1);
 	real DZ=zmed(k+1)-zmed(k);
 	real z=dq2(FF[llzp],FF[ll],FF[llzm],DZ,DZM);
-		//(((H_X(i,j,k)*H_Y(i,j,k)/H_Z(i,j,k))*2./(DZ*DZ*DZM+DZM*DZM*DZ))*((DZM*FF[llzp])+(DZ*FF[llzm])-((DZ+DZM)*FF[ll])))+
-		//(DZM/(DZ-DZM))*(DZ*(FF[ll]-FF[llzm])-DZM*(FF[llzp]-FF[ll]))*(DZM/(DZ-DZM))*(DZ*((H_X(i,j,k)*H_Y(i,j,k)/H_Z(i,j,k))-((H_X(i,j,k-1)*H_Y(i,j,k-1)/H_Z(i,j,k-1))))-DZM*((H_X(i,j,k+1)*H_Y(i,j,k+1)/H_Z(i,j,k+1))-(H_X(i,j,k)*H_Y(i,j,k)/H_Z(i,j,k))));
-	//printf("z[%d]=%f ",ll,z);
 	lap+=z;
 #endif
-//	lap*=(1./H_X(i,j,k)*H_Y(i,j,k)*H_Z(i,j,k));
-	//printf(" lap[%d]=%f ",ll,lap);
 	return lap;
 }
 #endif

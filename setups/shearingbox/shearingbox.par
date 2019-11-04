@@ -3,9 +3,12 @@ Setup                   shearingbox
 ### Disk parameters
 rhoDust		1.0	 Dust grain density
 surfDust	0.000001	Grain surface
-TsConst		1.0	Stopping time
+TsConst		0.0	Stopping time
 CsConst		5.0	 Gas sound speed
 OMEGAFRAME 1.0 omega frame
+BURNINSTEPS 50 burnin steps ### Initial condition burnin period
+vortexA 0.1 vortex semimajor axis  
+vortexB 0.025 vortex semiminor axis
 
 ### Mesh parameters
 
@@ -25,10 +28,10 @@ KILLZONE								0.8
 KILLZONE_RHO_0					5.0
 KILLZONE_E_0						112.5
 
-Ntot                    10000
+Ntot                    1000
 Ninterm                 20
-DT                      0.1
-OutputDir               /data/lovascio/shearingbox_dust
+DT                      0.5
+OutputDir               /data/scratch/apw489/shearingbox_dustBurninTest/
 
 # Plot options
 Field                   gasdens
