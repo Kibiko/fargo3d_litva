@@ -12,8 +12,8 @@ vortexB 0.025 vortex semiminor axis
 
 ### Mesh parameters
 
-Nx                      512
-Ny                      512
+Nx                      480
+Ny                      480
 Nz                      1
 Xmin                    -4.0
 Xmax                    4.0
@@ -26,10 +26,10 @@ PERIODICY               YES
 
 KILLZONE								0.8
 KILLZONE_RHO_0					5.0
-KILLZONE_E_0						112.5
+KILLZONE_E_0						122.375
 
-Ntot                    1000
-Ninterm                 20
+Ntot                    100
+Ninterm                 2
 DT                      0.5
 OutputDir               /data/scratch/apw489/shearingbox_dustBurninTest/
 

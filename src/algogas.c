@@ -49,9 +49,9 @@ void Fill_Resistivity_Profiles () {
   Resistivity_Profiles_Filled = YES;
 }
 void Sources(real dt) {
-     
+
   SetupHook1 (); //Setup specific hook. Defaults to empty function.
-  
+
   //Equations of state-----------------------------------------------------------
 #ifdef ADIABATIC
   FARGO_SAFE(ComputePressureFieldAd());
@@ -63,15 +63,15 @@ void Sources(real dt) {
   FARGO_SAFE(ComputePressureFieldPoly());
 #endif
   //-----------------------------------------------------------------------------
-    
+
   InitSpecificTime (&t_Hydro, "Eulerian Hydro (no transport) algorithms");
-  
+
   // REGARDLESS OF WHETHER WE USE FARGO, Vx IS ALWAYS THE TOTAL VELOCITY IN X
-  
+
 #ifdef POTENTIAL
   FARGO_SAFE(compute_potential(dt));
 #endif
-  
+
 #if ((defined(SHEARINGSHEET2D) || defined(SHEARINGBOX3D)) && !defined(SHEARINGBC))
   FARGO_SAFE(NonReflectingBC(Vy));
 #endif
@@ -85,11 +85,11 @@ void Sources(real dt) {
 #ifdef Z
   FARGO_SAFE(SubStep1_z(dt));
 #endif
-  
+
 #if (defined(VISCOSITY) || defined(ALPHAVISCOSITY))
   if (Fluidtype == GAS) viscosity(dt);
 #endif
-  
+
 #ifndef NOSUBSTEP2
   FARGO_SAFE(SubStep2_a(dt));
   FARGO_SAFE(SubStep2_b(dt));
@@ -101,17 +101,17 @@ void Sources(real dt) {
 #	ifdef DUSTY	
 
 #	 ifdef STABLE 
-	FARGO_SAFE(cooling_cpu(dt));
+  FARGO_SAFE(cooling_cpu(dt));
 #	 else
-	FARGO_SAFE(RK2_cooling_cpu(dt));
+  FARGO_SAFE(RK2_cooling_cpu(dt));
 #	 endif
 #	else
   FARGO_SAFE(SubStep3(dt));
 #	endif
 #endif
-    
+
   GiveSpecificTime (t_Hydro);
-  
+
 #ifdef MHD //-------------------------------------------------------------------
   if(Fluidtype == GAS){
     InitSpecificTime (&t_Mhd, "MHD algorithms");
@@ -121,7 +121,7 @@ void Sources(real dt) {
     FARGO_SAFE(ChangeFrame(-1, Vx, VxMed)); //Vx becomes the residual velocity
     VxIsResidual = YES;
 #endif
-     
+
     ComputeMHD(dt);
 
 #ifndef STANDARD
@@ -139,14 +139,14 @@ void Sources(real dt) {
 #if ((defined(SHEARINGSHEET2D) || defined(SHEARINGBOX3D)) && !defined(SHEARINGBC))
   FARGO_SAFE(NonReflectingBC (Vy_temp));
 #endif
-  
+
   FARGO_SAFE(copy_velocities(VTEMP2V));
   FARGO_SAFE(FillGhosts(PrimitiveVariables()));
   FARGO_SAFE(copy_velocities(V2VTEMP));
 
 #ifdef MHD //-------------------------------------------------------------------
   if(Fluidtype == GAS){ //We do MHD only for the gaseous component
-    
+
     FARGO_SAFE(UpdateMagneticField(dt,1,0,0));
     FARGO_SAFE(UpdateMagneticField(dt,0,1,0));
     FARGO_SAFE(UpdateMagneticField(dt,0,0,1));
@@ -170,17 +170,17 @@ void Transport(real dt) {
 #endif
 
   transport(dt);
-  
+
   GiveSpecificTime (t_Hydro);
-  
+
   if (ForwardOneStep == YES) prs_exit(EXIT_SUCCESS);
-  
+
 #ifdef MHD
   if(Fluidtype == GAS) {   // We do MHD only for the gaseous component
-   *(Emfx->owner) = Emfx;  // EMFs claim ownership of their storage area
-   *(Emfy->owner) = Emfy;
-   *(Emfz->owner) = Emfz;
- }
+    *(Emfx->owner) = Emfx;  // EMFs claim ownership of their storage area
+    *(Emfy->owner) = Emfy;
+    *(Emfz->owner) = Emfz;
+  }
 #endif
-//waveKiller();
+  //waveKiller();
 }

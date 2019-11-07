@@ -1,8 +1,8 @@
 /** \file main.c
 
-Main file of the distribution. 
-Manages the call to initialization
-functions, then the main loop.
+  Main file of the distribution. 
+  Manages the call to initialization
+  functions, then the main loop.
 
 */
 #include "fargo3d.h"
@@ -13,7 +13,7 @@ real dt;
 real dtemp = 0.0;
 
 int main(int argc, char *argv[]) {
-  
+
   int   i=0, OutputNumber = 0, d;
   char  sepline[]="===========================";
   sprintf (FirstCommand, "%s", argv[0]);
@@ -33,111 +33,111 @@ int main(int argc, char *argv[]) {
     d=1;
     if (*(argv[i]) == '+') {
       if (strspn (argv[i], \
-		  "+S#D") \
-	  != strlen (argv[i]))
-	PrintUsage (argv[0]);
+            "+S#D") \
+          != strlen (argv[i]))
+        PrintUsage (argv[0]);
       if (strchr (argv[i], '#')) {
-	d=2;
-	ArrayNb = atoi(argv[i+1]);
-	EarlyOutputRename = YES;
-	if (ArrayNb <= 0) {
-	  masterprint ("Incorrect Array number after +# flag\n");
-	  PrintUsage (argv[0]);
-	}
+        d=2;
+        ArrayNb = atoi(argv[i+1]);
+        EarlyOutputRename = YES;
+        if (ArrayNb <= 0) {
+          masterprint ("Incorrect Array number after +# flag\n");
+          PrintUsage (argv[0]);
+        }
       }
       if (strchr (argv[i], 'D')) {
-	d=2;
-	strcpy (DeviceFile, argv[i+1]);
-	DeviceFileSpecified = YES;
+        d=2;
+        strcpy (DeviceFile, argv[i+1]);
+        DeviceFileSpecified = YES;
       }
       if (strchr (argv[i], 'S')) {
-	d=2;
-	StretchNumber = atoi(argv[i+1]);
-	StretchOldOutput = YES;
+        d=2;
+        StretchNumber = atoi(argv[i+1]);
+        StretchOldOutput = YES;
       }
     }
     if (*(argv[i]) == '-') {
       if (strspn (argv[i], \
-		  "-tofCmkspSVBD0#") \
-	  != strlen (argv[i]))
-	PrintUsage (argv[0]);
+            "-tofCmkspSVBD0#") \
+          != strlen (argv[i]))
+        PrintUsage (argv[0]);
       if (strchr (argv[i], 't'))
-	TimeInfo = YES;
+        TimeInfo = YES;
       if (strchr (argv[i], 'f'))
-	ForwardOneStep = YES;
+        ForwardOneStep = YES;
       if (strchr (argv[i], '0'))
-	OnlyInit = YES;
+        OnlyInit = YES;
       if (strchr (argv[i], 'C')) {
-	EverythingOnCPU = YES;
+        EverythingOnCPU = YES;
 #ifdef GPU
-	mastererr ("WARNING: Forcing execution of all functions on CPU\n");
+        mastererr ("WARNING: Forcing execution of all functions on CPU\n");
 #else
-	mastererr ("WARNING: Flag -C meaningless for a CPU built\n");
+        mastererr ("WARNING: Flag -C meaningless for a CPU built\n");
 #endif
       }
       if (strchr (argv[i], 'm')) {
-	Merge = YES;
+        Merge = YES;
       }
       if (strchr (argv[i], 'k')) {
-	Merge = NO;
+        Merge = NO;
       }
       if (strchr (argv[i], 'o')) {
-	RedefineOptions = YES;
-	ParseRedefinedOptions (argv[i+1]) ;
-	d=2;
+        RedefineOptions = YES;
+        ParseRedefinedOptions (argv[i+1]) ;
+        d=2;
       }
       if (strchr (argv[i], 's')) {
-	Restart = YES;
-	d=2;
-	NbRestart = atoi(argv[i+1]);
-	if ((NbRestart < 0)) {
-	  masterprint ("Incorrect restart number\n");
-	  PrintUsage (argv[0]);
-	}
+        Restart = YES;
+        d=2;
+        NbRestart = atoi(argv[i+1]);
+        if ((NbRestart < 0)) {
+          masterprint ("Incorrect restart number\n");
+          PrintUsage (argv[0]);
+        }
       }
       if (strchr (argv[i], '#')) {
-	d=2;
-	ArrayNb = atoi(argv[i+1]);
-	if (ArrayNb <= 0) {
-	  masterprint ("Incorrect Array number after -# flag\n");
-	  PrintUsage (argv[0]);
-	}
+        d=2;
+        ArrayNb = atoi(argv[i+1]);
+        if (ArrayNb <= 0) {
+          masterprint ("Incorrect Array number after -# flag\n");
+          PrintUsage (argv[0]);
+        }
       }
       if (strchr (argv[i], 'p')) {
-	PostRestart = YES;
+        PostRestart = YES;
       }
       if (strchr (argv[i], 'S')) {
-	Restart_Full = YES;
-	d=2;
-	NbRestart = atoi(argv[i+1]);
-	if ((NbRestart < 0)) {
-	  masterprint ("Incorrect restart number\n");
-	  PrintUsage (argv[0]);
-	}
+        Restart_Full = YES;
+        d=2;
+        NbRestart = atoi(argv[i+1]);
+        if ((NbRestart < 0)) {
+          masterprint ("Incorrect restart number\n");
+          PrintUsage (argv[0]);
+        }
       }
       if (strchr (argv[i], 'V')) {
-	Dat2vtk = YES;
-	Restart_Full = YES;
-	d=2;
-	NbRestart = atoi(argv[i+1]);
-	if ((NbRestart < 0)) {
-	  masterprint ("Incorrect output number\n");
-	  PrintUsage (argv[0]);	  
-	}
+        Dat2vtk = YES;
+        Restart_Full = YES;
+        d=2;
+        NbRestart = atoi(argv[i+1]);
+        if ((NbRestart < 0)) {
+          masterprint ("Incorrect output number\n");
+          PrintUsage (argv[0]);	  
+        }
       }
       if (strchr (argv[i], 'B')) {
-	Vtk2dat = YES;
-	Restart_Full = YES;
-	d=2;
-	NbRestart = atoi(argv[i+1]);
-	if ((NbRestart < 0)) {
-	  masterprint ("Incorrect output number\n");
-	  PrintUsage (argv[0]);	  
-	}
+        Vtk2dat = YES;
+        Restart_Full = YES;
+        d=2;
+        NbRestart = atoi(argv[i+1]);
+        if ((NbRestart < 0)) {
+          masterprint ("Incorrect output number\n");
+          PrintUsage (argv[0]);	  
+        }
       }
       if (strchr (argv[i], 'D')) {
-	d=2;
-	DeviceManualSelection = atoi(argv[i+1]);
+        d=2;
+        DeviceManualSelection = atoi(argv[i+1]);
       }
     }
     else strcpy (ParameterFile, argv[i]);
@@ -145,13 +145,13 @@ int main(int argc, char *argv[]) {
 
 #ifdef WRITEGHOSTS
   if (Merge == YES) {
-	mastererr ("Cannot merge outputs when dumping ghost values.\n");
-	mastererr ("'make nofulldebug' could fix this problem.\n");
-	mastererr ("Using the -k flag could be another solution.\n");
-	prs_exit (1);
+    mastererr ("Cannot merge outputs when dumping ghost values.\n");
+    mastererr ("'make nofulldebug' could fix this problem.\n");
+    mastererr ("Using the -k flag could be another solution.\n");
+    prs_exit (1);
   }
 #endif
-  
+
 
 #ifdef MPICUDA
   EarlyDeviceSelection();
@@ -166,8 +166,8 @@ int main(int argc, char *argv[]) {
   else
     sprintf (VersionString, "FARGO3D git version %s", xstr(VERSION));
   masterprint("\n\n%s\n%s\nSETUP: '%s'\n%s\n\n",
-	      sepline, VersionString, xstr(SETUPNAME), sepline);
-  
+      sepline, VersionString, xstr(SETUPNAME), sepline);
+
   if ((ParameterFile[0] == 0) || (argc == 1)) PrintUsage (argv[0]);
 
 #ifndef MPICUDA
@@ -223,11 +223,11 @@ int main(int argc, char *argv[]) {
     prs_exit(EXIT_FAILURE);
   }
 #endif
-    
+
   ListVariables ("variables.par"); //Writes all variables defined in set up
   ListVariablesIDL ("IDL.var");
   ChangeArch(); /*Changes the name of the main functions
-		  ChangeArch adds _cpu or _gpu if GPU is activated.*/
+                  ChangeArch adds _cpu or _gpu if GPU is activated.*/
   split(&Gridd); /*Split mesh over PEs*/
   InitSpace();
   WriteDim();
@@ -241,18 +241,18 @@ int main(int argc, char *argv[]) {
     OMEGAFRAME = GetPsysInfo(FREQUENCY);
   OMEGAFRAME0 = OMEGAFRAME;
   /* We need to keep track of initial azimuthal velocity to correct
-the target velocity in Stockholm's damping prescription. We copy the
-value above *after* rescaling, and after any initial correction to
-OMEGAFRAME (which is used afterwards to build the initial Vx field. */
+     the target velocity in Stockholm's damping prescription. We copy the
+     value above *after* rescaling, and after any initial correction to
+     OMEGAFRAME (which is used afterwards to build the initial Vx field. */
 
-  
+
   if(Restart == YES || Restart_Full == YES) {
     CondInit (); //Needed even for restarts: some setups have custom
-		 //definitions (eg potential for setup MRI) or custom
-		 //scaling laws (eg. setup planetesimalsRT).
+    //definitions (eg potential for setup MRI) or custom
+    //scaling laws (eg. setup planetesimalsRT).
 
     MULTIFLUID( begin_i  = RestartSimulation(NbRestart));
-    
+
     if (ThereArePlanets) {
       PhysicalTime  = GetfromPlanetFile (NbRestart, 9, 0);
       OMEGAFRAME  = GetfromPlanetFile (NbRestart, 10, 0);
@@ -270,7 +270,7 @@ OMEGAFRAME (which is used afterwards to build the initial Vx field. */
   if (StretchOldOutput == YES) {
     StretchOutput (StretchNumber);
   }
-  
+
   MULTIFLUID(comm(ENERGY)); //Very important for isothermal cases!
 
   /* This must be placed ***after*** reading the input files in case of a restart */
@@ -294,19 +294,19 @@ OMEGAFRAME (which is used afterwards to build the initial Vx field. */
 #ifdef LONGSUMMARY
   ExtractFromExecutable (NO, ArchFile, 2);
 #endif
-  
+
   MULTIFLUID(FillGhosts(PrimitiveVariables()));
-  
+
 #ifdef STOCKHOLM 
   FARGO_SAFE(init_stockholm()); //ALREADY IMPLEMENTED MULTIFLUID COMPATIBILITY
 #endif
-  
+
 #ifdef GHOSTSX
   masterprint ("\n\nNew version with ghost zones in X activated\n");
 #else
   masterprint ("Standard version with no ghost zones in X\n");
 #endif
-  
+
   for (i = begin_i; i<=NTOT; i++) { // MAIN LOOP
     if (NINTERM * (TimeStep = (i / NINTERM)) == i) {
 
@@ -314,38 +314,38 @@ OMEGAFRAME (which is used afterwards to build the initial Vx field. */
       FARGO_SAFE(ComputeDivergence(Bx, By, Bz));
 #endif
       if (ThereArePlanets)
-	WritePlanetSystemFile(TimeStep, NO);
-      
+        WritePlanetSystemFile(TimeStep, NO);
+
 #ifndef NOOUTPUTS
       MULTIFLUID(WriteOutputs(ALL));
-      
+
 #ifdef MATPLOTLIB
       Display();
 #endif
-      
+
       if(CPU_Master) printf("OUTPUTS %d at date t = %f OK\n", TimeStep, PhysicalTime);
 #endif
-      
+
       if (TimeInfo == YES) GiveTimeInfo (TimeStep);
 
     }
-    
+
     if (NSNAP != 0) {
       if (NSNAP * (TimeStep = (i / NSNAP)) == i) {
-	MULTIFLUID(WriteOutputs(SPECIFIC));
+        MULTIFLUID(WriteOutputs(SPECIFIC));
 #ifdef MATPLOTLIB
-	Display();
+        Display();
 #endif
       }
     }
 
     if (i==NTOT)
       break;
-    
+
     dtemp = 0.0;
-    
+
     while (dtemp<DT) { // DT LOOP
-      
+
       /// AT THIS STAGE Vx IS THE INITIAL TOTAL VELOCITY IN X
 #ifdef X
 #ifndef STANDARD
@@ -353,32 +353,32 @@ OMEGAFRAME (which is used afterwards to build the initial Vx field. */
 #endif
 #endif
       /// NOW THE 2D MESH VxMed CONTAINS THE AZIMUTHAL AVERAGE OF Vx in X
-      
+
 #ifdef FLOOR
       MULTIFLUID(Floor());
 #endif
 
 #ifdef MHD
-  if (Resistivity_Profiles_Filled == NO) {
-    FARGO_SAFE(Fill_Resistivity_Profiles ());
-  }
+      if (Resistivity_Profiles_Filled == NO) {
+        FARGO_SAFE(Fill_Resistivity_Profiles ());
+      }
 #endif
 
       // CFL condition is applied below ----------------------------------------
       MULTIFLUID(cfl());
 
       CflFluidsMin(); /*Fills StepTime with the " global min " of the
-			cfl, computed from each fluid.*/
+                        cfl, computed from each fluid.*/
       dt = StepTime; //cfl works with the 'StepTime' global variable.
-      
+
       dtemp+=dt;
       if(dtemp>DT)  dt = DT - (dtemp-dt); //updating dt
       //------------------------------------------------------------------------
-      
+
       //------------------------------------------------------------------------
       /* We now compute the total density of the mesh. We need first
-	 reset an array and then fill it by adding the density of each
-	 fluid */
+         reset an array and then fill it by adding the density of each
+         fluid */
       FARGO_SAFE(Reset_field(Total_Density)); 
       MULTIFLUID(ComputeTotalDensity()); 
       //------------------------------------------------------------------------
@@ -386,7 +386,7 @@ OMEGAFRAME (which is used afterwards to build the initial Vx field. */
 #ifdef COLLISIONPREDICTOR
       FARGO_SAFE(Collisions(0.5*dt, 0)); // 0 --> V is used and we update v_half.
 #endif
-      
+
       MULTIFLUID(Sources(dt)); //v_half is used in the R.H.S
 
 #ifdef DRAGFORCE
@@ -402,49 +402,49 @@ OMEGAFRAME (which is used afterwards to build the initial Vx field. */
       MULTIFLUID(StockholmBoundary(dt));
 #endif
 #ifdef SWK
-			FARGO_SAFE(waveKiller(dt));
+      FARGO_SAFE(waveKiller(dt));
 #endif
 #ifdef VORTEXBURNIN
-            FARGO_SAFE(burnin(Timestepcount));
+      FARGO_SAFE(burnin(Timestepcount));
 #endif
 
       //We apply comms and boundaries at the end of the step
       MULTIFLUID(FillGhosts(PrimitiveVariables()));
 
       if(CPU_Master) {
-	if (FullArrayComms)
-	  printf("%s", "!");
-	else {
-	  if (ContourComms)
-	    printf("%s", ":");
-	  else
-	    printf("%s", ".");
-	}
+        if (FullArrayComms)
+          printf("%s", "!");
+        else {
+          if (ContourComms)
+            printf("%s", ":");
+          else
+            printf("%s", ".");
+        }
 #ifndef NOFLUSH
-	fflush(stdout);
+        fflush(stdout);
 #endif
       }
       FullArrayComms = 0;
       ContourComms = 0;
     }
-    
+
     if(CPU_Master) printf("%s", "\n");
-    
+
     MULTIFLUID(MonitorGlobal (MONITOR2D      |	\
-			      MONITORY       |	\
-			      MONITORY_RAW   |	\
-			      MONITORSCALAR  |	\
-			      MONITORZ       |	\
-			      MONITORZ_RAW));
+          MONITORY       |	\
+          MONITORY_RAW   |	\
+          MONITORSCALAR  |	\
+          MONITORZ       |	\
+          MONITORZ_RAW));
 
     if (ThereArePlanets) {
       WritePlanetSystemFile(TimeStep, YES);
       SolveOrbits (Sys);
     }
   }
-  
+
   MPI_Finalize();
-  
+
   masterprint("End of the simulation!\n");
   return 0;  
 }

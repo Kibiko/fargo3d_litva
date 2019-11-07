@@ -1,15 +1,5 @@
 #include "fargo3d.h"
 
-/*real shearVY(real y, real z){
-	real v = 0.0;
-	return v;
-}
-
-real shearVZ(real y, real z){
-	real v = -1.5*y;
-	return v;
-}*/
-
 real vortexVZ(real y, real z, real cY, real cZ, real a, real b){
   real v = shearVX(y,z);
   real ZZ=z+cZ;
@@ -34,6 +24,12 @@ real vortexVY(real y, real z, real cZ, real cY, real a, real b){
   return v;
 }
 
+real burninSmoothingFunction(int nt){
+  real sf=cos(0.5*M_PI*((double)nt/((double)BURNINSTEPS)));
+  sf*=sf;
+  return sf;
+}
+
 void burnin(int nt) {
   if(nt<BURNINSTEPS){
     unsigned int size_z=Nz+NGHZ;	
@@ -44,21 +40,20 @@ void burnin(int nt) {
     real maskwidth=KILLZONE;
     real rho0=KILLZONE_RHO_0;
     real e0=KILLZONE_E_0;
-    //printf("maskwidth=%f",maskwidth);
     real a=vortexA;
     real b=vortexB;
     int i;
     int j;
     int k;
+    double bsf=burninSmoothingFunction(nt); //An attempt to make relaxation profile smooth in time
     i = j = k = 0;
     for(k=0; k<Nz + 2*NGHZ; k++) {
       for(j=0;j<Ny + 2*NGHY; j++) {
         for(i=0;i<Nx; i++) {
           unsigned int	ll = l;//i+pitch*j+stride*k;
-          //printf("%d\n",ll);
-          //rho[ll]	 =0.5*rho[ll]+0.5*((xmed(i)*xmed(i)/a + ymed(j)*ymed(j)/b)<1.0?4.0*rho0:rho0);
-          vy[ll]	 =0.5*vy[ll]+0.5*vortexVY(ymed(j),xmed(i),0.0,0.0,a,b);
-          vx[ll]	 =0.5*vx[ll]+0.5*vortexVZ(ymed(j),xmed(i),0.0,0.0,a,b);
+          rho[ll]	 =bsf*rho[ll]+(1.0-bsf)*((xmed(i)*xmed(i)/a + ymed(j)*ymed(j)/b)<1.0?4.0*rho0:rho0);
+          vy[ll]	 =bsf*vy[ll]+(1.0-bsf)*vortexVY(ymed(j),xmed(i),0.0,0.0,a,b);
+          vx[ll]	 =bsf*vx[ll]+(1.0-bsf)*vortexVZ(ymed(j),xmed(i),0.0,0.0,a,b);
         }
       }
     }

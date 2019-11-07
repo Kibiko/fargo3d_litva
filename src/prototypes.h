@@ -60,6 +60,7 @@ ex real shearVY(real, real);
 ex real vortexVZ(real, real, real, real, real, real);
 ex real vortexVY(real, real, real, real, real, real);
 ex void burnin(int);
+ex real burninSmoothingFunction(int);
 
 real maskfunction(real);
 real shearVX(real, real);
