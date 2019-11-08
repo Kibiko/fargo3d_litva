@@ -37,7 +37,13 @@ void Init() {
       cs[l] = soundspeed;
 #endif
 #ifdef ADIABATIC
-      e[l] = pow(soundspeed,2)*rho[l]/(GAMMA-1.0);
+	#ifndef DUSTY
+	      e[l] = pow(soundspeed,2)*rho[l]/(GAMMA-1.0);
+	#endif
+#endif
+#if defined DUSTY && ADIABATIC
+	double fd = 0.0;
+	e[l] = (1-fd)*rho[l]*pow(CSCONST,2);
 #endif
       
       vphi[l] = omega*r*sqrt(1.0+pow(ASPECTRATIO,2)*pow(r/R0,2*FLARINGINDEX)*

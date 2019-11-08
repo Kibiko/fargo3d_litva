@@ -2,10 +2,12 @@ Setup			fargo
 
 ### Disk parameters
 
+TsConst			0.0		Stopping time
+CsConst			0.05		Sound speed
 AspectRatio     	0.05            Thickness over Radius in the disc
-Sigma0			6.3661977237e-4	Surface Density at r=1
+Sigma0			1.0e-4		Surface Density at r=1
 Nu			1.0e-5		Uniform kinematic viscosity
-SigmaSlope		0.0		Slope for the surface density
+SigmaSlope		0.5		Slope for the surface density
 FlaringIndex		0.0		Slope for the aspect-ratio
 
 # Radial range for damping (in period-ratios). Values smaller than one
@@ -24,8 +26,8 @@ PlanetConfig		planets/jupiter.cfg
 ThicknessSmoothing 	0.6
 RocheSmoothing 		0.0
 Eccentricity		0.0
-ExcludeHill		no
-IndirectTerm		Yes
+ExcludeHill		Yes
+IndirectTerm		no
 
 ### Mesh parameters
 
