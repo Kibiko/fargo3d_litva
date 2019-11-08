@@ -4,6 +4,7 @@
 #ifdef DUSTY
 
 void cooling_cpu(real dt){
+#ifndef TESTNOCOOLING
   SelectFluid(0);
 	double cs = CSCONST;
 	real * y0 = Energy->field_cpu;
@@ -129,7 +130,7 @@ void cooling_cpu(real dt){
 	current_simulation_time=time_initial+dt;
 	comunicate = ENERGY;
 	FARGO_SAFE(FillGhosts(comunicate));
-
+#endif
 }
 
 
