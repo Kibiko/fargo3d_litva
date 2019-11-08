@@ -144,21 +144,27 @@ void SubStep2_b_cpu (real dt) {
 	vx_temp[ll] += - 2.0*(pres_x[ll]-pres_x[llxm])/(rho[ll]+rho[llxm])* \
 	  dt/zone_size_x(j,k);//Should be distance from center to center
 #ifdef ADIABATIC
+#ifndef DUSTY
 	e[ll] += -dt*(pres_x[ll]*(vx[llxp]-vx[ll])/zone_size_x(j,k));
+#endif
 #endif
 #endif
 #ifdef Y
 	vy_temp[ll] += - 2.0*(pres_y[ll]-pres_y[llym])/(rho[ll]+rho[llym])*	\
 	  dt/zone_size_y(j,k);// instead of zone_size_(x,y,z)
 #ifdef ADIABATIC
+#ifndef DUSTY 
 	e[ll] += -dt*(pres_y[ll]*(vy[llyp]-vy[ll])/zone_size_y(j,k));
+#endif
 #endif
 #endif
 #ifdef Z
 	vz_temp[ll] += -2.0*(pres_z[ll]-pres_z[llzm])/(rho[ll]+rho[llzm])*	\
 	  dt/zone_size_z(j,k);// which is the distance from edge to edge
 #ifdef ADIABATIC
+#ifndef DUSTY
 	e[ll] += -dt*(pres_z[ll]*(vz[llzp]-vz[ll])/zone_size_z(j,k));
+#endif
 #endif
 #endif
 //<\#>
