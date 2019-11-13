@@ -42,7 +42,7 @@ void Init() {
 	#endif
 #endif
 #if defined DUSTY && ADIABATIC
-	double fd = 0.0;
+	double fd = 0.1;
 	e[l] = (1-fd)*rho[l]*pow(CSCONST,2);
 #endif
       

@@ -2,10 +2,10 @@ Setup			fargo
 
 ### Disk parameters
 
-TsConst			0.0		Stopping time
+TsConst			0.01		Stopping time
 CsConst			0.05		Sound speed
 AspectRatio     	0.05            Thickness over Radius in the disc
-Sigma0			1.0e-4		Surface Density at r=1
+Sigma0			2.0e-4		Surface Density at r=1
 Nu			1.0e-5		Uniform kinematic viscosity
 SigmaSlope		0.5		Slope for the surface density
 FlaringIndex		0.0		Slope for the aspect-ratio
@@ -26,8 +26,8 @@ PlanetConfig		planets/jupiter.cfg
 ThicknessSmoothing 	0.6
 RocheSmoothing 		0.0
 Eccentricity		0.0
-ExcludeHill		Yes
-IndirectTerm		no
+ExcludeHill		no
+IndirectTerm		yes
 
 ### Mesh parameters
 
@@ -44,9 +44,9 @@ Frame			G		Method for moving the frame of reference
 
 DT			0.314159265359	Physical time between fine-grain outputs
 Ninterm	 		20		Number of DTs between scalar fields outputs
-Ntot			1000		Total number of DTs
+Ntot			2000		Total number of DTs
 
-OutputDir		@outputs/fargo
+OutputDir		/data/chan/fargo/dustyfargo
 
 ### Plotting parameters
 
