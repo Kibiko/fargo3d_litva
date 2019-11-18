@@ -42,8 +42,10 @@ void Init() {
 	#endif
 #endif
 #if defined DUSTY && ADIABATIC
-	double fd = 0.1;
-	e[l] = (1-fd)*rho[l]*pow(CSCONST,2);
+	real *cs = LICs->field_cpu; //18/11
+	cs[l] = soundspeed; //18/11
+	double fd = 0.5;
+	e[l] = (1-fd)*rho[l]*pow(cs[l],2); //18/11
 #endif
       
       vphi[l] = omega*r*sqrt(1.0+pow(ASPECTRATIO,2)*pow(r/R0,2*FLARINGINDEX)*

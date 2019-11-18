@@ -43,14 +43,14 @@ real C_dust(real yp, real y, real ym, real fdp, real fd, real fdm,real h){
 	return C;
 }
 
-real Cd(real* P_current, real* P, real* rho, int i, int j, int k){
-	real cs = CSCONST;
+real Cd(real* P_current, real* P, real* rho, real* CS, int i, int j, int k){
+	//real cs = CSCONST; //18/11 m2
 	real ts = TSCONST;
 	int pitch=Pitch_cpu;
 	int stride=Stride_cpu;
 	real C=0.;
 	//C=Lap(P,i,j,k,pitch,stride);
-	C=ts*cs*cs*(Lap(P_current,i,j,k,pitch,stride)*(1.-(P_current[l]/(cs*cs*rho[l])))+(GradDDotGrad(P_current,rho,cs,i,j,k,pitch,stride)));
+	C=ts*CS[l]*CS[l]*(Lap(P_current,i,j,k,pitch,stride)*(1.-(P_current[l]/(CS[l]*CS[l]*rho[l])))+(GradDDotGrad(P_current,rho,CS,i,j,k,pitch,stride))); //18/11 m2
 //	printf("i= %d, lap= %e gdg= %e \n",k,Lap(P_current,i,j,k,pitch,stride)*(1.-(P_current[l]/(cs*cs*rho[l]))), GradDDotGrad(P_current,rho,cs,i,j,k,pitch,stride));
 	return C;
 }

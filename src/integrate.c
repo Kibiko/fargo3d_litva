@@ -39,6 +39,7 @@ void integrate_cpu(real dt, real * F1, real * F2, real * Fnew, int J, int S){
 	real SurfDust = SURFDUST;
 	real TS_CONST = TSCONST;
   real * rho = Density->field_cpu;
+	real * CS = LICs->field_cpu; //18/11 a
 	real * F0 = Energy->field_cpu;
 	real * store = Y4->field_cpu;
 	//<\EXTERNAL>
@@ -77,14 +78,14 @@ void integrate_cpu(real dt, real * F1, real * F2, real * Fnew, int J, int S){
 				Fnew[ll] = ((2.*J-1)/J)*F1[ll]+ 
 				((1.-J)/J)*F2[ll]+ 
 			  //((1.0-muj(J)-nuj(J))*F0[ll])+ 
-				((4.*J-2.)/(J*S*S+J*S))*dt*Cd(F1,F1,rho,i,j,k);
+				((4.*J-2.)/(J*S*S+J*S))*dt*Cd(F1,F1,rho,CS,i,j,k); //18/11 a
 				//store[ll] = Fnew[ll];
 #	else
 				Fnew[ll] = (muj(J)*F1[ll])+ 
 				(nuj(J)*F2[ll])+ 
 			  ((1.0-muj(J)-nuj(J))*F0[ll])+ 
-				(mu1j(J,S)*dt*Cd(F1,F1,rho,i,j,k))+
-				(nu1j(J,S)*dt*Cd(F1,F0,rho,i,j,k));
+				(mu1j(J,S)*dt*Cd(F1,F1,rho,CS,i,j,k))+ //18/11 a
+				(nu1j(J,S)*dt*Cd(F1,F0,rho,CS,i,j,k)); //18/11 a
 
 				//store[ll] = Fnew[ll];
 #	endif
@@ -114,6 +115,7 @@ void integrate1_cpu(real dt, real * F0, real * Fnew, int S){
 	real SurfDust = SURFDUST;
 	real TS_CONST = TSCONST;
 	real * rho = Density->field_cpu;
+	real * CS = LICs->field_cpu; //18/11 a
 	//<\EXTERNAL>
 
 	//<INTERNAL>
@@ -149,7 +151,7 @@ void integrate1_cpu(real dt, real * F0, real * Fnew, int S){
 				//<#>
 				ll = l;
 				Fnew[ll]=0.;
-				Fnew[ll]+= F0[ll]+mu1j(1,S)*dt*Cd(F0,F0,rho,i,j,k);
+				Fnew[ll]+= F0[ll]+mu1j(1,S)*dt*Cd(F0,F0,rho,CS,i,j,k); //18/11 a
 				//<\#>
 #ifdef X
 			}
@@ -177,6 +179,7 @@ void RK2_cpu(real dt){
   real * rho = Density->field_cpu;
 	real * F0 = Energy->field_cpu;
 	real * F1 = Y1->field_cpu;
+	real * CS = LICs->field_cpu; //18/11 a
 	//<\EXTERNAL>
 
 	//<INTERNAL>
@@ -209,7 +212,7 @@ void RK2_cpu(real dt){
 #endif
 				//<#>
 				ll = l;
-				F1[ll]=F0[ll]+0.5*dt*Cd(F0,F0,rho,i,j,k);
+				F1[ll]=F0[ll]+0.5*dt*Cd(F0,F0,rho,CS,i,j,k); //18/11 a
 				//<\#>
 #ifdef X
 			}
@@ -235,7 +238,7 @@ void RK2_cpu(real dt){
 #endif
 				//<#>
 				ll = l;
-				F0[ll]=F0[ll]+dt*Cd(F1,F1,rho,i,j,k);
+				F0[ll]=F0[ll]+dt*Cd(F1,F1,rho,CS,i,j,k); //18/11
 				//<\#>
 #ifdef X
 			}
