@@ -114,6 +114,7 @@ struct fluid {
 	struct field *Y2;
 	struct field *Y3;
 	struct field *Y4;
+	struct field *LICs;
 #endif
 #ifdef STOCKHOLM
   struct field2D *Density0;

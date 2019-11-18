@@ -99,6 +99,7 @@
 #define Y2_COMM 32768L
 #define Y3_COMM 65536L
 #define Y4_COMM 131072L
+#define LIC_COMM 262144L //18/11
 
 /////////////////////////////////////////////////////
 //Definitions relative to Fine Grain Monitoring 

@@ -140,6 +140,7 @@ Field *Y2;
 Field *Y3;
 Field *Y4;
 Field *Y5;
+Field *LICs; //18/11
 real CSCONST;
 real TSCONST;
 real SURFDUST;
