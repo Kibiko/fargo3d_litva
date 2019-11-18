@@ -46,7 +46,7 @@ DT			0.314159265359	Physical time between fine-grain outputs
 Ninterm	 		20		Number of DTs between scalar fields outputs
 Ntot			2000		Total number of DTs
 
-OutputDir		/data/chan/fargo/dustyfargo
+OutputDir		@outputs/dustyfargo
 
 ### Plotting parameters
 
