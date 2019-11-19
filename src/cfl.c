@@ -35,7 +35,8 @@ void cfl_cpu() {
   real* rho = Density->field_cpu;
   real* dtime = DensStar->field_cpu;
 #ifdef DUSTY
-	real CS = CSCONST;
+  	real * CS = LICs->field_cpu; //19/11 a
+	//real CS = CSCONST;
 #endif
 
 #ifdef X
@@ -159,7 +160,7 @@ void cfl_cpu() {
 #	ifndef DUSTY
 	soundspeed2 = GAMMA*(GAMMA-1)*cs[ll]/rho[ll];
 #	else
-	soundspeed2 = cs[ll]/rho[ll];
+	soundspeed2 = cs[ll]/rho[ll]; //19/11 m was cs before?
 #	endif
 #endif
 

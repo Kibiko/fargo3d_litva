@@ -6,7 +6,8 @@
 void cooling_cpu(real dt){
 #ifndef TESTNOCOOLING
   SelectFluid(0);
-	double cs = CSCONST;
+	//double cs = CSCONST; //19/11 m
+	real * CS = LICs->field_cpu; //19/11 a
 	real * y0 = Energy->field_cpu;
 	real * y1 = Y1->field_cpu;
 	real * y2 = Y2->field_cpu;
@@ -33,7 +34,7 @@ void cooling_cpu(real dt){
 	real t_parabY=dt;
 	real t_parabZ=dt;
 
-	real DMAX=TS_CONST*cs*cs;
+	real DMAX=TS_CONST*CS[ll]*CS[ll]; //19/11 m
 
 #ifdef Z
 	real t_parabz=0.1*(zmed(2)-zmed(1))*(zmed(2)-zmed(1))/DMAX;
@@ -136,7 +137,8 @@ void cooling_cpu(real dt){
 
 void RK2_cooling_cpu(real dt){
 
-	double cs = CSCONST;
+	//double cs = CSCONST; //19/11 m
+	real * CS = LICs->field_cpu;
 	real * y0 = Energy->field_cpu;
 	real * dens = Density->field_cpu;
 	int pitch  = Pitch_cpu;
@@ -155,7 +157,7 @@ void RK2_cooling_cpu(real dt){
 	
 	i = j = k = 0;
 	real DeltaT=0.0;
-	real DMAX=TS_CONST*cs*cs*calcDmax_cpu();
+	real DMAX=TS_CONST*CS[ll]*CS[ll]*calcDmax_cpu(); //19/11 m
 	real t_parabX=dt;
 	real t_parabY=dt;
 	real t_parabZ=dt;
@@ -197,7 +199,7 @@ void RK2_cooling_cpu(real dt){
 	
 	while(DeltaT<dt){
 
-		real DMAX=TS_CONST*cs*cs*calcDmax_cpu();
+		real DMAX=TS_CONST*CS[ll]*CS[ll]*calcDmax_cpu(); //19/11 m
 		t_parabX=dt-DeltaT;
 		t_parabY=dt-DeltaT;
 		t_parabZ=dt-DeltaT;

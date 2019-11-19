@@ -27,21 +27,22 @@
 
 
 
-real C_dust(real yp, real y, real ym, real fdp, real fd, real fdm,real h){
+//real C_dust(real yp, real y, real ym, real fdp, real fd, real fdm,real h){
 	//<EXTERNAL>
-	real cs = CSCONST;
-	real ts = TSCONST;
+//	real cs = CSCONST; //19/11 m
+	//real * CS = LICs->field_cpu; //19/11 a
+//	real ts = TSCONST;
 	//<\EXTERNAL>
 
-	real C=0.;
+//	real C=0.;
 #ifdef LINEARDIFF
 //	C=ts*cs*cs*dxx(yp,y,ym,h)*fd;
 #else
 //	C=ts*cs*cs*(dxx(yp,y,ym,h)*fd + dx(fdp,fdm,h)*dx(yp,ym,h));
 #endif
-	C=ts*cs*cs*(dq2(yp,y,ym,h,h)*fd + dq(fdp,fd,fdm,h,h)*dq(yp,y,ym,h,h));
-	return C;
-}
+//	C=ts*cs*cs*(dq2(yp,y,ym,h,h)*fd + dq(fdp,fd,fdm,h,h)*dq(yp,y,ym,h,h));
+//	return C;
+//}
 
 real Cd(real* P_current, real* P, real* rho, real* CS, int i, int j, int k){
 	//real cs = CSCONST; //18/11 m2

@@ -63,7 +63,8 @@ void make_D_cpu(){
 	int size_y = Ny+2 * NGHY;
 	int size_z = Nz+2 * NGHZ;
 
-	real cs = CSCONST;
+	//real cs = CSCONST; //19/11 m
+	real * CS = LICs->field_cpu; //19/11 a
 	real ts = TSCONST;
 	//<\EXTERNAL>
 
@@ -95,7 +96,7 @@ void make_D_cpu(){
 #		endif
 				//<#>
 				ll = l;
-				D[ll]=1-(p[ll]/(cs*cs*rho[ll]));
+				D[ll]=1-(p[ll]/(CS[ll]*CS[ll]*rho[ll])); //19/11 m
 				//<\#>
 #		ifdef X
 			}
