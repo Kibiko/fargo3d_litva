@@ -35,11 +35,11 @@
 	//<\EXTERNAL>
 
 //	real C=0.;
-#ifdef LINEARDIFF
+//#ifdef LINEARDIFF
 //	C=ts*cs*cs*dxx(yp,y,ym,h)*fd;
-#else
+//#else
 //	C=ts*cs*cs*(dxx(yp,y,ym,h)*fd + dx(fdp,fdm,h)*dx(yp,ym,h));
-#endif
+//#endif
 //	C=ts*cs*cs*(dq2(yp,y,ym,h,h)*fd + dq(fdp,fd,fdm,h,h)*dq(yp,y,ym,h,h));
 //	return C;
 //}
@@ -55,5 +55,15 @@ real Cd(real* P_current, real* P, real* rho, real* CS, int i, int j, int k){
 //	printf("i= %d, lap= %e gdg= %e \n",k,Lap(P_current,i,j,k,pitch,stride)*(1.-(P_current[l]/(cs*cs*rho[l]))), GradDDotGrad(P_current,rho,cs,i,j,k,pitch,stride));
 	return C;
 }
+
+real gradlncs(real * P_current, real * vy, double flaringindex, int j)
+{
+	int pitch = Pitch_cpu;
+	int stride = Stride_cpu;
+	real gradlncs = 0. ;
+	gradlncs = -2*(flaringindex-0.5)*P_current[l]*(vy[llym]+vy[llyp])/(2*ymed(j));
+
+	return gradlncs;
+}//21/11 a	
 
 #endif
