@@ -129,4 +129,5 @@ real Lap(real* FF, int i, int j, int k, int pitch, int stride){
 #endif
 	return lap;
 }
+
 #endif

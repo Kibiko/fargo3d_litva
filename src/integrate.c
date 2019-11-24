@@ -42,6 +42,7 @@ void integrate_cpu(real dt, real * F1, real * F2, real * Fnew, int J, int S){
 	real * CS = LICs->field_cpu; //18/11 a
 	real * F0 = Energy->field_cpu;
 	real * store = Y4->field_cpu;
+	real * vy = Vy_temp->field_cpu; //21/11 a
 	//<\EXTERNAL>
 
 	//<INTERNAL>

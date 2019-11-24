@@ -1,0 +1,2 @@
+condinit.c:  real *e   = Energy->field_cpu;
+condinit.c:  real *cs   = Energy->field_cpu;
