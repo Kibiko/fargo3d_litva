@@ -44,7 +44,7 @@ void Init() {
 #if defined DUSTY && ADIABATIC
 	real *CS = LICs->field_cpu; //18/11
 	CS[l] = soundspeed; //18/11
-	double fd = 0.5;
+	double fd = 0.2;
 	e[l] = (1-fd)*rho[l]*pow(CS[l],2); //18/11 stores Pressure in Energy field
 #endif
       

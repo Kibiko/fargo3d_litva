@@ -60,9 +60,10 @@ real gradlncs(real * P_current, real * vy, double flaringindex,int i, int j, int
 {
 	int pitch = Pitch_cpu;
 	int stride = Stride_cpu;
-	int ll = l;
+	int llym = lym;
+	int llyp = lyp;
 	real gradlncs = 0. ;
-	gradlncs = -2*(flaringindex-0.5)*P_current[l]*(vy[lym]+vy[lyp])/(2*ymed(j));
+	gradlncs = -2.*(flaringindex-0.5)*P_current[l]*(vy[llym]+vy[llyp])/(2.*ymed(j));
 
 	return gradlncs;
 }//21/11 a	
