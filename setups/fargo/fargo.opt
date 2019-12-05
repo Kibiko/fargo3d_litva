@@ -35,7 +35,7 @@ FARGO_OPT +=  -DSTABLE
 
 #Legacy files for outputs
 #FARGO_OPT += -DLEGACY
-
+#FARGO_OPT +=  -DOUTCS 
 FARGO_OPT += -DPOTENTIAL
 
 FARGO_OPT += -DVISCOSITY

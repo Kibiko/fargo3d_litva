@@ -684,8 +684,10 @@ void WriteOutputs(int type) {
     __WriteField(Density, TimeStep);
   if (WRITEENERGY)
     __WriteField(Energy, TimeStep);
+#ifdef OUTCS
   if (WRITECS)
-    __WriteField(LICs, TimeStep); //5/12 a
+    __WriteField(LICs, TimeStep);
+#endif  //5/12 a
 #ifdef MHD //MHD is 3D.
   if(Fluidtype == GAS){
     if (WRITEDIVERGENCE)
