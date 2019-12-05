@@ -85,8 +85,8 @@ void integrate_cpu(real dt, real * F1, real * F2, real * Fnew, int J, int S){
 				Fnew[ll] = (muj(J)*F1[ll])+ 
 				(nuj(J)*F2[ll])+ 
 			  ((1.0-muj(J)-nuj(J))*F0[ll])+ 
-				(mu1j(J,S)*dt*(Cd(F1,F1,rho,CS,i,j,k)+gradlncs(F1,vy,0.,i,j,k)))+ //18/11 a
-				(nu1j(J,S)*dt*(Cd(F1,F0,rho,CS,i,j,k)+gradlncs(F1,vy,0.,i,j,k))); //18/11 a
+				(mu1j(J,S)*dt*(Cd(F1,F1,rho,CS,i,j,k)+gradlncs(F1,vy,FLARINGINDEX,i,j,k)))+ //18/11 a
+				(nu1j(J,S)*dt*(Cd(F1,F0,rho,CS,i,j,k)+gradlncs(F1,vy,FLARINGINDEX,i,j,k))); //18/11 a
 
 				//store[ll] = Fnew[ll];
 #	endif
@@ -153,7 +153,7 @@ void integrate1_cpu(real dt, real * F0, real * Fnew, int S){
 				//<#>
 				ll = l;
 				Fnew[ll]=0.;
-				Fnew[ll]+= F0[ll]+mu1j(1,S)*dt*(Cd(F0,F0,rho,CS,i,j,k)+gradlncs(F0,vy,0.,i,j,k)); //18/11 a
+				Fnew[ll]+= F0[ll]+mu1j(1,S)*dt*(Cd(F0,F0,rho,CS,i,j,k)+gradlncs(F0,vy,FLARINGINDEX,i,j,k)); //18/11 a
 				//<\#>
 #ifdef X
 			}

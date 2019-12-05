@@ -568,6 +568,8 @@ void WriteOutputs(int type) {
   
   boolean writedensity;
   boolean writeenergy;
+  boolean writecs; //5/12 a
+  boolean WRITECS = 0; //5/12 a
   boolean writedivergence;
   boolean writebx;
   boolean writeby;
@@ -592,6 +594,7 @@ void WriteOutputs(int type) {
   if (type == ALL){ //We store the .par variables' value for a while.
     writedensity = WRITEDENSITY;
     writeenergy = WRITEENERGY;
+    writecs = WRITECS; //5/12 a
     writebx = WRITEBX;
     writeby = WRITEBY;
     writebz = WRITEBZ;
@@ -601,7 +604,8 @@ void WriteOutputs(int type) {
     writeenergyrad = WRITEENERGYRAD;
     writetau = WRITETAU;
     WRITEDENSITY = YES;
-    WRITEENERGY = YES;
+    WRITEENERGY = YES; 
+    WRITECS = YES; //5/12 a
     WRITEBX = YES;
     WRITEBY = YES;
     WRITEBZ = YES;
@@ -680,6 +684,8 @@ void WriteOutputs(int type) {
     __WriteField(Density, TimeStep);
   if (WRITEENERGY)
     __WriteField(Energy, TimeStep);
+  if (WRITECS)
+    __WriteField(LICs, TimeStep); //5/12 a
 #ifdef MHD //MHD is 3D.
   if(Fluidtype == GAS){
     if (WRITEDIVERGENCE)
@@ -709,6 +715,7 @@ void WriteOutputs(int type) {
 if (type == ALL){ //We recover the .par variables' value
     WRITEDENSITY = writedensity;
     WRITEENERGY = writeenergy;
+    WRITECS = writecs; //5/12 a
     WRITEBX = writebx;
     WRITEBY = writeby;
     WRITEBZ = writebz;
