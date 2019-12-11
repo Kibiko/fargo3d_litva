@@ -85,8 +85,8 @@ void integrate_cpu(real dt, real * F1, real * F2, real * Fnew, int J, int S){
 				Fnew[ll] = (muj(J)*F1[ll])+ 
 				(nuj(J)*F2[ll])+ 
 			  ((1.0-muj(J)-nuj(J))*F0[ll])+ 
-				(mu1j(J,S)*dt*(Cd(F1,F1,rho,CS,i,j,k)+gradlncs(F1,vy,FLARINGINDEX,i,j,k)))+ //18/11 a
-				(nu1j(J,S)*dt*(Cd(F1,F0,rho,CS,i,j,k)+gradlncs(F1,vy,FLARINGINDEX,i,j,k))); //18/11 a
+				(mu1j(J,S)*dt*Cd(F1,F1,rho,CS,i,j,k))+
+				(nu1j(J,S)*dt*Cd(F1,F0,rho,CS,i,j,k));
 
 				//store[ll] = Fnew[ll];
 #	endif
@@ -153,7 +153,7 @@ void integrate1_cpu(real dt, real * F0, real * Fnew, int S){
 				//<#>
 				ll = l;
 				Fnew[ll]=0.;
-				Fnew[ll]+= F0[ll]+mu1j(1,S)*dt*(Cd(F0,F0,rho,CS,i,j,k)+gradlncs(F0,vy,FLARINGINDEX,i,j,k)); //18/11 a
+				Fnew[ll]+= F0[ll]+mu1j(1,S)*dt*Cd(F0,F0,rho,CS,i,j,k);
 				//<\#>
 #ifdef X
 			}
@@ -258,7 +258,7 @@ void RK2_cpu(real dt){
 }
 
 
-void Assign_cpu(real * E, real * Enew){
+void Assign_cpu(real * E, real * Enew, real * temp_glcs){
 
 	//<USER_DEFINED>
 	//<\USER_DEFINED>
@@ -308,7 +308,72 @@ void Assign_cpu(real * E, real * Enew){
 				//<#>
 				ll = l;
 				//printf("DeltaE[%d]=%e \n",ll,Enew[ll]-E[ll]); 
-				E[ll] = Enew[ll];
+				E[ll] = Enew[ll] + temp_glcs[ll]; //11/12 m
+				
+				//<\#>
+#ifdef X
+			}
+#endif
+#ifdef Y
+		}
+#endif
+#ifdef Z
+	}
+#endif
+	//printf("\n");
+}
+
+void Assign_cpu1(real * E, real * Enew){
+
+	//<USER_DEFINED>
+	//<\USER_DEFINED>
+
+	//<EXTERNAL>
+	//double safety = SAFETYFACTOR;
+	int size_x = Nx;
+	int size_y = Ny+2 * NGHY;
+	int size_z = Nz+2 * NGHZ;
+	real RhoDust = RHODUST;
+	real SurfDust = SURFDUST;
+	real TS_CONST = TSCONST;
+
+
+	//<\EXTERNAL>
+
+	//<INTERNAL>
+	int i;
+	int j;
+	int k;
+	int ll;
+	double divP;
+	real *y0;
+	real *y1;
+	real *ym;
+	real *ymm;
+	//<\INTERNAL>
+
+	//<CONSTANT>
+	// real xmin(Ny+2*NGHX+1);
+	// real ymin(Ny+2*NGHY+1);
+	// real zmin(Nz+2*NGHZ+1);
+	// real GAMMA(1);
+	//<\CONSTANT>
+
+
+	//<MAIN_LOOP>
+#ifdef Z
+	for (k=NGHZ; k<size_z-NGHZ; k++) {
+#endif
+#ifdef Y
+		for (j=NGHY; j<size_y-NGHY; j++) {
+#endif
+#ifdef X
+			for (i=0; i<size_x; i++ ) {
+#endif
+				//<#>
+				ll = l;
+				//printf("DeltaE[%d]=%e \n",ll,Enew[ll]-E[ll]); 
+				E[ll] = Enew[ll]; //11/12 m
 				
 				//<\#>
 #ifdef X

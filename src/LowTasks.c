@@ -571,6 +571,7 @@ void SelectFluid(int n) {
 	Y3 = Fluids[n]->Y3;
 	Y4 = Fluids[n]->Y4;
 	LICs = Fluids[n]->LICs;
+	glcs = Fluids[n]->glcs; //10/12/
 #endif 
 }
 
@@ -658,6 +659,7 @@ void CreateFields() {
 	Y3 = CreateField("gasy3",Y3_COMM,0,0,0);
 	Y4 = CreateField("gasy4",Y4_COMM,0,0,0);
 	LICs = CreateField("localcs",LIC_COMM,0,0,0); //18/11
+	glcs = CreateField("glcs",GLCS_COMM,0,0,0); //10/12
 #endif //DUSTY
 
 }

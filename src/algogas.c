@@ -100,9 +100,11 @@ void Sources(real dt) {
 #ifdef ADIABATIC
 #	ifdef DUSTY	
 
-#	 ifdef STABLE 
+#	 ifdef STABLE
+  FARGO_SAFE(SubStep3(dt)); //10/12 a 
   FARGO_SAFE(cooling_cpu(dt));
 #	 else
+  FARGO_SAFE(SubStep3(dt)); //10/12 a
   FARGO_SAFE(RK2_cooling_cpu(dt));
 #	 endif
 #	else

@@ -235,6 +235,8 @@ void comm_cpu (int options) {
 #ifdef DUSTY
 	if(options & Y1_COMM)//{
 		f[nvar++] = Y1;
+	if(options & GLCS_COMM)
+		f[nvar++] = glcs; //10/12
 		//printf("were here Y1 comm\n");
 	//}
 //#ifdef STABLE

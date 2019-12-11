@@ -8,6 +8,7 @@ void cooling_cpu(real dt){
   SelectFluid(0);
 	//double cs = CSCONST; //19/11 m
 	real * CS = LICs->field_cpu; //19/11 a
+	real * gradlc = glcs->field_cpu; //10/12 a
 	real * y0 = Energy->field_cpu;
 	real * y1 = Y1->field_cpu;
 	real * y2 = Y2->field_cpu;
@@ -74,10 +75,10 @@ void cooling_cpu(real dt){
 	//printf("DMAX= %f \n",DMAX);
 	double time_initial=current_simulation_time;
 	int J=2;
-	FARGO_SAFE(Assign_cpu(y1,y0))
-	FARGO_SAFE(Assign_cpu(y2,y0))
-	FARGO_SAFE(Assign_cpu(y3,y0))
-	FARGO_SAFE(Assign_cpu(y4,y0))
+	FARGO_SAFE(Assign_cpu1(y1,y0))
+	FARGO_SAFE(Assign_cpu1(y2,y0))
+	FARGO_SAFE(Assign_cpu1(y3,y0))
+	FARGO_SAFE(Assign_cpu1(y4,y0))
 	FARGO_SAFE(integrate1_cpu(dt, y0, y1, intersteps));
 	int comunicate=Y1_COMM;
 	//comunicate |= ENERGY;
@@ -119,13 +120,13 @@ void cooling_cpu(real dt){
 			//printf("\n \n");
 		}
 	if((J%3)==0){
-		Assign_cpu(y0,y3);
+		Assign_cpu(y0,y3,gradlc);
 	}
 	if((J%3)==1){
-		Assign_cpu(y0,y1);
+		Assign_cpu(y0,y1,gradlc);
 	}
 	if((J%3)==2){
-		Assign_cpu(y0,y2);
+		Assign_cpu(y0,y2,gradlc);
 	}
 	//printf("\n \n");
 	current_simulation_time=time_initial+dt;

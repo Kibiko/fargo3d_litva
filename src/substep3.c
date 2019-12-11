@@ -25,6 +25,8 @@ void SubStep3_cpu (real dt) {
 
 //<EXTERNAL>
   real* e   = Energy->field_cpu;
+  real * temp_gradlncs = glcs->field_cpu; //10/12
+
 #ifdef X
   real* vx  = Vx_temp->field_cpu;
 #endif
@@ -57,6 +59,7 @@ void SubStep3_cpu (real dt) {
 #endif
   real term;
   real div_v;
+  real gradlc; //6/12 a
 //<\INTERNAL>
   
 //<CONSTANT>
@@ -95,6 +98,8 @@ void SubStep3_cpu (real dt) {
 #ifdef Z
 	llzp = lzp;
 #endif
+
+#ifndef DUSTY
 	div_v = 0.0;
 #ifdef X
 	div_v += (vx[llxp]-vx[ll])*SurfX(j,k);
@@ -107,6 +112,17 @@ void SubStep3_cpu (real dt) {
 #endif
 	term = 0.5 * dt * (GAMMA - 1.) * div_v * InvVol(j,k);
 	e[ll] *= (1.0-term)/(1.0+term);
+#endif
+
+#ifdef DUSTY
+	gradlc = 0.0;
+	
+	gradlc += e[ll]/(1-dt*gradlncs(vy,FLARINGINDEX,i,j,k));
+
+	temp_gradlncs[ll] =  gradlc - e[ll];
+#endif  //10/12
+
+
 //<\#>
 #ifdef X
       }

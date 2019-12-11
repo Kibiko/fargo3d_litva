@@ -56,14 +56,14 @@ real Cd(real* P_current, real* P, real* rho, real* CS, int i, int j, int k){
 	return C;
 }
 
-real gradlncs(real * P_current, real * vy, double flaringindex,int i, int j, int k)
+real gradlncs(real * vy, double flaringindex,int i, int j, int k)
 {
 	int pitch = Pitch_cpu;
 	int stride = Stride_cpu;
 	int llym = lym;
 	int llyp = lyp;
 	real gradlncs = 0. ;
-	gradlncs = 2.*(flaringindex-0.5)*P_current[l]*(vy[llym]+vy[llyp])/(2.*ymed(j));
+	gradlncs = 2.*(flaringindex-0.5)*(vy[llym]+vy[llyp])/(2.*ymed(j));
 
 	return gradlncs;
 }//21/11 a	
