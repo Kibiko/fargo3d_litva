@@ -160,7 +160,7 @@ void cfl_cpu() {
 #	ifndef DUSTY
 	soundspeed2 = GAMMA*(GAMMA-1)*cs[ll]/rho[ll];
 #	else
-	soundspeed2 = cs[ll]/rho[ll]; //19/11 m was cs before?
+	soundspeed2 = cs[ll]/rho[ll]; //16/12 m
 #	endif
 #endif
 

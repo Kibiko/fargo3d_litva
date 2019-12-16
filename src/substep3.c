@@ -115,11 +115,18 @@ void SubStep3_cpu (real dt) {
 #endif
 
 #ifdef DUSTY
+#ifndef TESTGRAD
 	gradlc = 0.0;
 	
 	gradlc += e[ll]/(1-dt*gradlncs(vy,FLARINGINDEX,i,j,k));
 
 	temp_gradlncs[ll] = gradlc - e[ll];
+#endif
+#ifdef TESTGRAD
+	gradlc = 0.0;
+
+	temp_gradlncs[ll] = gradlc;
+#endif
 #endif  //10/12
 
 

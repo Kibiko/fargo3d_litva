@@ -47,11 +47,11 @@ void Init() {
 	e[l] = (1-DUSTRATIO)*rho[l]*pow(CS[l],2); //18/11 stores Pressure in Energy field
 #endif
       
-      vphi[l] = omega*r*sqrt(1.0+pow(ASPECTRATIO,2)*pow(r/R0,2*FLARINGINDEX)*
-			     (2.0*FLARINGINDEX - 1.0 - SIGMASLOPE));
-      vphi[l] -= OMEGAFRAME*r;
-      vphi[l] *= (1.+ASPECTRATIO*NOISE*(drand48()-.5));
+     // vphi[l] = omega*r*sqrt(1.0+pow(ASPECTRATIO,2)*pow(r/R0,2*FLARINGINDEX)*(2.0*FLARINGINDEX - 1.0 - SIGMASLOPE));
+      //vphi[l] -= OMEGAFRAME*r;
+      //vphi[l] *= (1.+ASPECTRATIO*NOISE*(drand48()-.5)); //16/12 m
       
+	
       vr[l]    = soundspeed*NOISE*(drand48()-.5);
     }
   } 
