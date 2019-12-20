@@ -10,6 +10,7 @@ void Init() {
   int i,j,k;
   real r, omega;
   real soundspeed;
+  real vmix;
   
   real *vphi = Vx->field_cpu;
   real *vr   = Vy->field_cpu;
@@ -45,14 +46,20 @@ void Init() {
 	real *CS = LICs->field_cpu; //18/11
 	CS[l] = soundspeed; //18/11
 	e[l] = (1-DUSTRATIO)*rho[l]*pow(CS[l],2); //18/11 stores Pressure in Energy field
+	vmix = omega*r*sqrt(1.0+(1.0-DUSTRATIO)*(2.0*FLARINGINDEX - 1.0 - SIGMASLOPE)*pow(ASPECTRATIO,2.0)*pow(r/R0,2.0*FLARINGINDEX));
+	vphi[l] = vmix;
+	vphi[l] -= OMEGAFRAME*r;
+
+	vr[l] = 0.0;
 #endif
-      
-     // vphi[l] = omega*r*sqrt(1.0+pow(ASPECTRATIO,2)*pow(r/R0,2*FLARINGINDEX)*(2.0*FLARINGINDEX - 1.0 - SIGMASLOPE));
-      //vphi[l] -= OMEGAFRAME*r;
-      //vphi[l] *= (1.+ASPECTRATIO*NOISE*(drand48()-.5)); //16/12 m
-      
+#ifndef DUSTY      
+      vphi[l] = omega*r*sqrt(1.0+pow(ASPECTRATIO,2)*pow(r/R0,2*FLARINGINDEX)*(2.0*FLARINGINDEX - 1.0 - SIGMASLOPE));
+      vphi[l] -= OMEGAFRAME*r;
+      vphi[l] *= (1.+ASPECTRATIO*NOISE*(drand48()-.5)); //16/12 m
+
 	
       vr[l]    = soundspeed*NOISE*(drand48()-.5);
+#endif
     }
   } 
 }
