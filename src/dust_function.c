@@ -63,7 +63,7 @@ real gradlncs(real * vy, double flaringindex,int i, int j, int k)
 	int llym = lym;
 	int llyp = lyp;
 	real gradlncs = 0. ;
-	gradlncs = 2.*(flaringindex-0.5)*(vy[llym]+vy[llyp])/(2.*ymed(j));
+	gradlncs += 2.*(flaringindex-0.5)*(vy[llym]+vy[llyp])/(2.*ymed(j));
 
 	return gradlncs;
 }//21/11 a	

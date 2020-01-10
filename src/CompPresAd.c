@@ -51,7 +51,7 @@ void ComputePressureFieldAd_cpu () {
 #endif
 //<#>
 	ll = l;
-#ifdef DUSTY
+#ifdef DUSTY	
 	pres[ll]= e[ll];
 #else
 	pres[ll] = (GAMMA-1.0)*e[ll];

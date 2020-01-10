@@ -25,7 +25,7 @@ FARGO_OPT +=  -DY
 
 #Tests
 
-FARGO_OPT += -DTESTGRAD
+#FARGO_OPT += -DTESTGRAD
 
 #Equation of State
 FARGO_OPT +=  -DADIABATIC
