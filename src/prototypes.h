@@ -42,7 +42,6 @@ ex void Assign_cpu1(real*,real*); //11/12 a
 ex real Cd(real*, real*, real*, real*, int,int,int); //18/11
 ex real GradDDotGrad(real*,real*,real*,int,int,int,int,int); //18/11
 ex real Lap(real*,int,int,int,int,int);
-ex real gradlncs(real*,double,int,int,int); //20/11 a
 ex real dq(real,real,real,real,real);
 ex real dq2(real,real,real,real,real);
 ex void testbound_cpu(); 

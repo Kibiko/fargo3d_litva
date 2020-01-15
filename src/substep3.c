@@ -25,7 +25,6 @@ void SubStep3_cpu (real dt) {
 
 //<EXTERNAL>
   real* e   = Energy->field_cpu;
-  real * temp_gradlncs = glcs->field_cpu; //10/12
 
 #ifdef X
   real* vx  = Vx_temp->field_cpu;
@@ -115,17 +114,10 @@ void SubStep3_cpu (real dt) {
 #endif
 
 #ifdef DUSTY
-#ifndef TESTGRAD
-	gradlc = 0.0;
-	
-	gradlc += e[ll]/(1-dt*gradlncs(vy,FLARINGINDEX,i,j,k));
+#ifndef TESTNOGRAD	
+	real r = Ymed(j);
 
-	temp_gradlncs[ll] = gradlc - e[ll];
-#endif
-#ifdef TESTGRAD
-	gradlc = 0.0;
-
-	temp_gradlncs[ll] = gradlc;
+	e[ll] = e[ll]/(1+(2*dt*vy[llyp]*(0.5-FLARINGINDEX)/r));
 #endif
 #endif  //10/12
 

@@ -2,8 +2,8 @@ Setup			fargo
 
 ### Disk parameters
 
-TsConst			0.01		Stopping time
-DustRatio		0.1		Dust to total density ratio
+TsConst			0.1		Stopping time
+DustRatio		0.5		Dust to total density ratio
 #CsConst			0.05		Sound speed
 AspectRatio     	0.05            Thickness over Radius in the disc
 Sigma0			1.0e-4		Surface Density at r=1

@@ -44,9 +44,9 @@ void Init() {
 #endif
 #if defined DUSTY && ADIABATIC
 	real *CS = LICs->field_cpu; //18/11
-	CS[l] = soundspeed*pow(1+(DUSTRATIO/(1-DUSTRATIO)),-0.5); //18/11
-	e[l] = rho[l]*pow(CS[l],2.)*(1-DUSTRATIO); //18/11 stores Pressure in Energy field
-	vmix = omega*r*sqrt(1.0+pow(1+(DUSTRATIO/(1-DUSTRATIO)),-1)*(1.0-DUSTRATIO)*(2.0*FLARINGINDEX - 1.0 - SIGMASLOPE)*pow(ASPECTRATIO,2.0)*pow(r/R0,2.0*FLARINGINDEX));
+	CS[l] = soundspeed;
+	e[l] = rho[l]*pow(CS[l],2.)*(1.-DUSTRATIO); //18/11 stores Pressure in Energy field
+	vmix = omega*r*sqrt(1+(1.0-DUSTRATIO)*(2.0*FLARINGINDEX - 1.0 - SIGMASLOPE)*pow(ASPECTRATIO,2.0)*pow(r/R0,2.0*FLARINGINDEX));
 	vphi[l] = vmix;
 	vphi[l] -= OMEGAFRAME*r;
 

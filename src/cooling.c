@@ -120,13 +120,16 @@ void cooling_cpu(real dt){
 			//printf("\n \n");
 		}
 	if((J%3)==0){
-		Assign_cpu(y0,y3,gradlc);
+		Assign_cpu1(y0,y3);
+		//Assign_cpu(y0,y3,gradlc);
 	}
 	if((J%3)==1){
-		Assign_cpu(y0,y1,gradlc);
+		Assign_cpu1(y0,y1);
+		//Assign_cpu(y0,y1,gradlc);
 	}
 	if((J%3)==2){
-		Assign_cpu(y0,y2,gradlc);
+		Assign_cpu1(y0,y2);
+		//Assign_cpu(y0,y2,gradlc);
 	}
 	//printf("\n \n");
 	current_simulation_time=time_initial+dt;
