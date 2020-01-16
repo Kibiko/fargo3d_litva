@@ -46,7 +46,7 @@ void Init() {
 	real *CS = LICs->field_cpu; //18/11
 	CS[l] = soundspeed;
 	e[l] = rho[l]*pow(CS[l],2.)*(1.-DUSTRATIO); //18/11 stores Pressure in Energy field
-	vmix = omega*r*sqrt(1+(1.0-DUSTRATIO)*(2.0*FLARINGINDEX - 1.0 - SIGMASLOPE)*pow(ASPECTRATIO,2.0)*pow(r/R0,2.0*FLARINGINDEX));
+	vmix = omega*r*sqrt(1.0+(1.0-DUSTRATIO)*(2.0*FLARINGINDEX - 1.0 - SIGMASLOPE)*pow(ASPECTRATIO,2.0)*pow(r/R0,2.0*FLARINGINDEX));
 	vphi[l] = vmix;
 	vphi[l] -= OMEGAFRAME*r;
 

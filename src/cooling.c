@@ -8,7 +8,6 @@ void cooling_cpu(real dt){
   SelectFluid(0);
 	//double cs = CSCONST; //19/11 m
 	real * CS = LICs->field_cpu; //19/11 a
-	real * gradlc = glcs->field_cpu; //10/12 a
 	real * y0 = Energy->field_cpu;
 	real * y1 = Y1->field_cpu;
 	real * y2 = Y2->field_cpu;
@@ -121,15 +120,12 @@ void cooling_cpu(real dt){
 		}
 	if((J%3)==0){
 		Assign_cpu1(y0,y3);
-		//Assign_cpu(y0,y3,gradlc);
 	}
 	if((J%3)==1){
 		Assign_cpu1(y0,y1);
-		//Assign_cpu(y0,y1,gradlc);
 	}
 	if((J%3)==2){
 		Assign_cpu1(y0,y2);
-		//Assign_cpu(y0,y2,gradlc);
 	}
 	//printf("\n \n");
 	current_simulation_time=time_initial+dt;

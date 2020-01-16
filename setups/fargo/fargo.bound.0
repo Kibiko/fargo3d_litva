@@ -5,6 +5,23 @@ Density:
 	Ymin: KEPLERIAN2DDENS
 	Ymax: KEPLERIAN2DDENS
 
+Energy:
+	Ymin: PRESSURE2D
+	Ymax: PRESSURE2D
+Y1:
+	Ymin: PRESSURE2D
+	Ymax: PRESSURE2D
+
+Y2:
+        Ymin: PRESSURE2D
+        Ymax: PRESSURE2D
+Y3:
+        Ymin: PRESSURE2D
+        Ymax: PRESSURE2D
+Y4:
+        Ymin: PRESSURE2D
+        Ymax: PRESSURE2D
+
 Vx:
 	Ymin: KEPLERIAN2DVAZIM
 	Ymax: KEPLERIAN2DVAZIM

@@ -571,7 +571,6 @@ void SelectFluid(int n) {
 	Y3 = Fluids[n]->Y3;
 	Y4 = Fluids[n]->Y4;
 	LICs = Fluids[n]->LICs;
-	glcs = Fluids[n]->glcs; //10/12/
 #endif 
 }
 

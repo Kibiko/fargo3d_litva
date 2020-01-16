@@ -27,3 +27,12 @@ Emfy:
 	Staggering: xz
 Emfz:
 	Staggering: xy
+
+Y1:
+	Staggering: C
+Y2:
+	Staggering: C
+Y3:
+	Staggering: C
+Y4:	
+	Staggering: C

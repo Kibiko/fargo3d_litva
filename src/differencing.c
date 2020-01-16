@@ -10,7 +10,7 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  Francesco Lovascio 
+ *         Author:  Francesco Lovascio and Kevin Chan 
  *   Organization:  
  *
  * =====================================================================================
@@ -59,6 +59,9 @@ real GradDDotGrad(real* P,real* rho, real* CS, int i, int j, int k, int pitch, i
 	FM=1.-(P[llxm]/(CS[llxm]*CS[llxm]*rho[llxm])); //18/11 m
 	FP=1.-(P[llxp]/(CS[llxp]*CS[llxp]*rho[llxp])); //18/11 m
 	real x=dx(FP,FM,DX)*dx(P[llxp],P[llxm],DX);
+#ifdef CYLINDRICAL
+	x = x/(ymed(j)*ymed(j));
+#endif
 	GdG+=x;
 #endif
 #ifdef Y
@@ -70,9 +73,7 @@ real GradDDotGrad(real* P,real* rho, real* CS, int i, int j, int k, int pitch, i
 	FP=1.-(P[llyp]/(CS[llym]*CS[llym]*rho[llyp])); //18/11 m
 	F=1.-(P[ll]/(CS[ll]*CS[ll]*rho[ll])); //18/11 m
 	real y=dq(FP,F,FM,DY,DYM)*dq(P[llyp],P[ll],P[llym],DY,DYM);
-#   ifdef CYLINDRICAL
-    y=y/(ymed(j)*ymed(j));
-#   endif
+
 	GdG+=y;
 #endif
 #ifdef Z
