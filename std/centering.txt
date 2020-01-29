@@ -27,7 +27,8 @@ Emfy:
 	Staggering: xz
 Emfz:
 	Staggering: xy
-
+LICs:
+	Staggering: C
 Y1:
 	Staggering: C
 Y2:

@@ -161,7 +161,7 @@ void cfl_cpu() {
 	soundspeed2 = GAMMA*(GAMMA-1)*cs[ll]/rho[ll];
 #	else
 	//soundspeed2 = cs[ll]/rho[ll]; //16/12 m
-	soundspeed2 = pow(CS[ll],2.0);
+	soundspeed2 = CS[ll]*CS[ll];
 #	endif
 #endif
 

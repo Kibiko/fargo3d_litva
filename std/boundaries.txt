@@ -68,7 +68,7 @@ KEPLERIAN2DVAZIM:   #Analytic Keplerian extrapolation of velocity profile
   Centered: |(vt+Ymed(jact)*'OmegaFrame')*sqrt(Ymed(jact)/Ymed(jgh))-Ymed(jgh)*'OmegaFrame'|vt|
 
 PRESSURE2D:
-	Centered: |pressure*pow(Ymed(jgh)/Ymed(jact),2*'FLARINGINDEX'-1)|pressure|
+	Centered: |pressure*pow(Ymed(jgh)/Ymed(jact),2*'FLARINGINDEX'-1-'SIGMASLOPE')|pressure|
 
 EXTRAPOLATE_LEFT:
 	    Centered:    |(density[i+(NGHY+1)*pitch]-density[i+NGHY*pitch])/(Ymed(NGHY+1)-Ymed(NGHY))*(Ymed(jgh)-Ymed(NGHY))+density[i+NGHY*pitch]|active|

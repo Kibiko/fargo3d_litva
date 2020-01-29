@@ -70,7 +70,7 @@ real GradDDotGrad(real* P,real* rho, real* CS, int i, int j, int k, int pitch, i
 	real DYM=ymed(j)-ymed(j-1);
 	real DY=ymed(j+1)-ymed(j);
 	FM=1.-(P[llym]/(CS[llym]*CS[llym]*rho[llym])); //18/11 m
-	FP=1.-(P[llyp]/(CS[llym]*CS[llym]*rho[llyp])); //18/11 m
+	FP=1.-(P[llyp]/(CS[llyp]*CS[llyp]*rho[llyp])); //18/11 m
 	F=1.-(P[ll]/(CS[ll]*CS[ll]*rho[ll])); //18/11 m
 	real y=dq(FP,F,FM,DY,DYM)*dq(P[llyp],P[ll],P[llym],DY,DYM);
 

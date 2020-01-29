@@ -74,6 +74,8 @@ void integrate_cpu(real dt, real * F1, real * F2, real * Fnew, int J, int S){
 #endif
 				//<#>
 				ll = l;
+				real a = 1-(F0[ll]/(CS[ll]*CS[ll]*rho[ll]));
+				//if(a>0){
 				Fnew[ll]=0.;
 #	ifdef RKL1
 				Fnew[ll] = ((2.*J-1)/J)*F1[ll]+ 
@@ -82,14 +84,11 @@ void integrate_cpu(real dt, real * F1, real * F2, real * Fnew, int J, int S){
 				((4.*J-2.)/(J*S*S+J*S))*dt*Cd(F1,F1,rho,CS,i,j,k); //18/11 a
 				//store[ll] = Fnew[ll];
 #	else
-				Fnew[ll] = (muj(J)*F1[ll])+ 
-				(nuj(J)*F2[ll])+ 
-			  ((1.0-muj(J)-nuj(J))*F0[ll])+ 
-				(mu1j(J,S)*dt*Cd(F1,F1,rho,CS,i,j,k))+
-				(nu1j(J,S)*dt*Cd(F1,F0,rho,CS,i,j,k));
-
-				//store[ll] = Fnew[ll];
-#	endif
+				Fnew[ll] = (muj(J)*F1[ll])+(nuj(J)*F2[ll])+((1.0-muj(J)-nuj(J))*F0[ll])+(mu1j(J,S)*dt*Cd(F1,F1,rho,CS,i,j,k))+(nu1j(J,S)*dt*Cd(F1,F0,rho,CS,i,j,k));
+#	endif			
+				//}else{
+				//	Fnew[ll] = CS[ll]*CS[ll]*rho[ll];
+				//}
 				//<\#>
 #ifdef X
 			}
@@ -99,6 +98,7 @@ void integrate_cpu(real dt, real * F1, real * F2, real * Fnew, int J, int S){
 #endif
 #ifdef Z
 	}
+
 #endif
 }
 
@@ -152,9 +152,14 @@ void integrate1_cpu(real dt, real * F0, real * Fnew, int S){
 #endif
 				//<#>
 				ll = l;
+				//real a = 1-(F0[ll]/(CS[ll]*CS[ll]*rho[ll]));
+				//if(a>0){
 				Fnew[ll]=0.;
 				Fnew[ll]+= F0[ll]+mu1j(1,S)*dt*Cd(F0,F0,rho,CS,i,j,k);
-				//<\#>
+				//}
+				//else{
+				//	Fnew[ll] = CS[ll]*CS[ll]*rho[ll];
+				//}
 #ifdef X
 			}
 #endif

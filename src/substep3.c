@@ -114,10 +114,12 @@ void SubStep3_cpu (real dt) {
 #endif
 
 #ifdef DUSTY
+#ifdef Y
 #ifndef TESTNOGRAD	
-	real r = Ymed(j);
+	real r = Ymed(j+1);
 
 	e[ll] = e[ll]/(1+(2*dt*vy[llyp]*(0.5-FLARINGINDEX)/r));
+#endif
 #endif
 #endif  //10/12
 

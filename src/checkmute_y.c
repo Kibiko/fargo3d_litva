@@ -75,6 +75,7 @@ void CheckMuteY_cpu() {
   real* vz = Vz->field_cpu;
 #endif
 #ifdef ADIABATIC
+
   real* energy = Energy->field_cpu;
 #endif
 #ifdef MHD

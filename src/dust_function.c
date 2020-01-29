@@ -51,7 +51,8 @@ real Cd(real* P_current, real* P, real* rho, real* CS, int i, int j, int k){
 	int stride=Stride_cpu;
 	real C=0.;
 
-	C=ts*CS[l]*CS[l]*(Lap(P_current,i,j,k,pitch,stride)*(1.-(P_current[l]/(CS[l]*CS[l]*rho[l])))+(GradDDotGrad(P_current,rho,CS,i,j,k,pitch,stride))); //18/11 m2
+	C=ts*CS[l]*CS[l]*(Lap(P_current,i,j,k,pitch,stride)*(1.-(P_current[l]/(CS[l]*CS[l]*rho[l])))+
+(GradDDotGrad(P_current,rho,CS,i,j,k,pitch,stride))); //18/11 m2
 //	printf("i= %d, lap= %e gdg= %e \n",k,Lap(P_current,i,j,k,pitch,stride)*(1.-(P_current[l]/(cs*cs*rho[l]))), GradDDotGrad(P_current,rho,cs,i,j,k,pitch,stride));
 	return C;
 }	
