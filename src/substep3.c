@@ -25,7 +25,7 @@ void SubStep3_cpu (real dt) {
 
 //<EXTERNAL>
   real* e   = Energy->field_cpu;
-
+  real * CS = Lics->field_cpu;
 #ifdef X
   real* vx  = Vx_temp->field_cpu;
 #endif
@@ -38,8 +38,8 @@ void SubStep3_cpu (real dt) {
   int pitch  = Pitch_cpu;
   int stride = Stride_cpu;
   int size_x = XIP; 
-  int size_y = Ny+2*NGHY-1;
-  int size_z = Nz+2*NGHZ-1;
+  int size_y = Ny+2*NGHY;
+  int size_z = Nz+2*NGHZ;
 //<\EXTERNAL>
 
 //<INTERNAL>
@@ -52,6 +52,7 @@ void SubStep3_cpu (real dt) {
 #endif
 #ifdef Y
   int llyp;
+  int llym;
 #endif
 #ifdef Z
   int llzp;
@@ -80,10 +81,10 @@ void SubStep3_cpu (real dt) {
   for(k=0; k<size_z; k++) {
 #endif
 #ifdef Y
-    for(j=0; j<size_y; j++) {
+    for(j=NGHY-1; j<size_y-NGHY; j++) {
 #endif
 #ifdef X
-      for(i=0; i<size_x; i++) {
+      for(i=0; i<size_x-NGHX; i++) {
 #endif
 //<#>
 
@@ -93,6 +94,7 @@ void SubStep3_cpu (real dt) {
 #endif
 #ifdef Y
 	llyp = lyp;
+	llym = lym;
 #endif
 #ifdef Z
 	llzp = lzp;
@@ -114,12 +116,13 @@ void SubStep3_cpu (real dt) {
 #endif
 
 #ifdef DUSTY
+        gradlc = 0.0;
+#ifndef TESTNOGRAD
 #ifdef Y
-#ifndef TESTNOGRAD	
-	real r = Ymed(j+1);
-
-	e[ll] = e[ll]/(1+(2*dt*vy[llyp]*(0.5-FLARINGINDEX)/r));
+        real r = Ymed(j);
+	gradlc = 1/(1-(dt*0.5*(vy[ll]+vy[llyp])*(- 1.0)/r)); //original
 #endif
+	e[ll] *= gradlc;
 #endif
 #endif  //10/12
 

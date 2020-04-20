@@ -64,7 +64,7 @@ void make_D_cpu(){
 	int size_z = Nz+2 * NGHZ;
 
 	//real cs = CSCONST; //19/11 m
-	real * CS = LICs->field_cpu; //19/11 a
+	real * CS = Lics->field_cpu; //19/11 a
 	real ts = TSCONST;
 	//<\EXTERNAL>
 

@@ -35,7 +35,7 @@ void cfl_cpu() {
   real* rho = Density->field_cpu;
   real* dtime = DensStar->field_cpu;
 #ifdef DUSTY
-  	real * CS = LICs->field_cpu; //19/11 a
+  	real * CS = Lics->field_cpu; //19/11 a
 	//real CS = CSCONST;
 #endif
 

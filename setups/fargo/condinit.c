@@ -43,15 +43,26 @@ void Init() {
 	#endif
 #endif
 #if defined DUSTY && ADIABATIC
-	real *CS = LICs->field_cpu; //18/11
-	CS[l] = soundspeed;
-	e[l] = rho[l]*CS[l]*CS[l]*(1-DUSTRATIO); //18/11 stores Pressure in Energy field
-	vmix = omega*r*sqrt(1.0+(1.0-DUSTRATIO)*(2.0*FLARINGINDEX - 1.0 - SIGMASLOPE)*pow(ASPECTRATIO,2.0)*pow(r/R0,2.0*FLARINGINDEX));
-	vphi[l] = vmix;
-	vphi[l] -= OMEGAFRAME*r;
-	vphi[l] *= (1.+ASPECTRATIO*NOISE*(drand48()-.5));	
+	real *CS = Lics->field_cpu; //18/11
+	
+//	CS[l] = 0.05;
+	CS[l] = soundspeed;	
+	
+//	double bump = BUMPTEST;
+//	double bumpratio = DUSTRATIO+bump*DUSTRATIO;
+//	double cs = CS[l];
+//	double rhoold = rho[l];
+//	rho[l]+= r>0.8&&r<0.9?bump*DUSTRATIO*rho[l]:0.0;
+//	e[l] = r>0.8&&r<0.9?cs*cs*(rho[l]-(1+bump)*DUSTRATIO*rhoold):cs*cs*(1.0-DUSTRATIO)*rhoold;
+//	vphi[l] = r>0.8&&r<0.9?sqrt(omega*omega*r*r+cs*cs*(-SIGMASLOPE)*(1.0-bumpratio)/(1.0+bump*DUSTRATIO)):sqrt(omega*omega*r*r+(-SIGMASLOPE)*cs*cs*(1.0-DUSTRATIO)); //CS CONST
 
+	e[l] = rho[l]*CS[l]*CS[l]*(1.0 - DUSTRATIO);
+	vphi[l] = omega*r*sqrt(1.0+(1.0-DUSTRATIO)*(2.0*FLARINGINDEX - 1.0 - SIGMASLOPE)*pow(ASPECTRATIO,2.0)*pow(r/R0,2.0*FLARINGINDEX));
+
+
+	vphi[l] -= OMEGAFRAME*r;
 	vr[l] = 0.0;
+	
 #endif
 #ifndef DUSTY      
       vphi[l] = omega*r*sqrt(1.0+pow(ASPECTRATIO,2)*pow(r/R0,2*FLARINGINDEX)*(2.0*FLARINGINDEX - 1.0 - SIGMASLOPE));
@@ -60,6 +71,7 @@ void Init() {
 
 	
       vr[l]    = soundspeed*NOISE*(drand48()-.5);
+
 #endif
     }
   } 

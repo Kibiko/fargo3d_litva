@@ -32,14 +32,14 @@ void integrate_cpu(real dt, real * F1, real * F2, real * Fnew, int J, int S){
 
 	//<EXTERNAL>
 	//double safety = SAFETYFACTOR;
-	int size_x = Nx;
+	int size_x = XIP;
 	int size_y = Ny+2 * NGHY;
 	int size_z = Nz+2 * NGHZ;
 	real RhoDust = RHODUST;
 	real SurfDust = SURFDUST;
 	real TS_CONST = TSCONST;
-  real * rho = Density->field_cpu;
-	real * CS = LICs->field_cpu; //18/11 a
+	real * rho = Density->field_cpu;
+	real * CS = Lics->field_cpu; //18/11 a
 	real * F0 = Energy->field_cpu;
 	real * store = Y4->field_cpu;
 	real * vy = Vy_temp->field_cpu; //21/11 a
@@ -64,7 +64,7 @@ void integrate_cpu(real dt, real * F1, real * F2, real * Fnew, int J, int S){
 	//<MAIN_LOOP>
 //printf("dt=%e \n",dt);
 #ifdef Z
-	for (k=NGHZ-1; k<size_z-1; k++) {
+	for (k= NGHZ-1; k<size_z-1; k++) {
 #endif
 #ifdef Y
 		for (j=NGHY-1; j<size_y-1; j++) {
@@ -72,10 +72,8 @@ void integrate_cpu(real dt, real * F1, real * F2, real * Fnew, int J, int S){
 #ifdef X
 			for (i=0; i<size_x; i++ ) {
 #endif
-				//<#>
-				ll = l;
-				real a = 1-(F0[ll]/(CS[ll]*CS[ll]*rho[ll]));
-				//if(a>0){
+				
+				ll = l;	
 				Fnew[ll]=0.;
 #	ifdef RKL1
 				Fnew[ll] = ((2.*J-1)/J)*F1[ll]+ 
@@ -86,10 +84,6 @@ void integrate_cpu(real dt, real * F1, real * F2, real * Fnew, int J, int S){
 #	else
 				Fnew[ll] = (muj(J)*F1[ll])+(nuj(J)*F2[ll])+((1.0-muj(J)-nuj(J))*F0[ll])+(mu1j(J,S)*dt*Cd(F1,F1,rho,CS,i,j,k))+(nu1j(J,S)*dt*Cd(F1,F0,rho,CS,i,j,k));
 #	endif			
-				//}else{
-				//	Fnew[ll] = CS[ll]*CS[ll]*rho[ll];
-				//}
-				//<\#>
 #ifdef X
 			}
 #endif
@@ -109,15 +103,14 @@ void integrate1_cpu(real dt, real * F0, real * Fnew, int S){
 
 	//<EXTERNAL>
 	//double safety = SAFETYFACTOR;
-	int size_x = Nx;
+	int size_x = XIP;
 	int size_y = Ny+2 * NGHY;
 	int size_z = Nz+2 * NGHZ;
 	real RhoDust = RHODUST;
 	real SurfDust = SURFDUST;
 	real TS_CONST = TSCONST;
 	real * rho = Density->field_cpu;
-	real * CS = LICs->field_cpu; //18/11 a
-	real * vy = Vy->field_cpu;
+	real * CS = Lics->field_cpu; //18/11 a
 	//<\EXTERNAL>
 
 	//<INTERNAL>
@@ -142,7 +135,7 @@ void integrate1_cpu(real dt, real * F0, real * Fnew, int S){
 
 	//<MAIN_LOOP>
 #ifdef Z
-	for (k=NGHZ-1; k<size_z-NGHZ; k++) {
+	for (k=NGHZ-1 ; k<size_z-NGHZ; k++) {
 #endif
 #ifdef Y
 		for (j=NGHY-1; j<size_y-NGHY; j++) {
@@ -150,16 +143,9 @@ void integrate1_cpu(real dt, real * F0, real * Fnew, int S){
 #ifdef X
 			for (i=0; i<size_x; i++ ) {
 #endif
-				//<#>
 				ll = l;
-				//real a = 1-(F0[ll]/(CS[ll]*CS[ll]*rho[ll]));
-				//if(a>0){
 				Fnew[ll]=0.;
 				Fnew[ll]+= F0[ll]+mu1j(1,S)*dt*Cd(F0,F0,rho,CS,i,j,k);
-				//}
-				//else{
-				//	Fnew[ll] = CS[ll]*CS[ll]*rho[ll];
-				//}
 #ifdef X
 			}
 #endif
@@ -186,7 +172,7 @@ void RK2_cpu(real dt){
   real * rho = Density->field_cpu;
 	real * F0 = Energy->field_cpu;
 	real * F1 = Y1->field_cpu;
-	real * CS = LICs->field_cpu; //18/11 a
+	real * CS = Lics->field_cpu; //18/11 a
 	//<\EXTERNAL>
 
 	//<INTERNAL>

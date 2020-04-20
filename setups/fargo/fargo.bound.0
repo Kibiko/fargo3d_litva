@@ -6,28 +6,34 @@ Density:
 	Ymax: KEPLERIAN2DDENS
 
 Energy:
-	Ymin: PRESSURE2D
-	Ymax: PRESSURE2D
+	Ymin: PLOCISO
+	Ymax: PLOCISO
+
 Y1:
-	Ymin: PRESSURE2D
-	Ymax: PRESSURE2D
+	Ymin: PLOCISO
+	Ymax: PLOCISO
 
 Y2:
-        Ymin: PRESSURE2D
-        Ymax: PRESSURE2D
+	Ymin: PLOCISO
+        Ymax: PLOCISO
 
 Y3:
-        Ymin: PRESSURE2D
-        Ymax: PRESSURE2D
+	Ymin: PLOCISO
+        Ymax: PLOCISO
 
 Y4:
-        Ymin: PRESSURE2D
-        Ymax: PRESSURE2D
-
+	Ymin: PLOCISO
+        Ymax: PLOCISO
+	
 Vx:
-	Ymin: KEPLERIAN2DVAZIM
-	Ymax: KEPLERIAN2DVAZIM
+	Ymin: VAZIMLOCISO
+	Ymax: VAZIMLOCISO
 
 Vy:
 	Ymin: ANTISYMMETRIC
 	Ymax: ANTISYMMETRIC
+
+Lics:
+	Ymin: CS2D
+	Ymax: CS2D
+

@@ -37,6 +37,7 @@ SYMMETRIC:
 	   Staggered:   |a|a|a|
 
 ANTISYMMETRIC:
+	   Centered:	|-a|a|
 	   Staggered:	|-a|0|a|
 
 NOBOUNDARY:
@@ -69,6 +70,24 @@ KEPLERIAN2DVAZIM:   #Analytic Keplerian extrapolation of velocity profile
 
 PRESSURE2D:
 	Centered: |pressure*pow(Ymed(jgh)/Ymed(jact),2*'FLARINGINDEX'-1-'SIGMASLOPE')|pressure|
+
+PCONST:
+	Centered: |pressure*pow(Ymed(jgh)/Ymed(jact),(-'SIGMASLOPE'))|pressure|
+
+PLOCISO:
+	Centered: |pressure*pow(Ymed(jact)/Ymed(jgh),1 + 'SIGMASLOPE')|pressure|
+
+DUSTDRIFT: 
+	Centered: |pressure*pow(Ymed(jgh),1+'SIGMASLOPE')*pow(Ymed(jact),1+'SIGMASLOPE')|pressure|
+
+VAZIMCONST:
+	Centered: |(vazim + Ymed(jact)*'OmegaFrame') -sqrt('G'*'MSTAR'/Ymed(jact) + (-'SIGMASLOPE)*0.05*0.05*(1.0-'DUSTRATIO')) + sqrt('G'*'MSTAR'/Ymed(jgh) +(-'SIGMASLOPE')*0.05*0.05*(1.0 - 'DUSTRATIO')) - Ymed(jgh)*'OmegaFrame'|vazim|
+
+VAZIMLOCISO:
+	Centered: |(vazim + Ymed(jact)*'OmegaFrame') * sqrt(Ymed(jact)/Ymed(jgh)) - Ymed(jgh)*'OmegaFrame'|vazim|
+
+CS2D:
+	Centered: |csact*pow(Ymed(jgh)/Ymed(jact),'FLARINGINDEX' - 0.5)|csact|
 
 EXTRAPOLATE_LEFT:
 	    Centered:    |(density[i+(NGHY+1)*pitch]-density[i+NGHY*pitch])/(Ymed(NGHY+1)-Ymed(NGHY))*(Ymed(jgh)-Ymed(NGHY))+density[i+NGHY*pitch]|active|

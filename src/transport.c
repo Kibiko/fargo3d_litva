@@ -110,7 +110,7 @@ void transport(real dt){
   TransportY(Mmz, Qs, dt);
 #endif
 #ifdef ADIABATIC
-  TransportY(Energy, Qs, dt);
+  TransportY(Energy, Qs, dt); //5/2
 #endif
   TransportY(Density, Qs, dt);
 #endif

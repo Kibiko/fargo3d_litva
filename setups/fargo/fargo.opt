@@ -18,15 +18,16 @@ MONITOR_Y_RAW  = TORQ
 
 #Damping zones in the active mesh
 
-#FARGO_OPT += -DSTOCKHOLM
-
+FARGO_OPT += -DSTOCKHOLM
 FARGO_OPT +=  -DX
 FARGO_OPT +=  -DY
+#FARGO_OPT += -DGHOSTSX
 
 #Tests
 
 #FARGO_OPT += -DTESTNOGRAD
 #FARGO_OPT += -DTESTNOCOOLING
+
 
 #Equation of State
 FARGO_OPT +=  -DADIABATIC

@@ -7,7 +7,7 @@ void cooling_cpu(real dt){
 #ifndef TESTNOCOOLING
   SelectFluid(0);
 	//double cs = CSCONST; //19/11 m
-	real * CS = LICs->field_cpu; //19/11 a
+	real * CS = Lics->field_cpu; //19/11 a
 	real * y0 = Energy->field_cpu;
 	real * y1 = Y1->field_cpu;
 	real * y2 = Y2->field_cpu;
@@ -138,7 +138,7 @@ void cooling_cpu(real dt){
 void RK2_cooling_cpu(real dt){
 
 	//double cs = CSCONST; //19/11 m
-	real * CS = LICs->field_cpu;
+	real * CS = Lics->field_cpu;
 	real * y0 = Energy->field_cpu;
 	real * dens = Density->field_cpu;
 	int pitch  = Pitch_cpu;

@@ -36,7 +36,7 @@ real calcDmax_cpu(){
 
 	//<EXTERNAL>
 	//double cs = CSCONST; //19/11 m
-	real * CS = LICs->field_cpu; //19/11 a
+	real * CS = Lics->field_cpu; //19/11 a
 	real * P = Energy->field_cpu;
 	real * dens = Density->field_cpu;
 	int pitch  = Pitch_cpu;
