@@ -15,6 +15,7 @@ void Init() {
   real *vphi = Vx->field_cpu;
   real *vr   = Vy->field_cpu;
   real *rho  = Density->field_cpu;
+  real *tsvar = Tsvar->field_cpu;
   
 #ifdef ADIABATIC
   real *e   = Energy->field_cpu;
@@ -46,7 +47,8 @@ void Init() {
 	real *CS = Lics->field_cpu; //18/11
 	
 //	CS[l] = 0.05;
-	CS[l] = soundspeed;	
+	CS[l] = soundspeed;
+	tsvar[l] = TSVARIABLE/omega;		
 	
 //	double bump = BUMPTEST;
 //	double bumpratio = DUSTRATIO+bump*DUSTRATIO;

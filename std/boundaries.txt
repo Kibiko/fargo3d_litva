@@ -75,7 +75,7 @@ PCONST:
 	Centered: |pressure*pow(Ymed(jgh)/Ymed(jact),(-'SIGMASLOPE'))|pressure|
 
 PLOCISO:
-	Centered: |pressure*pow(Ymed(jact)/Ymed(jgh),1 + 'SIGMASLOPE')|pressure|
+	Centered: |pressure*pow(Ymed(jact)/Ymed(jgh),1.0 + 'SIGMASLOPE')|pressure|
 
 DUSTDRIFT: 
 	Centered: |pressure*pow(Ymed(jgh),1+'SIGMASLOPE')*pow(Ymed(jact),1+'SIGMASLOPE')|pressure|

@@ -99,7 +99,8 @@ Fluid *CreateFluid(char *name, int fluidtype) {
 	f->Y2 = CreateField("y2",Y2_COMM,0,0,0);
 	f->Y3 = CreateField("y3",Y3_COMM,0,0,0);
 	f->Y4 = CreateField("y4",Y4_COMM,0,0,0);
-	f->Lics = CreateField("lics",LIC_COMM,0,0,0); //18/11
+	f->Lics = CreateField("lics",LIC_COMM,0,0,0);
+	f->Tsvar = CreateField("tsvar",TSV_COMM,0,0,0); 
 #endif //DUSTY*/
 
   return f;

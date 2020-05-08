@@ -141,7 +141,9 @@ Field *Y3;
 Field *Y4;
 Field *Y5;
 Field *Lics; //18/11
+Field *Tsvar;
 real CSCONST;
+real TSVARIABLE;
 real TSCONST;
 real SURFDUST;
 real RHODUST;

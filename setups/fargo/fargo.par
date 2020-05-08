@@ -3,7 +3,8 @@ Setup			fargo
 ### Disk parameters
 
 #Bumptest		0.5		Viscous evolution test
-TsConst			0.01		Stopping time
+TsConst			0.01		Stopping time 
+Tsvariable		0.01		Stopping time profile at r = 1	
 DustRatio		0.01		Dust to total density ratio
 #CsConst			0.05		Sound speed
 AspectRatio     	0.05            Thickness over Radius in the disc
@@ -15,7 +16,7 @@ FlaringIndex		0.0		Slope for the aspect-ratio
 # Radial range for damping (in period-ratios). Values smaller than one
 # prevent damping.
 
-DampingZone  1.5  # 1.15
+DampingZone  1.15  # 1.15
 
 # Characteristic time for damping, in units of the inverse local
 # orbital frequency. Higher values means lower damping
@@ -33,8 +34,8 @@ IndirectTerm		No
 
 ### Mesh parameters
 
-Nx			1		Azimuthal number of zones
-Ny               	50		Radial number of zones
+Nx			384		Azimuthal number of zones
+Ny               	256		Radial number of zones
 Xmin			-3.14159265358979323844	
 Xmax			3.14159265358979323844
 Ymin			0.4		Inner boundary radius

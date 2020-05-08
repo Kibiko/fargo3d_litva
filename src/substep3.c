@@ -84,7 +84,7 @@ void SubStep3_cpu (real dt) {
     for(j=NGHY-1; j<size_y-NGHY; j++) {
 #endif
 #ifdef X
-      for(i=0; i<size_x-NGHX; i++) {
+      for(i=0; i<size_x; i++) {
 #endif
 //<#>
 

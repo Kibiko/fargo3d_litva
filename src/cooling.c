@@ -23,6 +23,7 @@ void cooling_cpu(real dt){
 	real RhoDust = RHODUST;
 	real SurfDust = SURFDUST;
 	real TS_CONST = TSCONST;
+	real * tsvar = Tsvar->field_cpu;
 	int i;
 	int j;
 	int k;
@@ -34,7 +35,7 @@ void cooling_cpu(real dt){
 	real t_parabY=dt;
 	real t_parabZ=dt;
 
-	real DMAX=TS_CONST*CS[ll]*CS[ll]; //19/11 m
+	real DMAX=tsvar[ll]*CS[ll]*CS[ll]; //19/11 m
 
 #ifdef Z
 	real t_parabz=0.1*(zmed(2)-zmed(1))*(zmed(2)-zmed(1))/DMAX;
@@ -149,6 +150,7 @@ void RK2_cooling_cpu(real dt){
 	real RhoDust = RHODUST;
 	real SurfDust = SURFDUST;
 	real TS_CONST = TSCONST;
+	real * tsvar = Tsvar->field_cpu;
 	int i;
 	int j;
 	int k;
@@ -157,7 +159,7 @@ void RK2_cooling_cpu(real dt){
 	
 	i = j = k = 0;
 	real DeltaT=0.0;
-	real DMAX=TS_CONST*CS[ll]*CS[ll]*calcDmax_cpu(); //19/11 m
+	real DMAX=tsvar[ll]*CS[ll]*CS[ll]*calcDmax_cpu(); //19/11 m
 	real t_parabX=dt;
 	real t_parabY=dt;
 	real t_parabZ=dt;

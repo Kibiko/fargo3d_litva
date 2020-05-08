@@ -246,6 +246,8 @@ void comm_cpu (int options) {
 		f[nvar++] = Y4;
 	if(options & LIC_COMM) //18/11
 		f[nvar++] = Lics;
+	if(options & TSV_COMM)
+		f[nvar++] = Tsvar;
 //#endif
 #endif
 #ifdef MHD
