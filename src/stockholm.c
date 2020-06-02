@@ -164,7 +164,7 @@ void StockholmBoundary_cpu(real dt) {
 	if(ramp>0.0) {
 	  taud = tau/ramp;
 	  rho[l] = (rho[l]*taud+rho0[l2D]*dt)/(dt+taud);
-//	  e[l] = (e[l]*taud+e0[l2D]*dt)/(dt+taud);
+	  e[l] = (e[l]*taud+e0[l2D]*dt)/(dt+taud);
 #ifdef X
 	  vx0_target = vx0[l2D];
 	  radius = ymed(j);

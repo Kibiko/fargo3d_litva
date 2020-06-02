@@ -48,7 +48,7 @@ void Init() {
 	
 //	CS[l] = 0.05;
 	CS[l] = soundspeed;
-	tsvar[l] = TSVARIABLE/omega;		
+	tsvar[l] = (TSVARIABLE/omega)*(1.-DUSTRATIO);		
 	
 //	double bump = BUMPTEST;
 //	double bumpratio = DUSTRATIO+bump*DUSTRATIO;
