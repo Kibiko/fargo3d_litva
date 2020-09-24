@@ -684,16 +684,16 @@ void WriteOutputs(int type) {
 
   /// Standard ouput version
 #ifndef MPIIO
-  if (WRITEDENSITY)
-    __WriteField(Density, TimeStep);
-  if (WRITEENERGY)
+  if (WRITEDENSITY == 1 && TimeStep % 100 == 0)
+    __WriteField(Density, TimeStep); 
+  if (WRITEENERGY == 1 && TimeStep % 100 == 0)
     __WriteField(Energy, TimeStep);
 #ifdef OUTCS
-  if (WRITECS)
+  if (WRITECS == 1 && TimeStep == 0)
     __WriteField(Lics, TimeStep);
 #endif
 #ifdef OUTTS
-  if (WRITETS)
+  if (WRITETS == 1  && TimeStep == 0)
     __WriteField(Tsvar, TimeStep);
 #endif  //5/12 a
 #ifdef MHD //MHD is 3D.
@@ -709,15 +709,15 @@ void WriteOutputs(int type) {
   }
 #endif
 #ifdef X
-  if (WRITEVX)
+  if (WRITEVX == 1 && TimeStep % 100 == 0)
     __WriteField(Vx, TimeStep);
 #endif
 #ifdef Y
-  if (WRITEVY)
+  if (WRITEVY == 1 && TimeStep % 100 == 0)
     __WriteField(Vy, TimeStep);
 #endif
 #ifdef Z
-  if (WRITEVZ)
+  if (WRITEVZ == 1 && TimeStep % 100 == 0)
     __WriteField(Vz, TimeStep);
 #endif
 #endif

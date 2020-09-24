@@ -31,6 +31,7 @@ void SubStep3_cpu (real dt) {
 #endif
 #ifdef Y
   real* vy  = Vy_temp->field_cpu;
+  real* vy_ini = Vy->field_cpu;
 #endif
 #ifdef Z
   real* vz  = Vz_temp->field_cpu;
@@ -121,6 +122,7 @@ void SubStep3_cpu (real dt) {
 #ifdef Y
         real r = Ymed(j);
 	gradlc = 1/(1-(dt*0.5*(vy[ll]+vy[llyp])*(- 1.0)/r)); //original
+	//gradlc = 1/(1-(dt*vy[ll]*(-1.0)/r)); //test
 #endif
 	e[ll] *= gradlc;
 #endif
