@@ -117,16 +117,27 @@ void SubStep3_cpu (real dt) {
 #endif
 
 #ifdef DUSTY
+	div_v = 0.0;
+#ifdef X
+        div_v += (vx[llxp]-vx[ll])*SurfX(j,k);
+#endif
+#ifdef Y
+        div_v += (vy[llyp]-vy[ll])*SurfY(j,k);
+#endif
+        term = dt * div_v;
+        e[ll] *= 1.0/(1.0+term);
+
         gradlc = 0.0;
 #ifndef TESTNOGRAD
 #ifdef Y
         real r = Ymed(j);
-	gradlc = 1/(1-(dt*0.5*(vy[ll]+vy[llyp])*(- 1.0)/r)); //original
-	//gradlc = 1/(1-(dt*vy[ll]*(-1.0)/r)); //test
+	gradlc = 1.0/(1.0-(dt*0.5*(vy[ll]+vy[llyp])*(- 1.0)/r)); //original 
+//	gradlc = 1.0-dt*0.5*(vy[ll]+vy[llyp])/r; //test1 explicit
+//	gradlc = exp(-0.5*(vy[ll]+vy[llyp])*dt/r); //test2 Chen and Lin 
 #endif
-	e[ll] *= gradlc;
+	e[ll] *= gradlc; 
 #endif
-#endif  //10/12
+#endif
 
 
 //<\#>

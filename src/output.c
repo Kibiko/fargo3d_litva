@@ -684,9 +684,9 @@ void WriteOutputs(int type) {
 
   /// Standard ouput version
 #ifndef MPIIO
-  if (WRITEDENSITY == 1 && TimeStep % 100 == 0)
+  if (WRITEDENSITY == 1 && TimeStep % 50 == 0)
     __WriteField(Density, TimeStep); 
-  if (WRITEENERGY == 1 && TimeStep % 100 == 0)
+  if (WRITEENERGY == 1 && TimeStep % 50 == 0)
     __WriteField(Energy, TimeStep);
 #ifdef OUTCS
   if (WRITECS == 1 && TimeStep == 0)
@@ -709,15 +709,15 @@ void WriteOutputs(int type) {
   }
 #endif
 #ifdef X
-  if (WRITEVX == 1 && TimeStep % 100 == 0)
+  if (WRITEVX == 1 && TimeStep % 50 == 0)
     __WriteField(Vx, TimeStep);
 #endif
 #ifdef Y
-  if (WRITEVY == 1 && TimeStep % 100 == 0)
+  if (WRITEVY == 1 && TimeStep % 50 == 0)
     __WriteField(Vy, TimeStep);
 #endif
 #ifdef Z
-  if (WRITEVZ == 1 && TimeStep % 100 == 0)
+  if (WRITEVZ == 1 && TimeStep % 50 == 0)
     __WriteField(Vz, TimeStep);
 #endif
 #endif
