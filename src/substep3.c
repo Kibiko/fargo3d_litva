@@ -50,6 +50,7 @@ void SubStep3_cpu (real dt) {
   int ll;
 #ifdef X
   int llxp;
+  int llxm;
 #endif
 #ifdef Y
   int llyp;
@@ -92,6 +93,7 @@ void SubStep3_cpu (real dt) {
 	ll = l;
 #ifdef X
 	llxp = lxp;
+	llxm = lxm;
 #endif
 #ifdef Y
 	llyp = lyp;
@@ -112,31 +114,33 @@ void SubStep3_cpu (real dt) {
 #ifdef Z
 	div_v += (vz[llzp]*SurfZ(j,k+1)-vz[ll]*SurfZ(j,k));
 #endif
-	term = 0.5 * dt * (GAMMA - 1.) * div_v * InvVol(j,k);
+	term = 0.5 * dt * (GAMMA- 1.) * div_v * InvVol(j,k);
 	e[ll] *= (1.0-term)/(1.0+term);
 #endif
 
 #ifdef DUSTY
-	div_v = 0.0;
-#ifdef X
-        div_v += (vx[llxp]-vx[ll])*SurfX(j,k);
-#endif
-#ifdef Y
-        div_v += (vy[llyp]-vy[ll])*SurfY(j,k);
-#endif
-        term = dt * div_v;
-        e[ll] *= 1.0/(1.0+term);
+//	div_v = 0.0;
+//#ifdef X
+//        div_v += (vx[llxp]-vx[ll])*SurfX(j,k);
+//#endif
+//#ifdef Y
+//        div_v += (vy[llyp]*SurfY(j+1,k)-vy[ll]*SurfY(j,k));
+//#endif
+//#ifdef Z
+//        div_v += (vz[llzp]*SurfZ(j,k+1)-vz[ll]*SurfZ(j,k));
+//#endif
+//        term = 0.5 * dt * div_v * InvVol(j,k);
+//	e[ll] *= (1.0-term)/(1.0+term);
 
-        gradlc = 0.0;
-#ifndef TESTNOGRAD
+	gradlc = 0.0;
 #ifdef Y
         real r = Ymed(j);
-	gradlc = 1.0/(1.0-(dt*0.5*(vy[ll]+vy[llyp])*(- 1.0)/r)); //original 
+	gradlc = 1.0/(1.0-(dt*vy[ll]*(- 1.0)/r)); //original 
 //	gradlc = 1.0-dt*0.5*(vy[ll]+vy[llyp])/r; //test1 explicit
 //	gradlc = exp(-0.5*(vy[ll]+vy[llyp])*dt/r); //test2 Chen and Lin 
 #endif
 	e[ll] *= gradlc; 
-#endif
+
 #endif
 
 

@@ -141,8 +141,8 @@ void visctensor_cyl_cpu(){
 	viscositym   = ALPHA*.25*((energy[l]+energy[lym])*(energy[l]+energy[lym]))*sqrt(ymin(j)*ymin(j)*ymin(j)/(G*MSTAR));
 	viscosityzmym = ALPHA*0.0625*((energy[l]+energy[lym]+energy[lzm]+energy[lym-stride])*(energy[l]+energy[lym]+energy[lzm]+energy[lym-stride]))*sqrt(ymin(j)*ymin(j)*ymin(j)/(G*MSTAR));
 #else
-	viscosity =  ALPHA*energy[l]/rho[l]/(1.0-DUSTRATIO)*sqrt(ymed(j)*ymed(j)*ymed(j)/(G*MSTAR));
-	viscositym = ALPHA*.25*(energy[l]+energy[lym])/(rho[l]+rho[lym])*sqrt(ymed(j)*ymed(j)*ymed(j)/(G*MSTAR));
+	viscosity = viscositym =  ALPHA*energy[l]/rho[l]/(1.0-DUSTRATIO)*sqrt(ymed(j)*ymed(j)*ymed(j)/(G*MSTAR));
+//	viscositym = ALPHA*.25*(energy[l]+energy[lym])/(rho[l]+rho[lym])*sqrt(ymed(j)*ymed(j)*ymed(j)/(G*MSTAR));
 //	viscosity = ALPHA*GAMMA*(GAMMA-1.0)*energy[l]/rho[l]*sqrt(ymed(j)*ymed(j)*ymed(j)/(G*MSTAR));
 //	viscositym= ALPHA*GAMMA*(GAMMA-1.0)*(energy[l]+energy[lym])/(rho[l]+rho[lym])*sqrt(ymin(j)*ymin(j)*ymin(j)/(G*MSTAR)); 
 #endif
