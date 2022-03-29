@@ -709,15 +709,15 @@ void WriteOutputs(int type) {
   }
 #endif
 #ifdef X
-  if (WRITEVX == 1 && TimeStep % 50 == 0)
+  if (WRITEVX == 1 && TimeStep % 10 == 0)
     __WriteField(Vx, TimeStep);
 #endif
 #ifdef Y
-  if (WRITEVY == 1 && TimeStep % 50 == 0)
+  if (WRITEVY == 1 && TimeStep % 10 == 0)
     __WriteField(Vy, TimeStep);
 #endif
 #ifdef Z
-  if (WRITEVZ == 1 && TimeStep % 50 == 0)
+  if (WRITEVZ == 1 && TimeStep % 10 == 0)
     __WriteField(Vz, TimeStep);
 #endif
 #endif

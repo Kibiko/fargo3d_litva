@@ -567,9 +567,13 @@ void SelectFluid(int n) {
 #endif
 #ifdef DUSTY
 	Y1 = Fluids[n]->Y1;
+	Y1o = Fluids[n]->Y1o;
 	Y2 = Fluids[n]->Y2;
+	Y2o = Fluids[n]->Y2o;
 	Y3 = Fluids[n]->Y3;
+	Y3o = Fluids[n]->Y3o;
 	Y4 = Fluids[n]->Y4;
+	Y4o = Fluids[n]->Y4o;
 	Lics = Fluids[n]->Lics;
 	Tsvar = Fluids[n]->Tsvar;
 #endif 

@@ -92,6 +92,10 @@ Fluid *CreateFluid(char *name, int fluidtype) {
   f->Vx0  = CreateField2D ("vx0", YZ);
   f->Vy0  = CreateField2D ("vy0", YZ);
   f->Vz0  = CreateField2D ("vz0", YZ);
+  f->Y1o  = CreateField2D ("y1o", YZ);
+  f->Y2o  = CreateField2D ("y2o", YZ);
+  f->Y3o  = CreateField2D ("y3o", YZ);
+  f->Y4o  = CreateField2D ("y4o", YZ);
 #endif
 
 #ifdef DUSTY

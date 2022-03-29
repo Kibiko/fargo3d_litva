@@ -5,12 +5,12 @@ Setup			fargo
 #Bumptest		0.5		Viscous evolution test
 #TsConst			0.01		Stopping time 
 Tsvariable		0.01		Stopping time profile at r = 1	
-DustRatio		0.01		Dust to total density ratio
+DustRatio		0.5		Dust to total density ratio
 #CsConst			0.05		Sound speed
 AspectRatio     	0.05            Thickness over Radius in the disc
 Sigma0			6.3661977237e-4		Surface Density at r=1
-#Nu			1.0e-5  #1.0e-5		Uniform kinematic viscosity
-Alpha			1.0e-2
+Nu			1.0e-5  #1.0e-5		Uniform kinematic viscosity
+#Alpha			2.0e-1
 SigmaSlope		0.5		Slope for the surface density
 FlaringIndex		0.0		Slope for the aspect-ratio
 
@@ -22,7 +22,7 @@ DampingZone 1.15    # 1.15
 # Characteristic time for damping, in units of the inverse local
 # orbital frequency. Higher values means lower damping
 
-TauDamp 0.3
+TauDamp 0.3  #0.3
 
 ### Planet parameters
 
@@ -48,9 +48,9 @@ Frame			C		Method for moving the frame of reference
 
 DT			0.314159265359	Physical time between fine-grain outputs
 Ninterm	 		20		Number of DTs between scalar fields outputs
-Ntot			10000		Total number of DTs
+Ntot			1000		Total number of DTs
 
-OutputDir		@outputs/dustyfargo
+OutputDir		@/outputs/dustyfargo
 
 ### Plotting parameters
 

@@ -183,6 +183,10 @@ Field2D *Vx0;
 Field2D *Vy0;
 Field2D *Vz0;
 Field2D *Energy0;
+Field2D *Y1o;
+Field2D *Y2o;
+Field2D *Y3o;
+Field2D *Y4o;
 
 //Communications variables
 

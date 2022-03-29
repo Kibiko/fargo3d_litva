@@ -36,7 +36,7 @@ void Init() {
       soundspeed  = ASPECTRATIO*pow(r/R0,FLARINGINDEX)*omega*r;
 
 #ifdef ISOTHERMAL
-      cs[l] = soundspeed;
+	cs[l] = 0.05//soundspeed;
 #endif
 #ifdef ADIABATIC
 	#ifndef DUSTY
@@ -47,7 +47,7 @@ void Init() {
 	real *CS = Lics->field_cpu; //18/11
 	
 //	CS[l] = 0.05;
-	CS[l] = soundspeed;
+	CS[l] = soundspeed;//*pow(1.0+(DUSTRATIO/(1-DUSTRATIO)),-0.5);
 	tsvar[l] = (TSVARIABLE/omega)*(1.-DUSTRATIO);		
 	
 //	double bump = BUMPTEST;

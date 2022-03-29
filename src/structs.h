@@ -120,6 +120,10 @@ struct fluid {
 #ifdef STOCKHOLM
   struct field2D *Density0;
   struct field2D *Energy0;
+  struct field2D *Y1o;
+  struct field2D *Y2o;
+  struct field2D *Y3o;
+  struct field2D *Y4o;
   struct field2D *Vx0;
   struct field2D *Vy0;
   struct field2D *Vz0;

@@ -18,6 +18,20 @@ void StockholmBoundary_cpu(real dt) {
   INPUT2D(Energy0);
   OUTPUT(Energy);
 #endif
+#ifdef DUSTY
+  INPUT(Y1);
+  INPUT(Y2);
+  INPUT(Y3);
+  INPUT(Y4);
+  INPUT2D(Y1o);
+  INPUT2D(Y2o);
+  INPUT2D(Y3o);
+  INPUT2D(Y4o);
+  OUTPUT(Y1);
+  OUTPUT(Y2);
+  OUTPUT(Y3);
+  OUTPUT(Y4);
+#endif
 #ifdef X
   INPUT(Vx);
   INPUT2D(Vx0);
@@ -53,6 +67,16 @@ void StockholmBoundary_cpu(real dt) {
 #ifdef ADIABATIC
   real* e    = Energy->field_cpu;
   real* e0   = Energy0->field_cpu;
+#endif
+#ifdef DUSTY
+  real* y1   = Y1->field_cpu;
+  real* y1o  = Y1o->field_cpu;
+  real* y2   = Y2->field_cpu;
+  real* y2o  = Y2o->field_cpu;
+  real* y3   = Y3->field_cpu;
+  real* y3o  = Y3o->field_cpu;
+  real* y4   = Y4->field_cpu;
+  real* y4o  = Y4o->field_cpu;
 #endif
   int pitch   = Pitch_cpu;
   int stride  = Stride_cpu;
@@ -165,6 +189,10 @@ void StockholmBoundary_cpu(real dt) {
 	  taud = tau/ramp;
 	  rho[l] = (rho[l]*taud+rho0[l2D]*dt)/(dt+taud);
 	  e[l] = (e[l]*taud+e0[l2D]*dt)/(dt+taud);
+	  y1[l] = (y1[l]*taud+y1o[l2D]*dt)/(dt+taud);
+	  y2[l] = (y2[l]*taud+y2o[l2D]*dt)/(dt+taud);
+	  y3[l] = (y3[l]*taud+y3o[l2D]*dt)/(dt+taud);
+	  y4[l] = (y4[l]*taud+y4o[l2D]*dt)/(dt+taud);
 #ifdef X
 	  vx0_target = vx0[l2D];
 	  radius = ymed(j);
