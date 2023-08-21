@@ -7,6 +7,7 @@ scripts/bound_*.code
 src/rescale.c
 std/.lastflags
 std/.lastflags.old
+src/tags
 *.pyc
 *.blocks
 *.tar.gz
